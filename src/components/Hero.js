@@ -174,6 +174,16 @@ const Hero = () => {
                             >
                                 View Projects
                             </button>
+                            <a
+                                href="/assets/Yashindi_Bhagya.pdf"
+                                download="Yashindi_Bhagya_Resume.pdf"
+                                className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/10 hover:border-white/20 text-white font-semibold text-sm sm:text-base backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center gap-2"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download CV
+                            </a>
                         </div>
                     </div>
 
