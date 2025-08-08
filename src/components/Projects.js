@@ -71,6 +71,18 @@ const Projects = () => {
         },
         {
             id: 6,
+            title: "BEANLINE",
+            subtitle: "Designs by Edwinn",
+            category: "E-Commerce",
+            type: "mobile",
+            image: "/assets/img/coffee_shop.png",
+            description: "Designer portfolio website showcasing creative work and services.",
+            technologies: ["Figma", "Adobe Photoshop", "React Native"],
+            liveLink: "#",
+            githubLink: "#"
+        },
+        {
+            id: 7,
             title: "E-LEARNING",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -82,7 +94,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 7,
+            id: 8,
             title: "INSURANCE",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -94,7 +106,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 8,
+            id: 9,
             title: "GESTURECONNECT",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -106,7 +118,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 9,
+            id: 10,
             title: "NATURE WONDERS",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -118,7 +130,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 10,
+            id: 11,
             title: "EVENT EDGE",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -130,7 +142,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 11,
+            id: 12,
             title: "EPICUREAN DELIGHT",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -142,7 +154,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 12,
+            id: 13,
             title: "TROPICAL WATER",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
@@ -154,7 +166,7 @@ const Projects = () => {
             githubLink: "#"
         },
         {
-            id: 13,
+            id: 14,
             title: "FOREST HAVEN",
             subtitle: "Home Enterprises",
             category: "E-Commerce",
