@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
     const [activeTab, setActiveTab] = useState('all');
-    const [visibleCount, setVisibleCount] = useState(6); // Show 6 initially
+    const [visibleCount, setVisibleCount] = useState(8); // Show 6 initially
     const navigate = useNavigate();
+
 
     // Project data with unique IDs and updated for portfolio style
     const projects = [
@@ -187,7 +188,7 @@ const Projects = () => {
     const visibleProjects = filteredProjects.slice(0, visibleCount);
 
     const handleLoadMore = () => {
-        setVisibleCount(prev => prev + 6); // Load 6 more
+        setVisibleCount(prev => prev + 8); // Load 6 more
     };
 
     const handleProjectClick = (projectId) => {
@@ -225,8 +226,8 @@ const Projects = () => {
                                     setVisibleCount(6); // Reset visible count on tab switch
                                 }}
                                 className={`px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeTab === type
-                                        ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
-                                        : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
+                                    ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
+                                    : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
                                     }`}
                             >
                                 {type === "all" ? "All" : type === "uiux" ? "UI/UX Designs" : "Mobile Apps"}
@@ -237,7 +238,7 @@ const Projects = () => {
 
                 {/* Project Grid */}
                 {visibleProjects.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
                         {visibleProjects.map(project => (
                             <div
                                 key={project.id}
