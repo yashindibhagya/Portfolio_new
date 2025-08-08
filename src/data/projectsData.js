@@ -91,6 +91,18 @@ export const watermock = [
 export const forestmock = [
     { id: 1, image: '/assets/img/zoo/1.png' },
 ];
+export const coffeeShop = [
+    { id: 1, image: '/assets/img/coffeeShop/1.png' },
+    { id: 2, image: '/assets/img/coffeeShop/2.png' },
+    { id: 3, image: '/assets/img/coffeeShop/3.png' },
+    { id: 4, image: '/assets/img/coffeeShop/4.png' },
+    { id: 5, image: '/assets/img/coffeeShop/5.png' },
+    { id: 6, image: '/assets/img/coffeeShop/6.png' },
+    { id: 7, image: '/assets/img/coffeeShop/7.png' },
+    { id: 8, image: '/assets/img/coffeeShop/8.png' },
+    { id: 9, image: '/assets/img/coffeeShop/9.png' },
+    { id: 10, image: '/assets/img/coffeeShop/10.png' },
+];
 
 // Projects data
 export const projectsData = [
@@ -228,6 +240,32 @@ export const projectsData = [
     },
     {
         id: 6,
+        title: "BEANLINE",
+        subtitle: "A mobile-first coffee shop app designed for seamless browsing and ordering",
+        category: "Mobile App Design · UI/UX · Coffee & Lifestyle",
+        duration: "4 WEEKS",
+        type: "mobile",
+        image: "/assets/img/coffee_shop.png",
+        mockupImage: "/assets/img/coffee_shop.png",
+        description: "BeanLine is a cozy, mobile-first coffee experience designed for young coffee enthusiasts. With a clean and intuitive interface, the app helps users browse, customize, and order their favorite drinks — all from their phones.",
+        overview: "BeanLine is a modern coffee shop aiming to blend quality brews with tech-savvy convenience. The brand emphasizes warmth, personalization, and a premium feel while staying accessible to everyday coffee lovers.",
+        brandOverview: "BeanLine is a modern coffee shop aiming to blend quality brews with tech-savvy convenience. The brand emphasizes warmth, personalization, and a premium feel while staying accessible to everyday coffee lovers.",
+        challenge: "Design an app that captures the essence of a modern café while simplifying the customer journey — from browsing drinks to placing orders — without overwhelming the user.",
+        solution: "Developed a botanical-inspired website that transforms online plant shopping into an immersive nature experience. The design uses rich green imagery and organic layouts to create emotional connections with plants while providing practical shopping features like clear categorization, service guarantees, and educational content. The natural color palette and abundant plant photography work together to inspire customers to bring more greenery into their spaces.",
+        features: [
+            "Home screen with featured drinks and offers",
+            "Detailed drink pages with customization",
+            "Warm, cozy UI aligned with café vibes",
+            "Eco-Friendly Branding ",
+            "Built using React Native + Expo"
+        ],
+        tools: ["Figma", "Adobe Photoshop", "React Native"],
+        uiScreens: coffeeShop,
+        conclusion: "BeanLine brings together beautiful design and practical functionality to deliver an app experience that coffee lovers will enjoy using daily. The app elevates the connection between brand and customer by offering more than coffee — it delivers convenience with heart.",
+        websiteUrl: "https://github.com/yashindibhagya/BeanLine-CoffeeShop"
+    },
+    {
+        id: 7,
         title: "E-LEARNING",
         subtitle: "Home Enterprises",
         category: "E-Commerce",
@@ -253,7 +291,7 @@ export const projectsData = [
         websiteUrl: "#"
     },
     {
-        id: 7,
+        id: 8,
         title: "INSURANCE",
         subtitle: "Task Management & Earnings Tracker for Service Professionals",
         category: "Productivity & Finance Management Mobile Application",
@@ -279,7 +317,7 @@ export const projectsData = [
         websiteUrl: "https://github.com/yashindibhagya/task_list_insurance-company"
     },
     {
-        id: 8,
+        id: 9,
         title: "GESTURECONNECT",
         subtitle: "Real-Time Sign Language Translation and Learning Platform for Enhanced Deaf-Hearing Communication",
         category: "Machine Learning Application",
@@ -307,7 +345,7 @@ export const projectsData = [
         websiteUrl: "https://github.com/yashindibhagya/GestureConnect"
     },
     {
-        id: 9,
+        id: 10,
         title: "NATURE WONDERS",
         subtitle: "Discovering Sri Lanka's Hidden Forest Treasures",
         category: "Environmental & Conservation Web Design",
@@ -333,7 +371,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park"
     },
     {
-        id: 10,
+        id: 11,
         title: "EVENT EDGE",
         subtitle: "Home Enterprises",
         category: "Event Management Platform",
@@ -359,7 +397,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment"
     },
     {
-        id: 11,
+        id: 12,
         title: "EPICUREAN DELIGHT",
         subtitle: "Experience luxury accommodations with world-class amenities and exceptional hospitality in the heart of the city.",
         category: "Luxury Hotel & Hospitality Website",
@@ -385,7 +423,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms"
     },
     {
-        id: 12,
+        id: 13,
         title: "TROPICAL WATER",
         subtitle: "Pure, high-quality water solutions with reliable island-wide delivery, ensuring pure hydration reaches your doorstep.",
         category: "Beverage & Water Solutions",
@@ -411,7 +449,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere"
     },
     {
-        id: 13,
+        id: 14,
         title: "FOREST HAVEN",
         subtitle: "Discover amazing wildlife and conservation through immersive experiences and educational programs.",
         category: "Zoo & Wildlife Conservation Website",

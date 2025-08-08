@@ -76,10 +76,10 @@ const Projects = () => {
             category: "E-Commerce",
             type: "mobile",
             image: "/assets/img/coffee_shop.png",
-            description: "Designer portfolio website showcasing creative work and services.",
+            description: "A modern mobile experience for coffee lovers.",
             technologies: ["Figma", "Adobe Photoshop", "React Native"],
             liveLink: "#",
-            githubLink: "#"
+            githubLink: "https://github.com/yashindibhagya/BeanLine-CoffeeShop"
         },
         {
             id: 7,
