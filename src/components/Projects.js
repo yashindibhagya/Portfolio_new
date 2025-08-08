@@ -1,9 +1,9 @@
-// Live Demo
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
     const [activeTab, setActiveTab] = useState('all');
+    const [visibleCount, setVisibleCount] = useState(6); // Show 6 initially
     const navigate = useNavigate();
 
     // Project data with unique IDs and updated for portfolio style
@@ -184,80 +184,66 @@ const Projects = () => {
         ? projects
         : projects.filter(project => project.type === activeTab);
 
-    const handleProjectClick = (projectId) => {
-        // Save current scroll position before navigating
-        sessionStorage.setItem('scrollPosition', window.pageYOffset.toString());
-        // Save active tab to restore it when coming back
-        sessionStorage.setItem('activeTab', activeTab);
+    const visibleProjects = filteredProjects.slice(0, visibleCount);
 
-        // Navigate to project details
+    const handleLoadMore = () => {
+        setVisibleCount(prev => prev + 6); // Load 6 more
+    };
+
+    const handleProjectClick = (projectId) => {
+        sessionStorage.setItem('scrollPosition', window.pageYOffset.toString());
+        sessionStorage.setItem('activeTab', activeTab);
         navigate(`/project/${projectId}`);
     };
 
-    // Function to handle image errors
     const handleImageError = (e) => {
         console.log("Image failed to load");
-        e.target.src = "/assets/img/placeholder.png"; // Fallback image
+        e.target.src = "/assets/img/placeholder.png";
     };
 
     return (
         <section id="work" className="py-12 sm:py-16 md:py-20 transition-colors duration-300">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Responsive Title Section */}
-                <div className="mb-12 sm:mb-16 md:mb-20 text-center">
-                    <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold mb-4 bg-gradient-to-l from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] bg-clip-text text-transparent">
+                {/* Title */}
+                <div className="mb-12 text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-l from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] bg-clip-text text-transparent">
                         Projects
                     </h2>
-                    <p className="mt-2 sm:mt-4 max-w-3xl mx-auto text-sm sm:text-base text-white opacity-80">
-                        Showcasing my latest designs and development projects with a focus on user experience,
-                        visual aesthetics, and functional excellence.
+                    <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-white opacity-80">
+                        A selection of my recent works across UI/UX and mobile platforms.
                     </p>
                 </div>
 
-                {/* Responsive Tab Navigation */}
-                <div className="flex justify-center mb-12 sm:mb-16">
-                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
-                        <button
-                            onClick={() => setActiveTab('all')}
-                            className={`px-6 sm:px-8 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300 ${activeTab === 'all'
-                                ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
-                                : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
-                                }`}
-                        >
-                            All
-                        </button>
-                        <button
-                            onClick={() => setActiveTab('uiux')}
-                            className={`px-6 sm:px-8 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300 ${activeTab === 'uiux'
-                                ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
-                                : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
-                                }`}
-                        >
-                            UI/UX Designs
-                        </button>
-                        <button
-                            onClick={() => setActiveTab('mobile')}
-                            className={`px-6 sm:px-8 py-2 text-sm sm:text-base font-medium rounded-full transition-all duration-300 ${activeTab === 'mobile'
-                                ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
-                                : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
-                                }`}
-                        >
-                            Mobile Apps
-                        </button>
+                {/* Tabs */}
+                <div className="flex justify-center mb-10">
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {["all", "uiux", "mobile"].map((type) => (
+                            <button
+                                key={type}
+                                onClick={() => {
+                                    setActiveTab(type);
+                                    setVisibleCount(6); // Reset visible count on tab switch
+                                }}
+                                className={`px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeTab === type
+                                        ? 'text-white bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]'
+                                        : 'text-gray-300 hover:text-white border border-gray-700 hover:border-gray-500'
+                                    }`}
+                            >
+                                {type === "all" ? "All" : type === "uiux" ? "UI/UX Designs" : "Mobile Apps"}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Check if there are projects to display */}
-                {filteredProjects.length > 0 ? (
-                    /* Updated Projects Grid with New Style */
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredProjects.map(project => (
+                {/* Project Grid */}
+                {visibleProjects.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        {visibleProjects.map(project => (
                             <div
                                 key={project.id}
                                 className="group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer"
                                 onClick={() => handleProjectClick(project.id)}
                             >
-                                {/* Project Image */}
                                 <div className="relative overflow-hidden">
                                     <img
                                         src={project.image}
@@ -265,16 +251,13 @@ const Projects = () => {
                                         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                                         onError={handleImageError}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
 
-                                {/* Project Content */}
                                 <div className="p-6">
                                     <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
                                     <p className="text-gray-400 mb-4">{project.description}</p>
-
-                                    {/* Technologies */}
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <div className="flex flex-wrap gap-2 mb-2">
                                         {project.technologies.map((tech, index) => (
                                             <span
                                                 key={index}
@@ -284,28 +267,26 @@ const Projects = () => {
                                             </span>
                                         ))}
                                     </div>
-
-                                    {/* Action Buttons 
-                                    <div className="flex gap-4">
-                                        <a
-                                            href={project.githubLink}
-                                            className="flex-1 text-center px-4 py-2 rounded-full bg-gradient-to-r from-[#ff58d8] to-[#4f4cfa] text-white text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            Live Demo
-                                        </a>
-                                    </div> */}
                                 </div>
                             </div>
                         ))}
                     </div>
                 ) : (
-                    /* No Projects Yet Message */
-                    <div className="max-w-4xl mx-auto text-center py-20 px-4">
-                        <h3 className="text-1xl sm:text-2xl font-bold text-white mb-4">No Projects Yet</h3>
-                        <p className="text-gray-400 max-w-lg mx-auto text-0xl sm:text-1xl">
-                            There are no projects available in this category at the moment. Check back soon as new projects are being added regularly.
-                        </p>
+                    <div className="text-center py-20">
+                        <h3 className="text-2xl font-bold text-white mb-2">No Projects Yet</h3>
+                        <p className="text-gray-400">Please check back later. Projects are coming soon!</p>
+                    </div>
+                )}
+
+                {/* Load More Button */}
+                {visibleCount < filteredProjects.length && (
+                    <div className="text-center">
+                        <button
+                            onClick={handleLoadMore}
+                            className="px-8 py-3 rounded-full text-white text-sm font-medium bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-1 transition-all duration-300"
+                        >
+                            Load More Projects
+                        </button>
                     </div>
                 )}
             </div>
