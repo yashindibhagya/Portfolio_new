@@ -59,8 +59,9 @@ const ProfileCard = () => {
                         ))}
                     </div>
 
-                    {/* Contact Button */}
-                    <button className="mt-6 w-full bg-indigo-900 text-white py-2 rounded-xl shadow-md hover:bg-indigo-800">
+                    {/* Contact Button 
+                    <button className="mt-6 w-full bg-indigo-900 text-white py-2 rounded-xl shadow-md hover:bg-indigo-800"> */}
+                    <button className="w-full py-3.5 px-4 rounded-xl bg-indigo-900 text-gray-800 font-medium shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all disabled:opacity-70">
                         ✈️ Contact Me
                     </button>
                 </div>

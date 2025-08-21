@@ -29,7 +29,7 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[10%]"> {/* Added margin-top to prevent cutoff */}
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[10%]">
                 {/* Heading */}
                 <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
                     <img
@@ -88,7 +88,9 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    <div className="w-full">
+                    <div className="w-full relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none backdrop-blur-md"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none backdrop-blur-md"></div>
                         <MarqueeProjects />
                     </div>
                 </div>
