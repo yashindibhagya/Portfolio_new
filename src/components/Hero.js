@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import MarqueeProjects from "../components/ProjectsMarquee";
 
 const roles = ["Mobile App Developer", "UI/UX Developer", "Remote Designer"];
 
@@ -28,13 +29,13 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[10%]"> {/* Added margin-top to prevent cutoff */}
                 {/* Heading */}
                 <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
                     <img
                         src="../assets/img/pic.png"
                         alt="Profile"
-                        className="w-40 h-30 rounded-2xl shadow-lg object-cover"
+                        className="w-40 h-40 rounded-2xl shadow-lg object-cover"
                     />
                     <h1 className="text-5xl sm:text-6xl font-serif font-extrabold text-slate-800">
                         I'm Yashindi Bhagya
@@ -77,14 +78,19 @@ const Hero = () => {
                     collaborating with startups and leading brands
                 </p>
 
-                {/* Buttons */}
-                <div className="flex gap-6 flex-wrap justify-center">
-                    <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-[#222B4D] to-[#3D4680] text-white font-medium shadow-lg hover:scale-105 transition-transform">
-                        ➜ Get Template
-                    </button>
-                    <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-white to-gray-100 text-gray-700 font-medium shadow-lg hover:scale-105 transition-transform">
-                        ➜ See Projects
-                    </button>
+                <div className="w-full mt-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                        <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-[#222B4D] to-[#3D4680] text-white font-medium shadow-lg hover:scale-105 transition-transform whitespace-nowrap">
+                            ➜ Get Template
+                        </button>
+                        <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-white to-gray-100 text-gray-700 font-medium shadow-lg hover:scale-105 transition-transform whitespace-nowrap">
+                            ➜ See Projects
+                        </button>
+                    </div>
+
+                    <div className="w-full">
+                        <MarqueeProjects />
+                    </div>
                 </div>
             </div>
         </div>

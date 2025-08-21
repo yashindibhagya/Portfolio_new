@@ -15,7 +15,6 @@ import Marquee from './components/Marquee';
 import FAQ from './components/Faq';
 
 function App() {
-  // We're only keeping track of active section now, removed darkMode state
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -38,9 +37,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Effect to restore scroll position and active tab if coming from project details
   useEffect(() => {
-    // Check if we're returning from project details
     const savedPosition = sessionStorage.getItem('scrollPosition');
     const savedTab = sessionStorage.getItem('activeTab');
 
@@ -52,7 +49,6 @@ function App() {
         }
       }, 100);
 
-      // Clear the saved position after restoring
       sessionStorage.removeItem('scrollPosition');
       sessionStorage.removeItem('activeTab');
     }
@@ -65,9 +61,7 @@ function App() {
         <div className="fixed inset-0 z-0 overflow-hidden">
           {/* Primary gradients */}
           <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
-          {/* <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 to-fuchsia-500/10 blur-3xl"></div>*/}
           <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
-          {/* <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/20 to-sky-500/10 blur-3xl"></div>*/}
 
           {/* Additional color spots for more depth */}
           <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-pink-500/10 to-rose-500/5 blur-3xl"></div>
@@ -78,15 +72,12 @@ function App() {
           <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-gradient-to-l from-violet-500/15 to-purple-500/10 blur-2xl"></div>
         </div>
 
-        {/* Main content wrapper with consistent max-width */}
+        {/* Main content wrapper */}
         <div className="relative z-10">
           <Routes>
             <Route path="/project/:id" element={
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <Header
-                  activeSection={activeSection}
-                  isProjectPage={true}
-                />
+              <div className="w-full">
+                <Header activeSection={activeSection} isProjectPage={true} />
                 <ProjectDetails />
                 <Footer />
               </div>
@@ -97,8 +88,7 @@ function App() {
                 <div className="w-full">
                   <Hero />
                 </div>
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                  <Projects_Marquee />
+                <div className="w-full">
                   <Services />
                   <About />
                   <Marquee />
@@ -108,7 +98,7 @@ function App() {
                 <div className="w-full">
                   <Skills />
                 </div>
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="w-full">
                   <Contact />
                   <FAQ />
                   <Footer />

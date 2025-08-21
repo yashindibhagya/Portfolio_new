@@ -198,10 +198,7 @@ const Skills = () => {
                     </div>
 
                     {/* Design & Dev Tools */}
-                    <div className="p-6 rounded-2xl bg-[#f5f5f5] 
-    shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] 
-    transition-all duration-300 
-    hover:shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#ffffff]">
+                    <div className="p-6 rounded-2xl bg-[#f5f5f5] shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] transition-all duration-300 hover:shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#ffffff]">
                         <div className="flex items-center mb-6">
                             <span className="text-3xl mr-3">🎨</span>
                             <h3 className="text-lg font-semibold text-gray-800">

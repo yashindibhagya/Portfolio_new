@@ -120,8 +120,8 @@ const Contact = () => {
     }, [typingIndex]);
 
     const ContactCard = ({ icon, title, value }) => (
-        <div className="flex items-center p-6 rounded-2xl bg-[#E0E5EC] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff] transition-all hover:shadow-[inset_9px_9px_16px_#bec3c9,inset_-9px_-9px_16px_#ffffff] duration-300">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl mr-4 bg-[#E0E5EC] shadow-[5px_5px_10px_#bec3c9,-5px_-5px_10px_#ffffff]">
+        <div className="flex items-center p-6 rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff] transition-all hover:shadow-[inset_9px_9px_16px_#bec3c9,inset_-9px_-9px_16px_#ffffff] duration-300">
+            <div className="flex items-center justify-center w-12 h-12 rounded-xl mr-4 bg-[#E0E5E] shadow-[5px_5px_10px_#bec3c9,-5px_-5px_10px_#ffffff]">
                 {icon}
             </div>
             <div>
@@ -175,7 +175,7 @@ const Contact = () => {
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E0E5EC] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
                                     >
                                         <span className="text-gray-600">{social.icon}</span>
                                     </a>
@@ -185,7 +185,7 @@ const Contact = () => {
 
                         {/* Contact form */}
                         <div className="lg:col-span-7">
-                            <div className="p-1 rounded-2xl bg-[#E0E5EC] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
+                            <div className="p-1 rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
                                 <div className="p-8 rounded-xl">
                                     {formStatus.status === "success" ? (
                                         <div className="flex flex-col items-center justify-center py-10 text-center">
@@ -208,7 +208,7 @@ const Contact = () => {
                                                     value={formData.name}
                                                     onChange={handleChange}
                                                     placeholder="Name"
-                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5EC] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                     required
                                                 />
                                                 <input
@@ -217,7 +217,7 @@ const Contact = () => {
                                                     value={formData.email}
                                                     onChange={handleChange}
                                                     placeholder="Email"
-                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5EC] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                     required
                                                 />
                                             </div>
@@ -228,7 +228,7 @@ const Contact = () => {
                                                 value={formData.subject}
                                                 onChange={handleChange}
                                                 placeholder="Subject"
-                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5EC] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                 required
                                             />
 
@@ -238,7 +238,7 @@ const Contact = () => {
                                                 onChange={handleChange}
                                                 rows={5}
                                                 placeholder="Your message..."
-                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5EC] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
+                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
                                                 required
                                             />
 
@@ -251,7 +251,7 @@ const Contact = () => {
                                             <button
                                                 type="submit"
                                                 disabled={formStatus.status === "submitting"}
-                                                className="w-full py-3.5 px-4 rounded-xl bg-[#E0E5EC] text-gray-800 font-medium shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all disabled:opacity-70"
+                                                className="w-full py-3.5 px-4 rounded-xl bg-[#E0E5E] text-gray-800 font-medium shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all disabled:opacity-70"
                                             >
                                                 {formStatus.status === "submitting"
                                                     ? "Sending..."

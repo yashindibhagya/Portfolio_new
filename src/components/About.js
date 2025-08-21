@@ -1,5 +1,6 @@
-// ProfileCard.jsx
+
 import React from 'react';
+import { socialLinks, contactInfo } from "../config/socialLinks";
 
 const experiences = [
     { title: 'Product Designer', company: 'Nexus Creative', year: '2023' },
@@ -32,22 +33,30 @@ const ProfileCard = () => {
 
                 <div className="bg-white shadow-md rounded-2xl w-80 p-6 text-center">
                     <img
-                        src="/your-image.jpg" // Replace with your actual image path
-                        alt="Sophie Carter"
+                        src="../../assets/img/bakery.png" // Replace with your actual image path
+                        alt="Yashindi Bhagya"
                         className="w-full h-64 object-cover rounded-xl mb-4"
                     />
                     <p className="text-green-500 text-sm flex items-center justify-center gap-2 mb-2">
                         <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
                         available for work
                     </p>
-                    <h1 className="text-xl font-semibold">Sophie Carter</h1>
+                    <h1 className="text-xl font-semibold">Yashindi Bhagya</h1>
                     <p className="text-sm text-gray-500 mt-1">UI/UX Interaction Designer Based in Berlin.</p>
 
-                    {/* Social Icons */}
-                    <div className="flex justify-center mt-4 space-x-4 text-gray-600">
-                        <button className="hover:text-black"><i className="fab fa-x-twitter"></i></button>
-                        <button className="hover:text-black"><i className="fab fa-instagram"></i></button>
-                        <button className="hover:text-black"><i className="fab fa-facebook"></i></button>
+                    {/* Social Links */}
+                    <div className="flex gap-4 mt-6">
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                            >
+                                <span className="text-gray-600">{social.icon}</span>
+                            </a>
+                        ))}
                     </div>
 
                     {/* Contact Button */}
@@ -61,8 +70,16 @@ const ProfileCard = () => {
                     {/* Intro */}
                     <div>
                         <p className="text-gray-700 text-lg">
-                            I'm Sophie Carter, a passionate Web Designer & Developer based in the dynamic city of Berlin, Germany.
-                            I blend creative design with precise technical execution to deliver outstanding digital experiences.
+                            Hey, I'm Yashindi Bhagya,a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
+                            <br />
+                            <br />
+                            With over a year of hands-on experience in UI/UX design, I specialize in user research, wireframing, and prototyping using tools like Figma, Adobe Photoshop, and Canva.
+                            <br />
+                            <br />
+                            Beyond design, I develop mobile applications using React Native and create interactive games with Unity and C#. I enjoy turning ideas into real-world solutions whether it's a learning app, a game, or a user-centric platform.
+                            <br />
+                            <br />
+                            I'm always eager to learn, collaborate, and take on challenges that push my creative and technical skills forward.
                         </p>
                     </div>
 
@@ -87,7 +104,7 @@ const ProfileCard = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
