@@ -1,52 +1,45 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-                blue: {
-                    50: '#eff6ff',
-                    100: '#dbeafe',
-                    200: '#bfdbfe',
-                    300: '#93c5fd',
-                    400: '#60a5fa',
-                    500: '#3b82f6',
-                    600: '#2563eb',
-                    700: '#1d4ed8',
-                    800: '#1e40af',
-                    900: '#1e3a8a',
-                },
-            },
-            animation: {
-                'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                'marquee': 'marquee 25s linear infinite',
-                'float': 'float 6s ease-in-out infinite',
-                'social-hover': 'socialHover 0.3s ease-out forwards',
-            },
-            keyframes: {
-                pulse: {
-                    '0%, 100%': { opacity: 1 },
-                    '50%': { opacity: 0.5 },
-                },
-                marquee: {
-                    '0%': { transform: 'translateX(0)' },
-                    '100%': { transform: 'translateX(-100%)' },
-                },
-                float: {
-                    '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-10px)' },
-                },
-                socialHover: {
-                    '0%': { transform: 'scale(1)' },
-                    '100%': { transform: 'scale(1.1)' },
-                },
-            },
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
+      },
+      boxShadow: {
+        'neu': '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+        'neu-sm': '4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff',
+        'neu-hover': '12px 12px 24px #d1d9e6, -12px -12px 24px #ffffff',
+        neumorphic: "4px 4px 10px #d1d9e6, -4px -4px 10px #ffffff",
+        'neumorphic-inset': "inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #ffffff",
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 }

@@ -10,6 +10,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
 import Education from './components/Education';
+import Projects_Marquee from './components/ProjectsMarquee';
+import Marquee from './components/Marquee';
+import FAQ from './components/Faq';
 
 function App() {
   // We're only keeping track of active section now, removed darkMode state
@@ -57,12 +60,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-black text-white relative">
+      <div className="min-h-screen relative">
         {/* Background gradients */}
         <div className="fixed inset-0 z-0 overflow-hidden">
           {/* Primary gradients */}
-          <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 to-fuchsia-500/10 blur-3xl"></div>
-          <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/20 to-sky-500/10 blur-3xl"></div>
+          <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
+          {/* <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-purple-500/20 to-fuchsia-500/10 blur-3xl"></div>*/}
+          <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
+          {/* <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/20 to-sky-500/10 blur-3xl"></div>*/}
 
           {/* Additional color spots for more depth */}
           <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-pink-500/10 to-rose-500/5 blur-3xl"></div>
@@ -87,19 +92,28 @@ function App() {
               </div>
             } />
             <Route path="/" element={
-              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <Header
-                  activeSection={activeSection}
-                />
-                <Hero />
-                <About />
-                <Services />
-                <Education />
-                <Projects />
-                <Skills />
-                <Contact />
-                <Footer />
-              </div>
+              <>
+                <Header activeSection={activeSection} />
+                <div className="w-full">
+                  <Hero />
+                </div>
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                  <Projects_Marquee />
+                  <Services />
+                  <About />
+                  <Marquee />
+                  <Projects />
+                  <Education />
+                </div>
+                <div className="w-full">
+                  <Skills />
+                </div>
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                  <Contact />
+                  <FAQ />
+                  <Footer />
+                </div>
+              </>
             } />
           </Routes>
         </div>

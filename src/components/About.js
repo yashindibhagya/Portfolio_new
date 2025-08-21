@@ -1,135 +1,89 @@
-import React, { useState, useEffect } from 'react';
-import { socialLinks, contactInfo } from '../config/socialLinks';
+// ProfileCard.jsx
+import React from 'react';
 
-const About = () => {
-    // Small decorative dots that appear in the background
-    const renderDecorationDots = () => {
-        return (
-            <>
-                {/* Responsive dot positioning with smaller sizes on mobile */}
-                <div className="absolute top-20 left-10 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full opacity-30"></div>
-                <div className="absolute bottom-40 right-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full opacity-20"></div>
-                <div className="absolute top-1/3 right-1/4 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full opacity-40"></div>
-                <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full opacity-30"></div>
-                <div className="absolute top-2/3 right-10 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full opacity-25"></div>
-            </>
-        );
-    };
+const experiences = [
+    { title: 'Product Designer', company: 'Nexus Creative', year: '2023' },
+    { title: 'Freelance', company: 'BrightLeaf Co', year: '2021' },
+    { title: 'Graphic Designer', company: 'SummitWorks', year: '2024' },
+    { title: 'UX/UI Designer', company: 'UrbanFlow Lab', year: '2022' },
+];
 
-    // State for the slow animated dots
-    const [dots, setDots] = useState(() =>
-        Array(60).fill().map(() => ({
-            top: Math.random() * 100,
-            left: Math.random() * 100,
-            opacity: Math.random() * 0.5 + 0.2,
-            size: 1 // keep all dots the same size of 1px
-        }))
-    );
+const skills = [
+    'Product Design', 'UX Design', 'UI Design', 'Framer',
+    'Interaction Design', 'Branding', 'Webflow', 'UX Research', 'No-Code',
+];
 
-    // Effect for slow animated dots
-    useEffect(() => {
-        // Function to update random dots
-        const updateRandomDots = () => {
-            setDots(prevDots => {
-                return prevDots.map(dot => {
-                    // Randomly decide which dots to update (only 10% chance to make it slower)
-                    if (Math.random() < 0.1) {
-                        return {
-                            ...dot,
-                            top: Math.random() * 100,
-                            left: Math.random() * 100,
-                            opacity: Math.random() * 0.5 + 0.2
-                        };
-                    }
-                    return dot;
-                });
-            });
-        };
-
-        // Set interval to update dots every 5 seconds (slower update interval)
-        const intervalId = setInterval(updateRandomDots, 50000);
-
-        // Clean up interval on component unmount
-        return () => clearInterval(intervalId);
-    }, []);
-
+const ProfileCard = () => {
     return (
-        <section id="about" className="min-h-screen text-white relative py-12 md:py-16 lg:py-20 ">
-            {renderDecorationDots()}
 
-            <div className="absolute inset-0 pointer-events-none">
-                {dots.map((dot, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-1 h-1 bg-gray-400 rounded-full"
-                        style={{
-                            top: `${dot.top}%`,
-                            left: `${dot.left}%`,
-                            opacity: dot.opacity,
-                            // Add a very slow transition effect (8 seconds)
-                            transition: 'all 1s ease-in-out'
-                        }}
-                    />
-                ))}
+        <section className="py-16 px-6 md:px-8 text-gray-800">
+            {/* Section Header */}
+            <div className="text-center mb-10">
+                <span className="uppercase tracking-widest text-xs bg-white py-1 px-3 rounded-full shadow-[inset_1px_1px_3px_#d1d9e6,inset_-1px_-1px_3px_#ffffff] inline-block mb-3">
+                    Projects
+                </span>
+                <h2 className="text-4xl font-semibold">Proven Impact & Results</h2>
+                <p className="text-sm text-gray-600 mt-2">
+                    Explore Projects that reflect our AI expertise & real world impact
+                </p>
             </div>
+            <div className="min-h-screen flex items-start justify-center p-10 space-x-8">
+                {/* Left: Profile */}
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col items-center text-center">
-                    {/* Responsive title with adjusted sizing */}
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] bg-clip-text text-transparent">
-                        Who Am I
-                    </h2>
+                <div className="bg-white shadow-md rounded-2xl w-80 p-6 text-center">
+                    <img
+                        src="/your-image.jpg" // Replace with your actual image path
+                        alt="Sophie Carter"
+                        className="w-full h-64 object-cover rounded-xl mb-4"
+                    />
+                    <p className="text-green-500 text-sm flex items-center justify-center gap-2 mb-2">
+                        <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
+                        available for work
+                    </p>
+                    <h1 className="text-xl font-semibold">Sophie Carter</h1>
+                    <p className="text-sm text-gray-500 mt-1">UI/UX Interaction Designer Based in Berlin.</p>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
-                        {/* Text content with responsive padding and sizing */}
-                        <div className="max-w-full md:max-w-3xl px-4 sm:px-6 md:px-8">
-                            <p className="mb-4 sm:mb-6 text-base sm:text-lg">
-                                Hey, I'm <span className="font-bold">Yashindi Bhagya</span>,a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
-                            </p>
-
-                            <p className="mb-4 sm:mb-6 text-gray-300 leading-relaxed text-sm sm:text-base">
-                                With over a year of hands-on experience in UI/UX design, I specialize in user research, wireframing, and prototyping using tools like Figma, Adobe Photoshop, and Canva.
-                            </p>
-
-                            <p className="text-gray-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-                                Beyond design, I develop mobile applications using React Native and create interactive games with Unity and C#. I enjoy turning ideas into real-world solutions whether it's a learning app, a game, or a user-centric platform.
-                            </p>
-
-                            <p className="text-gray-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
-                                I'm always eager to learn, collaborate, and take on challenges that push my creative and technical skills forward.
-                            </p>
-
-                            {/* Social Icons with responsive spacing */}
-                            <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
-                                <div className="flex flex-wrap gap-4">
-                                    {socialLinks.map((social) => (
-                                        <a
-                                            key={social.name}
-                                            href={social.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group"
-                                        >
-                                            <div className={`p-3 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/10 transition-all duration-300 
-                                            hover:bg-gradient-to-br ${social.gradient} hover:border-white/0 hover:scale-105 hover:shadow-lg`}>
-                                                <div className="text-white/70 group-hover:text-white transition-colors">
-                                                    {social.icon}
-                                                </div>
-                                            </div>
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-
-                        </div>
+                    {/* Social Icons */}
+                    <div className="flex justify-center mt-4 space-x-4 text-gray-600">
+                        <button className="hover:text-black"><i className="fab fa-x-twitter"></i></button>
+                        <button className="hover:text-black"><i className="fab fa-instagram"></i></button>
+                        <button className="hover:text-black"><i className="fab fa-facebook"></i></button>
                     </div>
+
+                    {/* Contact Button */}
+                    <button className="mt-6 w-full bg-indigo-900 text-white py-2 rounded-xl shadow-md hover:bg-indigo-800">
+                        ✈️ Contact Me
+                    </button>
                 </div>
 
-                {/* Progress Bar with responsive width */}
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="relative h-1 w-full bg-gray-800 rounded-full overflow-hidden my-6 sm:my-8 lg:my-10">
-                        <div className="w-full h-full bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] p-4 text-white rounded-lg rounded-full relative">
-                        </div>
+                {/* Right: Info */}
+                <div className="flex-1 max-w-3xl space-y-6">
+                    {/* Intro */}
+                    <div>
+                        <p className="text-gray-700 text-lg">
+                            I'm Sophie Carter, a passionate Web Designer & Developer based in the dynamic city of Berlin, Germany.
+                            I blend creative design with precise technical execution to deliver outstanding digital experiences.
+                        </p>
+                    </div>
+
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-3">
+                        {skills.map(skill => (
+                            <span key={skill} className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium">
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Experience */}
+                    <div className="divide-y divide-gray-300 border-t border-b border-gray-300">
+                        {experiences.map(({ title, company, year }, idx) => (
+                            <div key={idx} className="flex justify-between py-4 px-2">
+                                <div className="font-medium">{title}</div>
+                                <div className="text-gray-500">{company}</div>
+                                <div className="text-gray-400">{year}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -137,4 +91,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default ProfileCard;

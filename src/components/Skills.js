@@ -1,228 +1,220 @@
-import React from 'react';
+import React from "react";
 
 const Skills = () => {
-    // Frontend skills with icon references
+    // Frontend skills
     const frontendSkills = [
         {
-            name: 'HTML',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-            proficiency: 95
+            name: "HTML",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            proficiency: 95,
         },
         {
-            name: 'CSS',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-            proficiency: 90
+            name: "CSS",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            proficiency: 90,
         },
         {
-            name: 'JavaScript',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-            proficiency: 92
+            name: "JavaScript",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            proficiency: 92,
         },
         {
-            name: 'React Native',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-            proficiency: 88
+            name: "React Native",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            proficiency: 88,
         },
         {
-            name: 'Tailwind CSS',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
-            proficiency: 60
-        }
+            name: "Tailwind CSS",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+            proficiency: 60,
+        },
     ];
 
-    // Backend skills (just Node.js)
+    // Backend skills
     const backendSkills = [
         {
-            name: 'Node.js',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-            proficiency: 75
-        }
+            name: "Node.js",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            proficiency: 75,
+        },
     ];
 
-    // Database skills (Supabase, Firebase, Cloudinary)
+    // Database skills
     const databaseSkills = [
         {
-            name: 'Supabase',
-            iconUrl: 'https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg',
-            proficiency: 85
+            name: "Supabase",
+            iconUrl: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
+            proficiency: 85,
         },
         {
-            name: 'Firebase',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-            proficiency: 88
+            name: "Firebase",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+            proficiency: 88,
         },
         {
-            name: 'Cloudinary',
-            iconUrl: 'https://res.cloudinary.com/cloudinary-marketing/image/upload/v1599098500/creative_folder/logo-blue-PDF.png',
-            proficiency: 90
-        }
+            name: "Cloudinary",
+            iconUrl:
+                "https://res.cloudinary.com/cloudinary-marketing/image/upload/v1599098500/creative_folder/logo-blue-PDF.png",
+            proficiency: 90,
+        },
     ];
 
-    // Design & Developer tools
+    // Design Tools
     const designTools = [
         {
-            name: 'Figma',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
-            proficiency: 95
+            name: "Figma",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+            proficiency: 95,
         },
         {
-            name: 'Canva',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg',
-            proficiency: 95
+            name: "Canva",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+            proficiency: 95,
         },
         {
-            name: 'Adobe Photoshop',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
-            proficiency: 90
+            name: "Adobe Photoshop",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+            proficiency: 90,
         },
         {
-            name: 'Wix Studio',
-            iconUrl: 'https://static.wixstatic.com/media/9aea63_de2dedcd4ee245fdbdcbe3d9f93d49d0~mv2.png',
-            proficiency: 90
+            name: "Wix Studio",
+            iconUrl:
+                "https://static.wixstatic.com/media/9aea63_de2dedcd4ee245fdbdcbe3d9f93d49d0~mv2.png",
+            proficiency: 90,
         },
         {
-            name: 'VS Code',
-            iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
-            proficiency: 95
-        }
+            name: "VS Code",
+            iconUrl:
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+            proficiency: 95,
+        },
     ];
 
-    // Function to determine the color based on proficiency level
-    const getProficiencyColor = (proficiency) => {
-        if (proficiency >= 90) return 'from-emerald-400 to-teal-500';
-        if (proficiency >= 80) return 'from-blue-400 to-indigo-500';
-        if (proficiency >= 70) return 'from-violet-400 to-purple-500';
-        return 'from-rose-400 to-pink-500';
-    };
-
-    // Skill item component to avoid repetition
+    // Skill item
     const SkillItem = ({ skill }) => (
-        <div className="group/skill">
+        <div className="group">
             <div className="flex justify-between items-center mb-2">
                 <div className="flex items-center">
-                    <div className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center mr-3 overflow-hidden">
+                    <div className="w-8 h-8 flex items-center justify-center mr-3 rounded-xl shadow-[inset_2px_2px_5px_#d1d9e6,inset_-2px_-2px_5px_#ffffff] bg-[#f5f5f5] overflow-hidden">
                         <img
                             src={skill.iconUrl}
                             alt={`${skill.name} icon`}
-                            className="w-5 h-5 object-contain group-hover/skill:scale-110 transition-transform"
+                            className="w-5 h-5 object-contain"
                         />
                     </div>
-                    <span className="text-gray-300 text-sm font-medium group-hover/skill:text-white transition-colors">
-                        {skill.name}
-                    </span>
+                    <span className="text-gray-700 text-sm font-medium">{skill.name}</span>
                 </div>
-                <span className="text-xs font-semibold text-gray-400 group-hover/skill:text-white transition-colors">
+                <span className="text-xs font-semibold text-gray-500">
                     {skill.proficiency}%
                 </span>
             </div>
 
-            {/* Progress bar with gradient */}
-            <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+            {/* Progress bar */}
+            <div className="h-2 w-full rounded-full bg-[#e6e6e6] shadow-inner overflow-hidden">
                 <div
-                    className={`h-full bg-gradient-to-r ${getProficiencyColor(skill.proficiency)} rounded-full transition-all duration-500 ease-out group-hover/skill:scale-x-100`}
-                    style={{
-                        width: `${skill.proficiency}%`,
-                        transform: 'scaleX(0.9)',
-                        transformOrigin: 'left'
-                    }}
+                    className="h-full rounded-full bg-gradient-to-r from-[#6a85f1] to-[#b084f9] transition-all duration-500"
+                    style={{ width: `${skill.proficiency}%` }}
                 ></div>
             </div>
         </div>
     );
 
     return (
-        <section id="skills" className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+        <section className="py-16 px-6 md:px-8 text-gray-800">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+                <span className="uppercase tracking-widest text-xs bg-white py-1 px-3 rounded-full shadow-[inset_1px_1px_3px_#d1d9e6,inset_-1px_-1px_3px_#ffffff] inline-block mb-3">
+                    Skills
+                </span>
+                <h2 className="text-4xl font-semibold">Technical Expertise</h2>
+                <p className="text-sm text-gray-600 mt-2 max-w-2xl mx-auto">
+                    A toolkit of technologies and tools I’ve mastered through practice and
+                    real-world application.
+                </p>
+            </div>
 
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Heading with animated underline */}
-                <div className="relative text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] bg-clip-text text-transparent inline-block">
-                        Technical Skills
-                    </h2>
-                    <div className="h-1 w-24 bg-gradient-to-r from-[#ff58d8] to-[#4f4cfa] rounded-full mx-auto mt-4 animate-pulse"></div>
-                    <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-sm sm:text-base">
-                        My toolkit of technologies and programming languages that I've mastered through years of practice and real-world application.
-                    </p>
-                </div>
-
-                {/* Three sections in one row */}
+            {/* Outer Neumorphic Container */}
+            <div className="max-w-6xl mx-auto bg-[#f5f5f5] rounded-3xl p-8 md:p-12 shadow-[10px_10px_20px_#d1d9e6,-10px_-10px_20px_#ffffff]">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Section 1: Frontend */}
-                    <div className="group h-full">
-                        <div className="h-full backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/5">
-                            <div className="flex items-center mb-6">
-                                <span className="text-3xl mr-3">💻</span>
-                                <h3 className="text-xl font-bold text-white">Frontend</h3>
-                            </div>
+                    {/* Frontend */}
+                    <div className="p-6 rounded-2xl bg-[#f5f5f5] 
+    shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] 
+    transition-all duration-300 
+    hover:shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#ffffff]">
+                        <div className="flex items-center mb-6">
+                            <span className="text-3xl mr-3">💻</span>
+                            <h3 className="text-lg font-semibold text-gray-800">Frontend</h3>
+                        </div>
+                        <div className="space-y-5">
+                            {frontendSkills.map((skill) => (
+                                <SkillItem key={skill.name} skill={skill} />
+                            ))}
+                        </div>
+                    </div>
 
-                            <p className="text-gray-400 mb-8 text-sm">
-                                Creating responsive, user-friendly interfaces with modern web technologies.
-                            </p>
+                    {/* Backend & Database */}
+                    <div className="p-6 rounded-2xl bg-[#f5f5f5] 
+    shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] 
+    transition-all duration-300 
+    hover:shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#ffffff]">
+                        <div className="flex items-center mb-6">
+                            <span className="text-3xl mr-3">⚙️</span>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Backend & Database
+                            </h3>
+                        </div>
 
+                        <div className="mb-8">
+                            <h4 className="text-base font-semibold text-gray-700 mb-3">
+                                Backend
+                            </h4>
                             <div className="space-y-5">
-                                {frontendSkills.map(skill => (
+                                {backendSkills.map((skill) => (
+                                    <SkillItem key={skill.name} skill={skill} />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-base font-semibold text-gray-700 mb-3">
+                                Database & Storage
+                            </h4>
+                            <div className="space-y-5">
+                                {databaseSkills.map((skill) => (
                                     <SkillItem key={skill.name} skill={skill} />
                                 ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Section 2: Combined Backend & Database */}
-                    <div className="group h-full">
-                        <div className="h-full backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/5">
-                            <div className="flex items-center mb-6">
-                                <span className="text-3xl mr-3">⚙️</span>
-                                <h3 className="text-xl font-bold text-white">Backend & Database</h3>
-                            </div>
-
-                            <p className="text-gray-400 mb-8 text-sm">
-                                Server-side development and data management solutions.
-                            </p>
-
-                            <div className="space-y-4">
-                                {/* Backend section */}
-                                <div className="mb-8">
-                                    <h4 className="text-base font-semibold text-white mb-4 pb-2 border-b border-white/10">Backend</h4>
-                                    <div className="space-y-5">
-                                        {backendSkills.map(skill => (
-                                            <SkillItem key={skill.name} skill={skill} />
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Database section */}
-                                <div>
-                                    <h4 className="text-base font-semibold text-white mb-4 pb-2 border-b border-white/10">Database & Storage</h4>
-                                    <div className="space-y-5">
-                                        {databaseSkills.map(skill => (
-                                            <SkillItem key={skill.name} skill={skill} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                    {/* Design & Dev Tools */}
+                    <div className="p-6 rounded-2xl bg-[#f5f5f5] 
+    shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] 
+    transition-all duration-300 
+    hover:shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#ffffff]">
+                        <div className="flex items-center mb-6">
+                            <span className="text-3xl mr-3">🎨</span>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Design & Dev Tools
+                            </h3>
+                        </div>
+                        <div className="space-y-5">
+                            {designTools.map((skill) => (
+                                <SkillItem key={skill.name} skill={skill} />
+                            ))}
                         </div>
                     </div>
 
-                    {/* Section 3: Design & Development Tools */}
-                    <div className="group h-full">
-                        <div className="h-full backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/5">
-                            <div className="flex items-center mb-6">
-                                <span className="text-3xl mr-3">🎨</span>
-                                <h3 className="text-xl font-bold text-white">Design & Dev Tools</h3>
-                            </div>
-
-                            <p className="text-gray-400 mb-8 text-sm">
-                                Software and platforms I use for design and development workflows.
-                            </p>
-
-                            <div className="space-y-5">
-                                {designTools.map(skill => (
-                                    <SkillItem key={skill.name} skill={skill} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
