@@ -29,25 +29,24 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[4%]">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-2 leading-tight">
                 {/* Profile Section */}
-                <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
-                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                <div className="flex items-center gap-2 mb-3 flex-wrap justify-center">
+                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-gray-400">
                         Hey, I'm
                     </h1>
                     <img
                         src="../assets/img/pic.png"
                         alt="Profile"
-                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
+                        className="w-[100px] h-[55px] rounded-full border border-black shadow-lg object-contain"
                     />
                     <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
                         Yashindi Bhagya
                     </h1>
-
                 </div>
 
                 {/* Animated Role with Icons */}
-                <div className="flex items-center gap-4 mb-6 flex-wrap justify-center min-h-[80px]">
+                <div className="flex items-center gap-2 mb-3 flex-wrap justify-center min-h-[60px]">
                     <AnimatePresence mode="wait">
                         <motion.h2
                             key={roles[index]}
@@ -64,52 +63,48 @@ const Hero = () => {
 
                     <img
                         src="../assets/img/day.jpg"
-                        alt="Profile"
-                        className="w-[95px] h-[65px] rounded-full border shadow-lg object-cover"
+                        alt="Day Icon"
+                        className="w-[100px] h-[55px] rounded-full border shadow-lg object-cover"
                     />
 
                     <img
                         src="../assets/img/night.jpg"
-                        alt="Profile"
-                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
+                        alt="Night Icon"
+                        className="w-[100px] h-[55px] rounded-full border border-black shadow-lg object-cover"
                     />
-
                 </div>
 
-                <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
-                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                {/* Location Section */}
+                <div className="flex items-center gap-2 mb-3 flex-wrap justify-center">
+                    <h1 className="text-5xl sm:text-5xl font-['Garamond_Nova_Pro'] font-light italic text-gray-400">
                         Living in
                     </h1>
                     <img
-                        src="../assets/img/pic.png"
-                        alt="Profile"
-                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
+                        src="../assets/img/sl.avif"
+                        alt="Sri Lanka"
+                        className="w-[100px] h-[55px] rounded-full border border-black shadow-lg object-cover"
                     />
-                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                    <h1 className="text-5xl sm:text-5xl font-['Garamond_Nova_Pro'] font-light italic text-gray-400 ">
                         Sri Lanka
                     </h1>
-
                 </div>
 
                 {/* Subheading */}
-                <p className="max-w-2xl text-lg sm:text-xl text-gray-600 mb-10 px-4">
+                <p className="max-w-2xl text-lg sm:text-xl text-gray-600 mb-6 px-4 mt-10">
                     I specialize in creating thoughtful and impactful products,
                     collaborating with startups and leading brands
                 </p>
 
-
-
                 {/* Buttons */}
-                <div className="w-full mt-8">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                        <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-[#222B4D] to-[#3D4680] text-white font-medium shadow-lg hover:scale-105 transition-transform whitespace-nowrap">
-                            ➜ Get Template
+                <div className="w-full mt-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+                        <button className="px-6 py-3 flex items-center justify-center rounded-xl bg-[#0000B9] text-white shadow-[6px_6px_12px_#0000B1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#090074,inset_-6px_-6px_12px_#0000FF] transition-all">
+                            ➜ Contact Me
                         </button>
-                        <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-white to-gray-100 text-gray-700 font-medium shadow-lg hover:scale-105 transition-transform whitespace-nowrap">
+                        <button className="px-6 py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
                             ➜ See Projects
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
