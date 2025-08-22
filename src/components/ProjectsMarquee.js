@@ -14,24 +14,17 @@ const projects = [
 ];
 
 const MarqueeProjects = () => {
-    // Create a larger array to ensure smooth looping
-    const marqueeItems = [...projects, ...projects, ...projects, ...projects];
-    
     return (
-        <div className="relative w-full overflow-hidden py-10">
-            {/* Left fade gradient with stronger blur */}
-            <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none">
-                <div className="absolute inset-0 backdrop-blur-md"></div>
-            </div>
+        <div className="relative w-full overflow-hidden -py-10">
+            {/* Left fade gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none"></div>
 
-            {/* Right fade gradient with stronger blur */}
-            <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none">
-                <div className="absolute inset-0 backdrop-blur-md"></div>
-            </div>
+            {/* Right fade gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none"></div>
 
-            {/* Marquee content with seamless looping */}
+            {/* Marquee content - Slowed down animation */}
             <div className="flex gap-6 animate-marquee whitespace-nowrap">
-                {marqueeItems.map((project, idx) => (
+                {[...projects, ...projects].map((project, idx) => (
                     <motion.div
                         key={`${project.id}-${idx}`}
                         className="w-[300px] h-[200px] sm:w-[350px] sm:h-[250px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg relative bg-white dark:bg-gray-800 bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-300 hover:scale-105 transition-transform duration-300 transform neumorphism"
@@ -52,13 +45,11 @@ const MarqueeProjects = () => {
             <style jsx>{`
                 @keyframes marquee {
                     0% { transform: translateX(0); }
-                    100% { transform: translateX(calc(-100% / 2)); }
+                    100% { transform: translateX(-50%); }
                 }
                 .animate-marquee {
                     display: flex;
                     animation: marquee 60s linear infinite;
-                    will-change: transform;
-                    padding: 0 10rem;
                 }
                 @media (min-width: 640px) {
                     .animate-marquee {

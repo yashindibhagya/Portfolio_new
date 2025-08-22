@@ -79,13 +79,13 @@ export default function ServicesSection() {
                 <h2 className="text-4xl font-light text-center mb-1">
                     Crafting Digital Excellence
                 </h2>
-                <p className="text-sm text-gray-700 text-center max-w-xl">
+                <p className="text-sm text-gray-700 text-center max-w-xl mb-10">
                     Building smooth and engaging digital interactions that elevate user
                     satisfaction
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full justify-items-center">
                 <ServiceCard
                     icon={<Feather className="w-6 h-6 text-gray-700" />}
                     title="UX & UI"

@@ -87,6 +87,7 @@ function App() {
                 <Header activeSection={activeSection} />
                 <div className="w-full">
                   <Hero />
+                  <Projects_Marquee />
                 </div>
                 <div className="w-full">
                   <Services />

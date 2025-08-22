@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MarqueeProjects from "../components/ProjectsMarquee";
 
-const roles = ["Mobile App Developer", "UI/UX Developer", "Remote Designer"];
+const roles = ["Mobile App Developer", "UI UX Developer", "Remote Designer"];
 
 const Hero = () => {
     const [index, setIndex] = useState(0);
@@ -29,17 +29,21 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[10%]">
-                {/* Heading */}
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 mt-[4%]">
+                {/* Profile Section */}
                 <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
+                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                        Hey, I'm
+                    </h1>
                     <img
                         src="../assets/img/pic.png"
                         alt="Profile"
-                        className="w-40 h-40 rounded-2xl shadow-lg object-cover"
+                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
                     />
-                    <h1 className="text-5xl sm:text-6xl font-serif font-extrabold text-slate-800">
-                        I'm Yashindi Bhagya
+                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                        Yashindi Bhagya
                     </h1>
+
                 </div>
 
                 {/* Animated Role with Icons */}
@@ -51,25 +55,40 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.6 }}
-                            className="text-4xl sm:text-6xl font-serif font-extrabold text-slate-800"
+                            className="text-4xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800"
+                            style={{ fontVariationSettings: '"wght" 300, "ital" 1' }}
                         >
                             {roles[index]}
                         </motion.h2>
                     </AnimatePresence>
 
-                    {/* Icons */}
-                    <div className="flex gap-2">
-                        <img
-                            src="/cloud.png"
-                            alt="Cloud"
-                            className="w-12 h-12 rounded-2xl shadow-md"
-                        />
-                        <img
-                            src="/moon.png"
-                            alt="Moon"
-                            className="w-12 h-12 rounded-2xl shadow-md"
-                        />
-                    </div>
+                    <img
+                        src="../assets/img/day.jpg"
+                        alt="Profile"
+                        className="w-[95px] h-[65px] rounded-full border shadow-lg object-cover"
+                    />
+
+                    <img
+                        src="../assets/img/night.jpg"
+                        alt="Profile"
+                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
+                    />
+
+                </div>
+
+                <div className="flex items-center gap-4 mb-6 flex-wrap justify-center">
+                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                        Living in
+                    </h1>
+                    <img
+                        src="../assets/img/pic.png"
+                        alt="Profile"
+                        className="w-[95px] h-[65px] rounded-full border border-black shadow-lg object-cover"
+                    />
+                    <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
+                        Sri Lanka
+                    </h1>
+
                 </div>
 
                 {/* Subheading */}
@@ -78,6 +97,9 @@ const Hero = () => {
                     collaborating with startups and leading brands
                 </p>
 
+
+
+                {/* Buttons */}
                 <div className="w-full mt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
                         <button className="px-6 py-3 rounded-xl bg-gradient-to-br from-[#222B4D] to-[#3D4680] text-white font-medium shadow-lg hover:scale-105 transition-transform whitespace-nowrap">
@@ -88,11 +110,6 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    <div className="w-full relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none backdrop-blur-md"></div>
-                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none backdrop-blur-md"></div>
-                        <MarqueeProjects />
-                    </div>
                 </div>
             </div>
         </div>
