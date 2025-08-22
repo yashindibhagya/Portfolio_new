@@ -33,7 +33,7 @@ const ProfileCard = () => {
 
                 <div className="bg-white shadow-md rounded-2xl w-80 p-6 text-center">
                     <img
-                        src="../../assets/img/bakery.png" // Replace with your actual image path
+                        src="../../assets/img/pic.png" // Replace with your actual image path
                         alt="Yashindi Bhagya"
                         className="w-full h-64 object-cover rounded-xl mb-4"
                     />
@@ -61,7 +61,7 @@ const ProfileCard = () => {
 
                     {/* Contact Button 
                     <button className="mt-6 w-full bg-indigo-900 text-white py-2 rounded-xl shadow-md hover:bg-indigo-800"> */}
-                    <button className="w-full py-3.5 px-4 rounded-xl bg-indigo-900 text-gray-800 font-medium shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all disabled:opacity-70">
+                    <button className="w-full mt-6 py-3.5 px-4 rounded-xl bg-[#3F35B9] text-white font-medium shadow-[6px_6px_12px_#090074,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#090074,inset_-6px_-6px_12px_#0B0091] transition-all disabled:opacity-70">
                         ✈️ Contact Me
                     </button>
                 </div>

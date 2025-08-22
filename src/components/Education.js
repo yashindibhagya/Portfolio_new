@@ -1,6 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const EducationExperience = () => {
+    // State to manage which section is expanded (Education or Experience)
+    const [expandedEducation, setExpandedEducation] = useState(null);
+    const [expandedExperience, setExpandedExperience] = useState(null);
+
+    const toggleEducationSection = (index) => {
+        setExpandedEducation(expandedEducation === index ? null : index); // Toggle the education section
+    };
+
+    const toggleExperienceSection = (index) => {
+        setExpandedExperience(expandedExperience === index ? null : index); // Toggle the experience section
+    };
+
     // Add the flow animation keyframes to the document only once
     useEffect(() => {
         if (!document.getElementById('flow-animation-style')) {
@@ -66,9 +78,15 @@ const EducationExperience = () => {
                         <h3 className="text-2xl font-bold text-white mb-8">Education</h3>
                         <div className="space-y-12">
                             {/* BSc Degree */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#ff58d8] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <div className="relative pl-8">
+                                <div
+                                    className="absolute left-0 top-0 w-2 h-2 bg-[#ff58d8] rounded-full transform -translate-x-[3px]"
+                                    onClick={() => toggleEducationSection(0)}
+                                ></div>
+                                <div
+                                    className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl cursor-pointer"
+                                    onClick={() => toggleEducationSection(0)}
+                                >
                                     <h4 className="text-xl font-semibold text-white mb-2">
                                         BSc (Hons) Computer Science
                                     </h4>
@@ -78,20 +96,30 @@ const EducationExperience = () => {
                                     <p className="text-sm text-gray-500">
                                         2022-2025
                                     </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Focused on software development, algorithms, and advanced computer science concepts. Specializing in UI/UX design and modern web technologies.
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                    {/* Toggle Details */}
+                                    {expandedEducation === 0 && (
+                                        <div className="mt-4">
+                                            <ul className="list-disc list-inside text-gray-400 space-y-2">
+                                                <li className="text-sm">
+                                                    Focused on software development, algorithms, and advanced computer science concepts. Specializing in UI/UX design and modern web technologies.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
                             {/* Advanced Level */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#bc50ff] to-[#4f4cfa]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#bc50ff] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <div className="relative pl-8">
+                                <div
+                                    className="absolute left-0 top-0 w-2 h-2 bg-[#bc50ff] rounded-full transform -translate-x-[3px]"
+                                    onClick={() => toggleEducationSection(1)}
+                                ></div>
+                                <div
+                                    className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl cursor-pointer"
+                                    onClick={() => toggleEducationSection(1)}
+                                >
                                     <h4 className="text-xl font-semibold text-white mb-2">
                                         G.C.E. Advanced Level
                                     </h4>
@@ -101,13 +129,17 @@ const EducationExperience = () => {
                                     <p className="text-sm text-gray-500">
                                         2018-2021
                                     </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Excelled in Combined Mathematics stream with a strong foundation in analytical thinking and problem-solving skills.
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                    {/* Toggle Details */}
+                                    {expandedEducation === 1 && (
+                                        <div className="mt-4">
+                                            <ul className="list-disc list-inside text-gray-400 space-y-2">
+                                                <li className="text-sm">
+                                                    Excelled in Combined Mathematics stream with a strong foundation in analytical thinking and problem-solving skills.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -118,9 +150,15 @@ const EducationExperience = () => {
                         <h3 className="text-2xl font-bold text-white mb-8">Experience</h3>
                         <div className="space-y-12">
                             {/* Amerck */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#ff58d8] to-[#bc50ff]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#ff58d8] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <div className="relative pl-8">
+                                <div
+                                    className="absolute left-0 top-0 w-2 h-2 bg-[#ff58d8] rounded-full transform -translate-x-[3px]"
+                                    onClick={() => toggleExperienceSection(0)}
+                                ></div>
+                                <div
+                                    className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl cursor-pointer"
+                                    onClick={() => toggleExperienceSection(0)}
+                                >
                                     <h4 className="text-xl font-semibold text-white mb-2">
                                         UI/UX Designer
                                     </h4>
@@ -130,26 +168,35 @@ const EducationExperience = () => {
                                     <p className="text-sm text-gray-500">
                                         2025 May - Present
                                     </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Designed responsive user interfaces for cross-platform web and mobile applications across healthcare.
-                                            </li>
-                                            <li className="text-sm">
-                                                Conducted user research and usability testing to inform design decisions
-                                            </li>
-                                            <li className="text-sm">
-                                                Collaborated with development team to ensure pixel-perfect implementation
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {/* Toggle Details */}
+                                    {expandedExperience === 0 && (
+                                        <div className="mt-4">
+                                            <ul className="list-disc list-inside text-gray-400 space-y-2">
+                                                <li className="text-sm">
+                                                    Designed responsive user interfaces for cross-platform web and mobile applications across healthcare.
+                                                </li>
+                                                <li className="text-sm">
+                                                    Conducted user research and usability testing to inform design decisions.
+                                                </li>
+                                                <li className="text-sm">
+                                                    Collaborated with development team to ensure pixel-perfect implementation.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
                             {/* New Pacific Systems */}
-                            <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b from-[#bc50ff] to-[#4f4cfa]">
-                                <div className="absolute left-0 top-0 w-2 h-2 bg-[#bc50ff] rounded-full transform -translate-x-[3px]"></div>
-                                <div className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+                            <div className="relative pl-8">
+                                <div
+                                    className="absolute left-0 top-0 w-2 h-2 bg-[#bc50ff] rounded-full transform -translate-x-[3px]"
+                                    onClick={() => toggleExperienceSection(1)}
+                                ></div>
+                                <div
+                                    className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl cursor-pointer"
+                                    onClick={() => toggleExperienceSection(1)}
+                                >
                                     <h4 className="text-xl font-semibold text-white mb-2">
                                         UI/UX Designer
                                     </h4>
@@ -159,48 +206,25 @@ const EducationExperience = () => {
                                     <p className="text-sm text-gray-500">
                                         2023 Jan - 2023 Dec
                                     </p>
-                                    <div className="mt-4">
-                                        <ul className="list-disc list-inside text-gray-400 space-y-2">
-                                            <li className="text-sm">
-                                                Designed responsive web and mobile interfaces for enterprise clients
-                                            </li>
-                                            <li className="text-sm">
-                                                Created and maintained design system documentation
-                                            </li>
-                                            <li className="text-sm">
-                                                Facilitated design workshops and stakeholder presentations
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {/* Toggle Details */}
+                                    {expandedExperience === 1 && (
+                                        <div className="mt-4">
+                                            <ul className="list-disc list-inside text-gray-400 space-y-2">
+                                                <li className="text-sm">
+                                                    Designed responsive web and mobile interfaces for enterprise clients.
+                                                </li>
+                                                <li className="text-sm">
+                                                    Created and maintained design system documentation.
+                                                </li>
+                                                <li className="text-sm">
+                                                    Facilitated design workshops and stakeholder presentations.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Services Bar */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden z-20">
-                <div className="relative w-full h-8 sm:h-12 lg:h-16 overflow-hidden">
-                    <div className="animate-flow whitespace-nowrap text-transparent font-extrabold tracking-wider flex items-center h-full" style={{ fontSize: '2.7rem', WebkitTextStroke: '0.5px white' }}>
-                        <span className="mx-2 sm:mx-4">PIXEL-PERFECT PRECISION</span>
-                        <span className="mx-2 sm:mx-4">•</span>
-                        <span className="mx-2 sm:mx-4">CREATIVE PROBLEM-SOLVING</span>
-                        <span className="mx-2 sm:mx-4">•</span>
-                        <span className="mx-2 sm:mx-4">RESPONSIVE DESIGN</span>
-                        <span className="mx-2 sm:mx-4">•</span>
-                        <span className="mx-2 sm:mx-4">PIXEL-PERFECT PRECISION</span>
-                        <span className="mx-2 sm:mx-4">•</span>
-                        <span className="mx-2 sm:mx-4">CREATIVE PROBLEM-SOLVING</span>
-                        <span className="mx-2 sm:mx-4">•</span>
-                        <span className="mx-2 sm:mx-4">RESPONSIVE DESIGN</span>
-                    </div>
-                </div>
-            </div>
-
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-                <div className="relative h-1 w-full bg-gray-800 rounded-full overflow-hidden my-6 sm:my-8 lg:my-10">
-                    <div className="w-full h-full bg-gradient-to-r from-[#ff58d8] via-[#bc50ff] to-[#4f4cfa] p-4 text-white rounded-lg rounded-full relative">
                     </div>
                 </div>
             </div>
