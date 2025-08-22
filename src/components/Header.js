@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Header = () => {
+    const [activeLink, setActiveLink] = useState('home');
+
+    const handleNavClick = (link) => {
+        setActiveLink(link);
+    };
+
+    const [isHovered, setIsHovered] = useState(false);
+
     const topHeaderStyle = {
         position: 'fixed',
         top: 0,
@@ -10,10 +18,11 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '15px 30px',
-        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+        background: 'rgba(255, 255, 255, 0.2)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
+        boxShadow: 'inset 2px 2px 5px rgba(255,255,255,0.6), inset -2px -2px 5px rgba(0,0,0,0.05)',
         zIndex: 1000,
     };
 
@@ -21,7 +30,8 @@ const Header = () => {
         fontFamily: 'cursive',
         fontSize: '22px',
         fontWeight: 'bold',
-        color: '#1f2937', // dark text for visibility
+        color: '#1f2937',
+        textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)',
     };
 
     const availabilityStyle = {
@@ -39,11 +49,45 @@ const Header = () => {
         borderRadius: '50%',
         display: 'inline-block',
         marginRight: '8px',
+        boxShadow: '0 0 6px #22c55e',
     };
+
+    const navContainerStyle = {
+        position: 'fixed',
+        bottom: '40px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        background: 'rgba(255, 255, 255, 0.25)',
+        backdropFilter: 'blur(18px)',
+        WebkitBackdropFilter: 'blur(18px)',
+        borderRadius: '50px',
+        padding: '15px 30px',
+        border: '1px solid rgba(0, 0, 0, 0.1)',
+        boxShadow: `
+            0 4px 30px rgba(0, 0, 0, 0.1),
+            inset 4px 4px 8px rgba(255, 255, 255, 0.6),
+            inset -4px -4px 8px rgba(0, 0, 0, 0.05)
+        `,
+        zIndex: 1000,
+        transition: 'all 0.3s ease',
+    };
+
+    const navStyle = {
+        display: 'flex',
+        gap: '30px',
+        alignItems: 'center',
+    };
+
+    const links = [
+        { name: 'Home', id: 'home' },
+        { name: 'Projects', id: 'projects' },
+        { name: 'Services', id: 'services' },
+        { name: 'Contact', id: 'contact' },
+    ];
 
     return (
         <>
-            {/* Top Header */}
+            {/* Top Glass + Neumorphic Header */}
             <div style={topHeaderStyle}>
                 <div style={nameStyle}>Emile Jones</div>
                 <div style={availabilityStyle}>
@@ -52,66 +96,81 @@ const Header = () => {
                 </div>
             </div>
 
-            {/* Bottom Navigation Header */}
-            <div style={{
-                position: 'fixed',
-                bottom: '40px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                backgroundColor: 'rgba(51, 65, 85, 0.9)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '50px',
-                padding: '15px 30px',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-                zIndex: 1000,
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-            }}>
-                <nav style={{
-                    display: 'flex',
-                    gap: '35px',
-                    alignItems: 'center',
-                }}>
-                    <a href="#home" style={{
-                        color: '#ffffff',
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                        textDecoration: 'none',
-                        fontWeight: '600',
-                        fontSize: '16px',
-                        padding: '8px 16px',
-                        borderRadius: '12px',
-                        position: 'relative',
-                        transition: 'all 0.3s ease',
-                    }}>Home</a>
-                    <a href="#projects" style={navLinkStyle}>Projects</a>
-                    <a href="#services" style={navLinkStyle}>Services</a>
-                    <a href="#contact" style={navLinkStyle}>Contact</a>
-                    <button style={{
-                        backgroundColor: '#3b82f6',
-                        color: 'white',
-                        border: 'none',
-                        padding: '10px 20px',
-                        borderRadius: '15px',
-                        cursor: 'pointer',
-                        fontWeight: '600',
-                        fontSize: '14px',
-                        transition: 'all 0.3s ease',
-                        boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
-                    }}>Get Template</button>
+            {/* Bottom Navigation with Glass & Neumorphism */}
+            <div style={navContainerStyle}>
+                <nav style={navStyle}>
+                    {links.map(link => (
+                        <a
+                            key={link.id}
+                            href={`#${link.id}`}
+                            onClick={() => handleNavClick(link.id)}
+                            style={{
+                                ...navLinkStyle,
+                                ...(activeLink === link.id ? activeLinkStyle : {})
+                            }}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <button
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        style={{
+                            ...buttonStyle,
+                            ...(isHovered ? buttonHoverStyle : {}),
+                        }}
+                    >
+                        Get Template
+                    </button>
+
                 </nav>
             </div>
         </>
     );
 };
 
+// Styles
 const navLinkStyle = {
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: '#1f2937',
     textDecoration: 'none',
     fontWeight: '500',
-    fontSize: '16px',
-    transition: 'all 0.3s ease',
-    padding: '8px 16px',
+    fontSize: '15px',
+    padding: '10px 18px',
     borderRadius: '12px',
-    position: 'relative',
+    backgroundColor: '#f0f0f3',
+    boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
+    transition: 'all 0.3s ease',
 };
+
+const activeLinkStyle = {
+    fontWeight: '600',
+    backgroundColor: '#e0e0e0',
+    boxShadow: 'inset 4px 4px 8pxrgba(192, 192, 192, 0.61), inset -4px -4px 8px #ffffff',
+};
+
+const buttonStyle = {
+    backgroundColor: '#f0f0f3',
+    color: '#3b82f6',
+    border: 'none',
+    padding: '10px 20px',
+    borderRadius: '15px',
+    cursor: 'pointer',
+    fontWeight: '600',
+    fontSize: '14px',
+    boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
+    transition: 'all 0.3s ease',
+};
+const buttonHoverStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backdropFilter: 'blur(6px)',
+    WebkitBackdropFilter: 'blur(6px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+    boxShadow: `
+        inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 4px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(0, 0, 0, 0.05)
+    `,
+};
+
 
 export default Header;
