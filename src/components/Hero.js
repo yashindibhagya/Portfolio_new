@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import MarqueeProjects from "../components/ProjectsMarquee";
 
 const roles = ["Mobile App Developer", "UI UX Developer", "Remote Designer"];
 
@@ -39,6 +38,7 @@ const Hero = () => {
                         src="../assets/img/pic.png"
                         alt="Profile"
                         className="w-[100px] h-[55px] rounded-full border border-black shadow-lg object-contain"
+
                     />
                     <h1 className="text-5xl sm:text-6xl font-['Garamond_Nova_Pro'] font-light italic text-slate-800">
                         Yashindi Bhagya
@@ -98,7 +98,7 @@ const Hero = () => {
                 {/* Buttons */}
                 <div className="w-full mt-4">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
-                        <button className="px-6 py-3 flex items-center justify-center rounded-xl bg-[#0000B9] text-white shadow-[6px_6px_12px_#0000B1,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#090074,inset_-6px_-6px_12px_#0000FF] transition-all">
+                        <button className="px-6 py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                             ➜ Contact Me
                         </button>
                         <button className="px-6 py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
