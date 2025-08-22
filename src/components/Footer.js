@@ -1,4 +1,5 @@
 import React from 'react';
+import { socialLinks, contactInfo } from "../config/socialLinks";
 
 const CreativeProject = () => {
     return (
@@ -31,6 +32,22 @@ const CreativeProject = () => {
                         See Projects
                     </a>
                 </div>
+
+                {/* Social Links */}
+                <div className="flex gap-4 mt-6">
+                    {socialLinks.map((social) => (
+                        <a
+                            key={social.name}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                        >
+                            <span className="text-gray-600">{social.icon}</span>
+                        </a>
+                    ))}
+                </div>
+
             </div>
 
             {/* Footer Sides with Copyright and Framer Text */}
