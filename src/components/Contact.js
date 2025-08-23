@@ -251,7 +251,7 @@ const Contact = () => {
                                             <button
                                                 type="submit"
                                                 disabled={formStatus.status === "submitting"}
-                                                className="w-full py-3.5 px-4 rounded-xl bg-[#3F35B9] text-gray-800 font-medium shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all disabled:opacity-70"
+                                                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
                                             >
                                                 {formStatus.status === "submitting"
                                                     ? "Sending..."

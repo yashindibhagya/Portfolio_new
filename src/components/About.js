@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { socialLinks, contactInfo } from "../config/socialLinks";
-
+import Education from './Education'; // 👈 Make sure the path is correct
 
 const skills = [
     'Product Design', 'UX Design', 'UI Design', 'Framer',
@@ -10,7 +9,6 @@ const skills = [
 
 const ProfileCard = () => {
     return (
-
         <section className="py-16 px-6 md:px-8 text-gray-800">
             {/* Section Header */}
             <div className="text-center mb-10">
@@ -22,12 +20,13 @@ const ProfileCard = () => {
                     Explore Projects that reflect our AI expertise & real world impact
                 </p>
             </div>
+
+            {/* Profile + Bio Layout */}
             <div className="min-h-screen flex items-start justify-center p-10 space-x-8">
                 {/* Left: Profile */}
-
                 <div className="bg-white shadow-md rounded-2xl w-80 p-6 text-center">
                     <img
-                        src="../../assets/img/pic.png" // Replace with your actual image path
+                        src="../../assets/img/pic.png"
                         alt="Yashindi Bhagya"
                         className="w-full h-64 object-cover rounded-xl mb-4"
                     />
@@ -53,10 +52,9 @@ const ProfileCard = () => {
                         ))}
                     </div>
 
-                    {/* Contact Button 
-                    <button className="mt-6 w-full bg-indigo-900 text-white py-2 rounded-xl shadow-md hover:bg-indigo-800"> */}
-                    <button className="w-full mt-6 py-3.5 px-4 rounded-xl bg-[#3F35B9] text-white font-medium shadow-[6px_6px_12px_#090074,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#090074,inset_-6px_-6px_12px_#0B0091] transition-all disabled:opacity-70">
-                        ✈️ Contact Me
+                    {/* Contact Button */}
+                    <button className="w-full mt-6 py-3.5 px-4 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                        ➜ Contact Me
                     </button>
                 </div>
 
@@ -65,15 +63,12 @@ const ProfileCard = () => {
                     {/* Intro */}
                     <div>
                         <p className="text-gray-700 text-lg">
-                            Hey, I'm Yashindi Bhagya,a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
-                            <br />
-                            <br />
+                            Hey, I'm Yashindi Bhagya, a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
+                            <br /><br />
                             With over a year of hands-on experience in UI/UX design, I specialize in user research, wireframing, and prototyping using tools like Figma, Adobe Photoshop, and Canva.
-                            <br />
-                            <br />
+                            <br /><br />
                             Beyond design, I develop mobile applications using React Native and create interactive games with Unity and C#. I enjoy turning ideas into real-world solutions whether it's a learning app, a game, or a user-centric platform.
-                            <br />
-                            <br />
+                            <br /><br />
                             I'm always eager to learn, collaborate, and take on challenges that push my creative and technical skills forward.
                         </p>
                     </div>
@@ -88,7 +83,10 @@ const ProfileCard = () => {
                     </div>
                 </div>
             </div>
-        </section >
+
+            {/* 👇 Education Section Inserted Below the Profile */}
+            <Education />
+        </section>
     );
 };
 

@@ -92,7 +92,6 @@ function App() {
                 <div className="w-full">
                   <Services />
                   <About />
-                  <Education />
                   <Marquee />
                   <Projects />
 

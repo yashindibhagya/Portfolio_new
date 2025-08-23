@@ -111,15 +111,6 @@ export default function ServicesSection() {
                     imageUrl="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=60"
                 />
             </div>
-
-            <div className="mt-10 flex gap-4">
-                <button className="bg-gradient-to-br from-indigo-900 to-indigo-700 text-white px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition transform">
-                    ↗ Contact Me
-                </button>
-                <button className="bg-white px-6 py-2 rounded-lg shadow-md hover:scale-105 transition transform">
-                    → See Projects
-                </button>
-            </div>
         </section>
     );
 }

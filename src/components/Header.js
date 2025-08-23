@@ -29,12 +29,10 @@ const Header = () => {
     };
 
     const nameStyle = {
-        fontFamily: 'cursive',
-        fontSize: '22px',
-        fontWeight: 'bold',
-        color: '#1f2937',
-        textShadow: '1px 1px 1px rgba(255, 255, 255, 0.5)',
+        width: 200,
+        marginLeft: 50
     };
+
 
     const availabilityStyle = {
         display: 'flex',
@@ -91,7 +89,7 @@ const Header = () => {
         <>
             {/* Top Glass + Neumorphic Header */}
             <div style={topHeaderStyle}>
-                <div style={nameStyle}>Emile Jones</div>
+                <div style={nameStyle}><img src="../../assets/img/logo.png "></img></div>
                 <div style={availabilityStyle}>
                     <span style={greenDotStyle}></span>
                     available for work

@@ -73,7 +73,7 @@ const FAQs = () => {
                             Still have questions? Feel free to get in touch with us today!
                         </p>
                         <div className="flex justify-center">
-                            <button className="px-5 py-2 rounded-xl bg-gradient-to-br from-indigo-900 to-indigo-700 text-white font-medium shadow-md hover:scale-105 transition text-sm">
+                            <button className="px-5 py-2 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Ask A Question
                             </button>
                         </div>
