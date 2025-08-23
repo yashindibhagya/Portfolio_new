@@ -8,6 +8,8 @@ const Header = () => {
     };
 
     const [isHovered, setIsHovered] = useState(false);
+    const [hoveredLink, setHoveredLink] = useState(null);
+
 
     const topHeaderStyle = {
         position: 'fixed',
@@ -104,13 +106,17 @@ const Header = () => {
                             key={link.id}
                             href={`#${link.id}`}
                             onClick={() => handleNavClick(link.id)}
+                            onMouseEnter={() => setHoveredLink(link.id)}
+                            onMouseLeave={() => setHoveredLink(null)}
                             style={{
                                 ...navLinkStyle,
-                                ...(activeLink === link.id ? activeLinkStyle : {})
+                                ...(hoveredLink === link.id ? navHoverStyle : {}),
+                                ...(activeLink === link.id ? activeLinkStyle : {}),
                             }}
                         >
                             {link.name}
                         </a>
+
                     ))}
                     <button
                         onMouseEnter={() => setIsHovered(true)}
@@ -171,6 +177,19 @@ const buttonHoverStyle = {
         0 4px 12px rgba(0, 0, 0, 0.05)
     `,
 };
+const navHoverStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backdropFilter: 'blur(6px)',
+    WebkitBackdropFilter: 'blur(6px)',
+    border: '1px solid rgba(255, 255, 255, 0.3)',
+    boxShadow: `
+        inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 4px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(0, 0, 0, 0.05)
+    `,
+    transition: 'all 0.3s ease',
+};
+
 
 
 export default Header;

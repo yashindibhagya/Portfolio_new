@@ -92,9 +92,10 @@ function App() {
                 <div className="w-full">
                   <Services />
                   <About />
+                  <Education />
                   <Marquee />
                   <Projects />
-                  <Education />
+
                 </div>
                 <div className="w-full">
                   <Skills />

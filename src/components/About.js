@@ -2,12 +2,6 @@
 import React from 'react';
 import { socialLinks, contactInfo } from "../config/socialLinks";
 
-const experiences = [
-    { title: 'Product Designer', company: 'Nexus Creative', year: '2023' },
-    { title: 'Freelance', company: 'BrightLeaf Co', year: '2021' },
-    { title: 'Graphic Designer', company: 'SummitWorks', year: '2024' },
-    { title: 'UX/UI Designer', company: 'UrbanFlow Lab', year: '2022' },
-];
 
 const skills = [
     'Product Design', 'UX Design', 'UI Design', 'Framer',
@@ -90,17 +84,6 @@ const ProfileCard = () => {
                             <span key={skill} className="bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium">
                                 {skill}
                             </span>
-                        ))}
-                    </div>
-
-                    {/* Experience */}
-                    <div className="divide-y divide-gray-300 border-t border-b border-gray-300">
-                        {experiences.map(({ title, company, year }, idx) => (
-                            <div key={idx} className="flex justify-between py-4 px-2">
-                                <div className="font-medium">{title}</div>
-                                <div className="text-gray-500">{company}</div>
-                                <div className="text-gray-400">{year}</div>
-                            </div>
                         ))}
                     </div>
                 </div>
