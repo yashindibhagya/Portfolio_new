@@ -2,8 +2,27 @@ import React from 'react';
 import { socialLinks, contactInfo } from "../config/socialLinks";
 
 const CreativeProject = () => {
+
+    const availabilityStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: '14px',
+        fontWeight: '500',
+        color: '#111827',
+    };
+
+    const greenDotStyle = {
+        height: '10px',
+        width: '10px',
+        backgroundColor: '#22c55e',
+        borderRadius: '50%',
+        display: 'inline-block',
+        marginRight: '8px',
+        boxShadow: '0 0 6px #22c55e',
+    };
+
     return (
-        <footer className="bg-gray-100 py-16 px-8 md:px-16 mt-20 mb-18">
+        <footer className=" py-16 px-8 md:px-16 mt-20 mb-18">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex justify-center mb-8">
                     <img
@@ -18,23 +37,23 @@ const CreativeProject = () => {
                 <p className="text-lg text-gray-600 mb-8">
                     Let’s create captivating digital experiences that engage audiences and drive meaningful brand interactions across diverse platforms.
                 </p>
-                <div className="flex justify-center gap-6 mt-4 mb-20">
-                    <a
-                        href="mailto:your-email@example.com" // Replace with your contact link
-                        className="inline-block bg-gray-200 text-gray-800 py-4 px-8 rounded-full shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105"
-                    >
-                        Contact Me
-                    </a>
-                    <a
-                        href="#projects" // Add the section or link to your projects
-                        className="inline-block bg-gray-200 text-gray-800 py-4 px-8 rounded-full shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105"
-                    >
-                        See Projects
-                    </a>
+                <div className="w-full mt-2">
+                    <div className="flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
+                        <button className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                            ➜ Contact Me
+                        </button>
+                        <button className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
+                            ➜ See Projects
+                        </button>
+                    </div>
                 </div>
 
                 {/* Social Links */}
-                <div className="flex gap-4 mt-6">
+                <div className="flex gap-4"
+                    style={{
+                        justifyContent: "center",
+                        //marginTop: -40,
+                    }}>
                     {socialLinks.map((social) => (
                         <a
                             key={social.name}
@@ -51,11 +70,14 @@ const CreativeProject = () => {
             </div>
 
             {/* Footer Sides with Copyright and Framer Text */}
-            <div className="flex justify-between items-center mt-10 px-8">
-                <p className="text-sm text-gray-600">© 2024 Portfoy Template</p>
-                <div className="flex gap-4 text-sm text-gray-600">
-                    <span>Made by <a href="https://www.framebase.com" className="text-gray-800 hover:underline">Framebase</a></span>
-                    <span>Built in <a href="https://www.framer.com" className="text-gray-800 hover:underline">Framer</a></span>
+            <div className="flex justify-between items-center mt-20 px-8">
+                <p className="text-sm text-gray-600">© 2025 Yashindi. All rights reserved.</p>
+                <div className="flex gap-4 text-sm text-gray-600"
+                    style={{ borderRadius: 100, borderWidth: 1, borderColor: '#E0E5E', borderStyle: 'solid', width: 180, height: 40, boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={availabilityStyle}>
+                        <span style={greenDotStyle}></span>
+                        available for work
+                    </div>
                 </div>
             </div>
         </footer>

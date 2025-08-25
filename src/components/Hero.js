@@ -28,7 +28,7 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 -mt-60 sm:-mt-60 md:-mt-60 lg:mt-10 xl:mt-12 leading-snug w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 -mt-50 sm:-mt-60 md:-mt-60 lg:mt-10 xl:mt-12 leading-snug w-full">
 
                 {/* Profile Section */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap justify-center w-full">

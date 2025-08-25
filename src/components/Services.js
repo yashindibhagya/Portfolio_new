@@ -70,8 +70,8 @@ const ServiceCard = ({
 
 export default function ServicesSection() {
     return (
-        <section className="min-h-screen flex flex-col items-center px-6 py-16">
-            <div className="mb-6">
+        <section className="min-h-screen flex flex-col items-center px-6 py-16 ">
+            <div className="mb-6 text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
                     <Box className="w-4 h-4" />
                     Services

@@ -78,7 +78,7 @@ const NeumorphicProjects = () => {
         <section className="py-16 px-6 md:px-8 text-gray-800">
             {/* Section Header */}
             <div className="text-center mb-10">
-                <span className="uppercase tracking-widest text-xs bg-white py-1 px-3 rounded-full shadow-[inset_1px_1px_3px_#d1d9e6,inset_-1px_-1px_3px_#ffffff] inline-block mb-3">
+                <span className="uppercase tracking-widest text-xm inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 shadow-md text-gray-700 text-sm mb-5">
                     Projects
                 </span>
                 <h2 className="text-4xl font-semibold">Proven Impact & Results</h2>

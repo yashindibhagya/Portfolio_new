@@ -130,7 +130,10 @@ const Skills = () => {
     );
 
     return (
-        <section className="py-16 px-6 md:px-8 text-gray-800">
+        <section className="py-16 px-6 md:px-8 text-gray-800 bg-[#F2F2F2]"
+            style={{
+                borderRadius: 100
+            }}>
             {/* Section Header */}
             <div className="text-center mb-12">
                 <span className="uppercase tracking-widest text-xs bg-white py-1 px-3 rounded-full shadow-[inset_1px_1px_3px_#d1d9e6,inset_-1px_-1px_3px_#ffffff] inline-block mb-3">

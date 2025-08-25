@@ -48,7 +48,10 @@ const FAQs = () => {
         setOpenIndex(openIndex === index ? null : index);
 
     return (
-        <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10">
+        <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10 bg-[#F2F2F2]"
+            style={{
+                borderRadius: 100
+            }}>
             <div className="max-w-6xl w-full">
                 <div className="text-center mb-14">
                     <span className="inline-block px-4 py-1 text-sm rounded-full border border-gray-300 bg-white shadow text-gray-700">
