@@ -7,8 +7,13 @@ const NeumorphicToggleSection = () => {
         <div className="min-h-screen flex items-center justify-center">
             <div className="w-full max-w-6xl p-10">
                 {/* Toggle */}
-                <div className="flex justify-center mb-8">
-                    <div className="flex bg-gray-100 p-2 rounded-full">
+                <div className="flex justify-center mb-8"
+                >
+                    <div className="flex bg-gray-100 p-2 rounded-full"
+                        style={{
+                            boxShadow: "8px 8px 16px #c5c5c5, -8px -8px 16px #ffffff",
+                            gap: 20
+                        }}>
                         <button
                             onClick={() => setActiveTab("education")}
                             className={`py-2 px-8 rounded-2xl text-sm font-medium transition-all duration-200
