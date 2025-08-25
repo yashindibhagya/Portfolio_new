@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Box } from 'lucide-react';
 
 const tabs = ["All", "UI/UX", "Mobile App"];
 
@@ -78,7 +79,8 @@ const NeumorphicProjects = () => {
         <section className="py-16 px-6 md:px-8 text-gray-800">
             {/* Section Header */}
             <div className="text-center mb-10">
-                <span className="uppercase tracking-widest text-xm inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 shadow-md text-gray-700 text-sm mb-5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
+                    <Box className="w-4 h-4" />
                     Projects
                 </span>
                 <h2 className="text-4xl font-semibold">Proven Impact & Results</h2>

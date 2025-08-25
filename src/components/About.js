@@ -18,13 +18,12 @@ const ProfileCard = () => {
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-100"
+                style={{ borderRadius: 100 }}
             >
                 <source src="../../assets/img/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
-            {/* 🔲 Optional: Overlay for dimming video */}
-            <div className="absolute inset-0 bg-black opacity-40 z-0" />
 
             {/* 🧱 Main Content Wrapper */}
             <div className="relative z-10 w-full px-6 py-20">
@@ -34,8 +33,8 @@ const ProfileCard = () => {
                         <Box className="w-4 h-4" />
                         About
                     </span>
-                    <h2 className="text-4xl font-semibold text-white">Proven Impact & Results</h2>
-                    <p className="text-sm text-gray-200 mt-2">
+                    <h2 className="text-4xl font-semibold text-black">Proven Impact & Results</h2>
+                    <p className="text-sm text-gray-800 mt-2">
                         Explore Projects that reflect our AI expertise & real world impact
                     </p>
                 </div>
@@ -95,7 +94,7 @@ const ProfileCard = () => {
                         {/* Skills */}
                         <div className="flex flex-wrap gap-3">
                             {skills.map(skill => (
-                                <span key={skill} className="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium border border-white border-opacity-30">
+                                <span key={skill} className="bg-black bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium border border-white border-opacity-30">
                                     {skill}
                                 </span>
                             ))}
@@ -104,7 +103,7 @@ const ProfileCard = () => {
                 </div>
 
                 {/* 👇 Education Section Below the Profile */}
-                <div className="mt-20">
+                <div className="mt-60">
                     <Education />
                 </div>
             </div>

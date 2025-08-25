@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { Box, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqData = [
     {
@@ -54,8 +54,9 @@ const FAQs = () => {
             }}>
             <div className="max-w-6xl w-full">
                 <div className="text-center mb-14">
-                    <span className="inline-block px-4 py-1 text-sm rounded-full border border-gray-300 bg-white shadow text-gray-700">
-                        FAQS
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
+                        <Box className="w-4 h-4" />
+                        FAQ
                     </span>
                     <h2 className="text-4xl font-semibold mt-4">Questions? Answers!</h2>
                     <p className="text-gray-600 mt-2 text-sm max-w-xl mx-auto">

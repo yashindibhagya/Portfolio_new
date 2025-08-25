@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { socialLinks, contactInfo } from "../config/socialLinks";
+import { Box } from "lucide-react";
 
 const Contact = () => {
     const form = useRef();
@@ -136,7 +137,11 @@ const Contact = () => {
     return (
         <section id="contact" className="py-20 sm:py-28 min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-5xl mx-auto text-center mb-12">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
+                        <Box className="w-4 h-4" />
+                        Contact
+                    </span>
                     <div className="text-center mb-16">
                         <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4">
                             Let's Connect

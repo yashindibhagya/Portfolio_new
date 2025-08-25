@@ -1,3 +1,4 @@
+import { Box } from "lucide-react";
 import React from "react";
 
 const Skills = () => {
@@ -136,7 +137,8 @@ const Skills = () => {
             }}>
             {/* Section Header */}
             <div className="text-center mb-12">
-                <span className="uppercase tracking-widest text-xs bg-white py-1 px-3 rounded-full shadow-[inset_1px_1px_3px_#d1d9e6,inset_-1px_-1px_3px_#ffffff] inline-block mb-3">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
+                    <Box className="w-4 h-4" />
                     Skills
                 </span>
                 <h2 className="text-4xl font-semibold">Technical Expertise</h2>
