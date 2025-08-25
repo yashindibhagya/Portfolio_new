@@ -10,20 +10,10 @@ const skills = [
 
 const ProfileCard = () => {
     return (
-        <div className="relative min-h-screen flex flex-col items-center  overflow-hidden ">
+        <div className="relative min-h-screen flex flex-col items-center  overflow-hidden bg-[#F2F2F2]"
+            style={{ borderRadius: 100 }}
+        >
             {/* 🎥 Background Video */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-100"
-                style={{ borderRadius: 100 }}
-            >
-                <source src="../../assets/img/video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-
 
             {/* 🧱 Main Content Wrapper */}
             <div className="relative z-10 w-full px-6 py-20">
@@ -103,7 +93,7 @@ const ProfileCard = () => {
                 </div>
 
                 {/* 👇 Education Section Below the Profile */}
-                <div className="mt-60">
+                <div>
                     <Education />
                 </div>
             </div>

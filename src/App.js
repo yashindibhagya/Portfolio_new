@@ -56,21 +56,24 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen relative">
-        {/* Background gradients */}
+      <div className="min-h-screen relative bg-[#E4E9ED]">
+
+        {/* Background gradients 
         <div className="fixed inset-0 z-0 overflow-hidden">
-          {/* Primary gradients */}
-          <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl"></div>
+          {/* Primary gradients 
+          <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#000000]/50 to-[#0000B9]/20 blur-3xl"></div>
+          <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-bl from-[#0000B9]/20 to-[#000000]/50 blur-3xl"></div>
 
-          {/* Additional color spots for more depth */}
-          <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-pink-500/10 to-rose-500/5 blur-3xl"></div>
-          <div className="absolute bottom-[20%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-indigo-500/10 to-blue-500/5 blur-3xl"></div>
+          {/* Additional color spots for more depth 
+          <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#0000B9]/10 to-[#000000]/5 blur-3xl"></div>
+          <div className="absolute bottom-[20%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-[#0000B9]/10 to-[#000000]/5 blur-3xl"></div>
 
-          {/* Small accent gradients */}
-          <div className="absolute top-[60%] right-[30%] w-[200px] h-[200px] rounded-full bg-gradient-to-r from-cyan-500/15 to-teal-500/10 blur-2xl"></div>
-          <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-gradient-to-l from-violet-500/15 to-purple-500/10 blur-2xl"></div>
+          {/* Small accent gradients 
+          <div className="absolute top-[60%] right-[30%] w-[200px] h-[200px] rounded-full bg-gradient-to-r from-[#0000B9]/15 to-[#000000]/8 blur-2xl"></div>
+          <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-gradient-to-l from-[#0000B9]/15 to-[#000000]/8 blur-2xl"></div>
         </div>
+
+
 
         {/* Main content wrapper */}
         <div className="relative z-10">

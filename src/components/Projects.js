@@ -76,7 +76,7 @@ const NeumorphicProjects = () => {
     };
 
     return (
-        <section className="py-16 px-6 md:px-8 text-gray-800">
+        <section className="py-5 px-6 md:px-8 text-gray-800 mb-20">
             {/* Section Header */}
             <div className="text-center mb-10">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
