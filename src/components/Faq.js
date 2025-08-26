@@ -27,7 +27,7 @@ const FAQs = () => {
     const toggleIndex = (index) => setOpenIndex(openIndex === index ? null : index);
 
     return (
-        <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10 bg-[#F2F2F2] rounded-[100px]">
+        <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10">
             <div className="max-w-6xl w-full">
                 {/* Header */}
                 <div className="text-center mb-14">

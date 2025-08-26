@@ -22,7 +22,11 @@ const CreativeProject = () => {
     };
 
     return (
-        <footer className=" py-16 px-8 md:px-16 mt-20 mb-18">
+        <footer className=" py-16 px-8 md:px-16 mt-20 mb-18 bg-[#F2F2F2]"
+            style={{
+                borderTopLeftRadius: 100,
+                borderTopRightRadius: 100,
+            }}>
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex justify-center mb-8">
                     <img

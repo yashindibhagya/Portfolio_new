@@ -13,6 +13,9 @@ import Education from './components/Education';
 import Projects_Marquee from './components/ProjectsMarquee';
 import Marquee from './components/Marquee';
 import FAQ from './components/Faq';
+import ProjectsPage from './pages/ProjectsPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -85,6 +88,21 @@ function App() {
                 <Footer />
               </div>
             } />
+            <Route path="/projects" element={
+              <div className="w-full">
+                <ProjectsPage />
+              </div>
+            } />
+            <Route path="/services" element={
+              <div className="w-full">
+                <ServicesPage />
+              </div>
+            } />
+            <Route path="/contact" element={
+              <div className="w-full">
+                <ContactPage />
+              </div>
+            } />
             <Route path="/" element={
               <>
                 <Header activeSection={activeSection} />
@@ -96,8 +114,6 @@ function App() {
                   <Services />
                   <About />
                   <Marquee />
-                  <Projects />
-
                 </div>
                 <div className="w-full">
                   <Skills />

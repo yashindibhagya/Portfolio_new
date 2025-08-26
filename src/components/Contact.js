@@ -135,7 +135,10 @@ const Contact = () => {
     );
 
     return (
-        <section id="contact" className="py-20 sm:py-28 min-h-screen">
+        <section id="contact" className="py-20 sm:py-28 min-h-screen bg-[#F2F2F2]"
+            style={{
+                borderRadius: 100
+            }}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="max-w-5xl mx-auto text-center mb-12">
                     <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">

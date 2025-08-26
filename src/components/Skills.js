@@ -50,7 +50,7 @@ const Skills = () => {
     );
 
     return (
-        <section className="py-12 px-4 md:px-6 text-gray-800 bg-[#F2F2F2]"
+        <section className="py-12 px-4 md:px-6 text-gray-800"
             style={{
                 borderRadius: 100
             }}>

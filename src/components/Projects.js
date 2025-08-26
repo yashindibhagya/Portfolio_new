@@ -1,70 +1,21 @@
 import React, { useState } from "react";
-import { Box } from 'lucide-react';
+import { Box } from "lucide-react";
+import { projectsData } from "../data/projectsData"; // Adjust path as needed
 
 const tabs = ["All", "UI/UX", "Mobile App"];
 
-const projects = [
-    {
-        id: 1,
-        category: "UI/UX",
-        title: "Workwise — Automated HR Workflow Bot",
-        description:
-            "Developed an AI-powered workflow automation bot for onboarding, leave requests, and FAQ handling.",
-        image: "../../assets/img/bakery.png",
-        stats: [
-            { value: "60%", label: "Saved admin time" },
-            { value: "35%", label: "Improved team output" },
-        ],
-    },
-    {
-        id: 2,
-        category: "Mobile App",
-        title: "SwiftChat — Real-time Messaging Platform",
-        description:
-            "Built a cross-platform real-time messaging app with encryption, voice notes, and media sharing.",
-        image: "../../assets/img/bakery.png",
-        stats: [
-            { value: "99.9%", label: "Uptime" },
-            { value: "85%", label: "User engagement increase" },
-        ],
-    },
-    {
-        id: 3,
-        category: "Mobile App",
-        title: "SwiftChat — Real-time Messaging Platform",
-        description:
-            "Built a cross-platform real-time messaging app with encryption, voice notes, and media sharing.",
-        image: "../../assets/img/bakery.png",
-        stats: [
-            { value: "99.9%", label: "Uptime" },
-            { value: "85%", label: "User engagement increase" },
-        ],
-    },
-    {
-        id: 4,
-        category: "Mobile App",
-        title: "SwiftChat — Real-time Messaging Platform",
-        description:
-            "Built a cross-platform real-time messaging app with encryption, voice notes, and media sharing.",
-        image: "../../assets/img/bakery.png",
-        stats: [
-            { value: "99.9%", label: "Uptime" },
-            { value: "85%", label: "User engagement increase" },
-        ],
-    },
-];
-
 const NeumorphicProjects = () => {
     const [activeTab, setActiveTab] = useState("All");
-
-    const filteredProjects =
-        activeTab === "All"
-            ? projects
-            : projects.filter((project) => project.category === activeTab);
-
-
     const [hoveredCard, setHoveredCard] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+
+    // Filtering logic based on the `type` field (e.g., 'uiux', 'mobile')
+    const filteredProjects =
+        activeTab === "All"
+            ? projectsData
+            : projectsData.filter((project) =>
+                activeTab === "UI/UX" ? project.type === "uiux" : project.type === "mobile"
+            );
 
     const handleMouseMove = (e, index) => {
         const card = e.currentTarget.getBoundingClientRect();
@@ -99,7 +50,7 @@ const NeumorphicProjects = () => {
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`py-2 px-8 rounded-2xl text-sm font-medium transition-all duration-200
-                ${activeTab === tab
+                            ${activeTab === tab
                                     ? "bg-white text-black shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff]"
                                     : "bg-[#f5f5f5] text-gray-600 shadow-[4px_4px_10px_#d1d9e6,-4px_-4px_10px_#ffffff]"
                                 } hover:shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff]`}
@@ -109,35 +60,28 @@ const NeumorphicProjects = () => {
                     ))}
                 </div>
 
-                {/* Projects */}
+                {/* Projects Grid */}
                 <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
+                    {filteredProjects.slice(0, 4).map((project, index) => (
                         <div
                             key={project.id}
                             className="relative group rounded-3xl overflow-hidden shadow-[6px_6px_16px_#d1d9e6,-6px_-6px_16px_#ffffff] bg-[#f5f5f5] cursor-none"
                             onMouseMove={(e) => handleMouseMove(e, index)}
                             onMouseLeave={() => setHoveredCard(null)}
                         >
-                            {/* Project Image */}
                             <img
                                 src={project.image}
-                                alt={project.name}
+                                alt={project.title}
                                 className="w-full h-64 object-cover rounded-3xl"
                             />
-
-                            {/* Project Name */}
                             <div className="text-center py-4 text-base font-semibold text-gray-700">
                                 {project.title}
                             </div>
-
-                            {/* Floating Cursor */}
-                            {/* Floating Cursor */}
                             {hoveredCard === index && (
                                 <div
                                     className="absolute z-20 text-sm font-medium text-white px-4 py-2 
-                   rounded-full pointer-events-none transition duration-100
-                   bg-white/20 backdrop-blur-md border border-white/30
-                   shadow-lg"
+                    rounded-full pointer-events-none transition duration-100
+                    bg-white/20 backdrop-blur-md border border-white/30 shadow-lg"
                                     style={{
                                         top: cursorPos.y,
                                         left: cursorPos.x,
@@ -147,10 +91,22 @@ const NeumorphicProjects = () => {
                                     View project
                                 </div>
                             )}
-
                         </div>
                     ))}
                 </div>
+
+                {/* View All Button */}
+                <div className="mt-8 text-center">
+                    <a
+                        href="/projects"
+                        className="inline-block py-2 px-6 rounded-2xl text-sm font-medium text-gray-700 bg-[#f5f5f5]
+        shadow-[4px_4px_10px_#d1d9e6,-4px_-4px_10px_#ffffff] hover:shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff]
+        transition-all duration-200"
+                    >
+                        View All Projects
+                    </a>
+                </div>
+
 
             </div>
         </section>
