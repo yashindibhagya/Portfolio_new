@@ -11,7 +11,8 @@ const ProjectDetails = () => {
     return (
         <div className="min-h-screen px-6 py-40">
             <div className="max-w-6xl w-full mx-auto font-sans">
-                {/* 🔝 Header Section (Based on Screenshot) */}
+
+                {/* 🔝 Header Section */}
                 <div style={topSectionStyle}>
                     <div style={topLeftStyle}>
                         <h1 style={projectTitleStyle}>{project.title}</h1>
@@ -51,6 +52,7 @@ const ProjectDetails = () => {
                     </div>
                 </div>
 
+                {/* 🖼 Project Mockup */}
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <img
                         src={project.mockupImage}
@@ -63,36 +65,36 @@ const ProjectDetails = () => {
                     />
                 </div>
 
-
-                {/* 📝 Details Section */}
-                <div style={sectionBlock}>
-                    <Section title="Project Overview" content={project.overview} />
-                    <Section title="Brand Overview" content={project.brandOverview} />
-                    <Section title="Challenge" content={project.challenge} />
-                    <Section title="Solution" content={project.solution} />
+                {/* 📝 Neumorphic Details */}
+                <div style={neumorphicDetailsWrapper}>
+                    <NeumorphicSection title="Project Overview" content={project.overview} />
+                    <NeumorphicSection title="Brand Overview" content={project.brandOverview} />
+                    <NeumorphicSection title="Challenge" content={project.challenge} />
+                    <NeumorphicSection title="Solution" content={project.solution} />
                 </div>
 
-                {/* ✨ Features */}
-                <div style={sectionBlock}>
-                    <h2 style={sectionHeading}>✨ Key Features</h2>
-                    <ul style={featuresList}>
+                {/* ✨ Key Features */}
+                <div style={neumorphicCardBlock}>
+                    <h2 style={neumorphicHeading}>✨ Key Features</h2>
+                    <ul style={neumorphicFeaturesList}>
                         {project.features.map((feature, i) => (
-                            <li key={i} style={featureItem}>✔ {feature}</li>
+                            <li key={i} style={neumorphicFeatureItem}>
+                                ✔ {feature}
+                            </li>
                         ))}
                     </ul>
                 </div>
 
-                {/* 🛠 Tools */}
-                <div style={sectionBlock}>
-                    <h2 style={sectionHeading}>🛠 Tools Used</h2>
-                    <div style={toolsList}>
+                {/* 🛠 Tools Used */}
+                <div style={neumorphicCardBlock}>
+                    <h2 style={neumorphicHeading}>🛠 Tools Used</h2>
+                    <div style={neumorphicToolsList}>
                         {project.tools.map((tool, i) => (
-                            <span key={i} style={toolTag}>{tool}</span>
+                            <span key={i} style={neumorphicToolTag}>{tool}</span>
                         ))}
                     </div>
                 </div>
 
-                {/* 🖼 UI Screens (Neumorphism style retained) */}
                 <div style={sectionBlock}>
                     <h2 style={sectionHeading}>🖼 UI Screens</h2>
                     <div style={screensContainerStyle}>
@@ -108,7 +110,10 @@ const ProjectDetails = () => {
                 </div>
 
                 {/* ✅ Conclusion */}
-                <Section title="Conclusion" content={project.conclusion} />
+                <div style={neumorphicCardBlock}>
+                    <h2 style={neumorphicHeading}>✅ Conclusion</h2>
+                    <p style={neumorphicText}>{project.conclusion}</p>
+                </div>
 
                 {/* 🔗 External Link */}
                 <div style={{ textAlign: 'center', marginTop: 40 }}>
@@ -126,34 +131,22 @@ const ProjectDetails = () => {
     );
 };
 
-// 🔄 Reusable Text Section Component
-const Section = ({ title, content }) => (
-    <div style={{ marginBottom: '40px' }}>
-        <h2 style={sectionHeading}>{title}</h2>
-        <p style={sectionText}>{content}</p>
+// 🧊 Neumorphic Section Component
+const NeumorphicSection = ({ title, content }) => (
+    <div style={neumorphicCard}>
+        <h2 style={neumorphicHeading}>{title}</h2>
+        <p style={neumorphicText}>{content}</p>
     </div>
 );
 
+// ===================== 🔧 Styles =====================
 
-
-
-
-const pageContainer = {
-    padding: '120px 20px 60px',
-    maxWidth: '1100px',
-    margin: '0 auto',
-    fontFamily: 'Inter, sans-serif',
-    color: '#1e293b',
-};
-
-// Header Section (Screenshot Style)
+// Header Section
 const topSectionStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    //padding: '30px 50px',
     borderRadius: '16px',
-    boxShadow: 'none',
     gap: '30px',
     flexWrap: 'wrap',
     maxWidth: '1100px',
@@ -222,13 +215,6 @@ const secondaryButtonStyle = {
     boxShadow: 'none',
 };
 
-
-const metaGroupStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '20px',
-};
-
 const metaLabelStyle = {
     fontWeight: '600',
     marginBottom: '4px',
@@ -241,7 +227,77 @@ const metaValueStyle = {
     whiteSpace: 'nowrap',
 };
 
-// Body Sections
+const externalLinkStyle = {
+    textDecoration: 'none',
+    color: '#3b82f6',
+    fontWeight: '600',
+    fontSize: '16px',
+};
+
+// 🧊 Neumorphic Styles
+const neumorphicDetailsWrapper = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '40px',
+    marginTop: '60px',
+};
+
+const neumorphicCard = {
+    background: '#e0e0e0',
+    borderRadius: '20px',
+    padding: '30px',
+    boxShadow: '8px 8px 20px #bebebe, -8px -8px 20px #ffffff',
+    transition: 'all 0.3s ease',
+};
+
+const neumorphicHeading = {
+    fontSize: '18px',
+    fontWeight: '700',
+    marginBottom: '16px',
+    color: '#1e293b',
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px',
+};
+
+const neumorphicText = {
+    fontSize: '15px',
+    lineHeight: '1.7',
+    color: '#4b5563',
+};
+
+const neumorphicCardBlock = {
+    ...neumorphicCard,
+    marginTop: '60px',
+};
+
+const neumorphicFeaturesList = {
+    listStyle: 'none',
+    paddingLeft: 0,
+    marginTop: '10px',
+};
+
+const neumorphicFeatureItem = {
+    fontSize: '15px',
+    padding: '8px 0',
+    color: '#1f2937',
+};
+
+const neumorphicToolsList = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '12px',
+};
+
+const neumorphicToolTag = {
+    padding: '6px 12px',
+    backgroundColor: '#e0e0e0',
+    borderRadius: '10px',
+    fontSize: '14px',
+    fontWeight: '500',
+    color: '#1f2937',
+    boxShadow: 'inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff',
+};
+
 const sectionBlock = {
     marginTop: '60px',
 };
@@ -252,38 +308,6 @@ const sectionHeading = {
     marginBottom: '12px',
 };
 
-const sectionText = {
-    lineHeight: '1.7',
-    color: '#374151',
-    fontSize: '16px',
-};
-
-const featuresList = {
-    paddingLeft: '20px',
-    marginTop: '10px',
-};
-
-const featureItem = {
-    fontSize: '15px',
-    padding: '5px 0',
-};
-
-const toolsList = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '12px',
-};
-
-const toolTag = {
-    padding: '6px 12px',
-    backgroundColor: '#f3f4f6',
-    borderRadius: '10px',
-    fontSize: '14px',
-    fontWeight: '500',
-    color: '#1f2937',
-};
-
-// UI Screens (Neumorphic style)
 const screensContainerStyle = {
     display: 'flex',
     gap: '20px',
@@ -297,12 +321,7 @@ const screenImageStyle = {
     boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
 };
 
-// External Link
-const externalLinkStyle = {
-    textDecoration: 'none',
-    color: '#3b82f6',
-    fontWeight: '600',
-    fontSize: '16px',
-};
+
+
 
 export default ProjectDetails;
