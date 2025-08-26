@@ -19,8 +19,7 @@ const ProfileCard = () => {
             <div className="relative z-10 w-full px-6 py-20">
                 {/* Section Header */}
                 <div className="text-center mb-10">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
-                        <Box className="w-4 h-4" />
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">                        <Box className="w-4 h-4" />
                         About
                     </span>
                     <h2 className="text-4xl font-semibold text-black">Proven Impact & Results</h2>
