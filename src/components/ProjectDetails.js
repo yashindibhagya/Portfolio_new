@@ -78,15 +78,14 @@ const ProjectDetails = () => {
                         <h1 style={projectTitleStyle}>{project.title}</h1>
                         <p style={projectDescriptionStyle}>{project.subtitle}</p>
                         <div style={buttonGroupStyle}>
-                            <Link to="/contact" style={primaryButtonStyle}>
+                            <Link to="/contact" className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Contact Me
                             </Link>
                             <a
                                 href={project.websiteUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={secondaryButtonStyle}
-                            >
+                                className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
                                 → Site Preview
                             </a>
                         </div>
