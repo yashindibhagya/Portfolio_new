@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import Contact from '../components/Contact';
+import Contact from '../pages/ContactFile';
 import Footer from '../components/Footer';
 
 const ContactPage = () => {

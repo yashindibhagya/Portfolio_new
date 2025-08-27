@@ -29,9 +29,9 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col py-20 sm:py-24">
       <Header />
-      <main className="flex-grow mt-32">
+      <main className="flex-grow">
         <section className="py-5 px-6 md:px-8 text-gray-800 mb-20">
           {/* Section Header */}
           <div className="text-center mb-10">

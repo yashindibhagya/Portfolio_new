@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Instagram, Facebook, PhoneCall } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { socialLinks } from '../config/socialLinks';
 
 const Header = () => {
     const [activeLink, setActiveLink] = useState('home');
@@ -49,15 +50,18 @@ const Header = () => {
 
                     {/* Social Icons */}
                     <div style={socialIconsStyle}>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={iconBoxStyle}>
-                            <Instagram size={16} />
-                        </a>
-                        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" style={iconBoxStyle}>
-                            <PhoneCall size={16} />
-                        </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconBoxStyle}>
-                            <Facebook size={16} />
-                        </a>
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-8 h-8 flex items-center justify-center rounded-xl bg-[#fff] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                            >
+                                <span className="text-gray-600 "
+                                    style={{ size: 20 }}>{social.icon}</span>
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>

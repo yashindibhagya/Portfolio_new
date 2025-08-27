@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="py-20 sm:py-12 min-h-screen">
       <Header />
       <main className="flex-grow">
         <Services />
