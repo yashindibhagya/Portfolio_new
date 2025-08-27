@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -16,6 +17,7 @@ import FAQ from './components/Faq';
 import ProjectsPage from './pages/ProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import ScrollToTopButton from './components/ScrollToTopButton'; // ✅ Import
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -60,24 +62,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen relative bg-[#E4E9ED]">
-
-        {/* Background gradients 
-        <div className="fixed inset-0 z-0 overflow-hidden">
-          {/* Primary gradients 
-          <div className="absolute -top-[40%] -right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#000000]/50 to-[#0000B9]/20 blur-3xl"></div>
-          <div className="absolute -bottom-[40%] -left-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-bl from-[#0000B9]/20 to-[#000000]/50 blur-3xl"></div>
-
-          {/* Additional color spots for more depth 
-          <div className="absolute top-[30%] left-[15%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#0000B9]/10 to-[#000000]/5 blur-3xl"></div>
-          <div className="absolute bottom-[20%] right-[15%] w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-[#0000B9]/10 to-[#000000]/5 blur-3xl"></div>
-
-          {/* Small accent gradients 
-          <div className="absolute top-[60%] right-[30%] w-[200px] h-[200px] rounded-full bg-gradient-to-r from-[#0000B9]/15 to-[#000000]/8 blur-2xl"></div>
-          <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-gradient-to-l from-[#0000B9]/15 to-[#000000]/8 blur-2xl"></div>
-        </div>
-
-
-
         {/* Main content wrapper */}
         <div className="relative z-10">
           <Routes>
@@ -88,21 +72,9 @@ function App() {
                 <Footer />
               </div>
             } />
-            <Route path="/projects" element={
-              <div className="w-full">
-                <ProjectsPage />
-              </div>
-            } />
-            <Route path="/services" element={
-              <div className="w-full">
-                <ServicesPage />
-              </div>
-            } />
-            <Route path="/contact" element={
-              <div className="w-full">
-                <ContactPage />
-              </div>
-            } />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/" element={
               <>
                 <Header activeSection={activeSection} />
@@ -127,6 +99,9 @@ function App() {
             } />
           </Routes>
         </div>
+
+        {/* ✅ Global Scroll-to-Top Button */}
+        <ScrollToTopButton />
       </div>
     </BrowserRouter>
   );
