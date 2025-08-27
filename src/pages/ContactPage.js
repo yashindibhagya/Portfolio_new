@@ -5,9 +5,9 @@ import Footer from '../components/Footer';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow bg-transparent">
         <Contact />
       </main>
       <Footer />
