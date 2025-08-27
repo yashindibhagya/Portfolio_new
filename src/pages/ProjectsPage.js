@@ -3,7 +3,7 @@ import { Box } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { projectsData } from "../data/projectsData"; // adjust if path is different
+import { projectsData } from "../data/projectsData";
 
 const tabs = ["All", "UI/UX", "Mobile App"];
 
@@ -46,7 +46,7 @@ const ProjectsPage = () => {
           </div>
 
           {/* Outer Neumorphic Container */}
-          <div className="max-w-6xl mx-auto rounded-3xl p-6 md:p-10 shadow-[10px_10px_20px_#d1d9e6,-10px_-10px_20px_#ffffff]">
+          <div className="max-w-6xl mx-auto rounded-3xl p-6 md:p-10">
             {/* Tabs */}
             <div className="flex justify-center space-x-4 mb-8">
               {tabs.map((tab) => (
@@ -67,7 +67,7 @@ const ProjectsPage = () => {
             {/* Projects Grid */}
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
               {filteredProjects.map((project, index) => (
-                <Link 
+                <Link
                   to={`/project/${project.id}`}
                   key={project.id}
                   className="block no-underline"
@@ -85,6 +85,18 @@ const ProjectsPage = () => {
                     <div className="text-center py-4 text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                       {project.title}
                     </div>
+
+                    <div className="flex flex-wrap justify-center gap-2 pb-4">
+                      {project.tools?.slice(0, 3).map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 text-xs rounded-full bg-[#f5f5f5] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
                     {hoveredCard === index && (
                       <div
                         className="absolute z-20 text-sm font-medium text-white px-4 py-2 
