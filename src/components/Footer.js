@@ -1,5 +1,6 @@
 import React from 'react';
 import { socialLinks, contactInfo } from "../config/socialLinks";
+import { motion } from "framer-motion";
 
 const CreativeProject = () => {
 
@@ -22,19 +23,21 @@ const CreativeProject = () => {
     };
 
     return (
-        <footer className=" py-16 px-8 md:px-16 mt-20 mb-18 bg-[#F2F2F2]"
+        <footer className=" py-16 px-8 md:px-16 mt-20 mb-18 bg-[#F2F2F2] align-center"
             style={{
                 borderTopLeftRadius: 100,
                 borderTopRightRadius: 100,
             }}>
-            <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-8">
-                    <img
-                        src="/path/to/your/icon.png" // Add your icon image path here
-                        alt="Handshake Icon"
-                        className="w-16 h-16 text-indigo-600"
-                    />
-                </div>
+            <div className="max-w-4xl mx-auto text-center justify-center items-center">
+                <motion.img
+                    src="../../assets/img/handshake.png"
+                    alt="Handshake Icon"
+                    className="w-16 h-16 animate-float mx-auto mb-4"
+                    animate={{ y: [0, -12, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+
                 <h2 className="text-4xl font-semibold text-gray-800 mb-4">
                     Tell Me About Your Next Creative Project
                 </h2>

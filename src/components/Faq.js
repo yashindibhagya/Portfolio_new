@@ -34,10 +34,11 @@ const FAQs = () => {
                     <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
                         <Box className="w-4 h-4" /> FAQ
                     </span>
-                    <h2 className="text-4xl font-semibold mt-4 text-gray-800">Questions? Answers!</h2>
-                    <p className="text-gray-600 mt-2 text-sm max-w-xl mx-auto">
+                    <h2 className="text-4xl font-light text-center mb-1">Questions? Answers!</h2>
+                    <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
                         Find quick answers to the most common questions about the services offered
                     </p>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">

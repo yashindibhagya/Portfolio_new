@@ -138,14 +138,14 @@ const ProjectDetails = () => {
                 {/* Brand Overview */}
                 <div className="container mx-auto max-w-5xl text-center py-8 px-4">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-700 mb-4 hover:underline">
-                            <svg className="w-4 h-4 mr-2 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-gray-700 mb-4 hover:underline">
+                            <svg className="w-4 h-4 mr-2 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             View Full Project
                         </a>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">BRAND OVERVIEW</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-black-900 mb-4 text-lg">BRAND OVERVIEW</h2>
                         <p className="text-gray-800 text-lg leading-relaxed">{project.brandOverview}</p>
                     </motion.div>
                 </div>
@@ -161,7 +161,7 @@ const ProjectDetails = () => {
                             transition={{ duration: 0.7, ease: 'easeOut' }}
                             className="space-y-4"
                         >
-                            <h2 className={`text-3xl font-bold ${i === 0 ? 'text-blue-800 border-l-4 border-blue-800' : 'text-blue-900 border-l-4 border-blue-900'} pl-4`}>
+                            <h2 className={`text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-black' : 'text-black-900 border-l-4 border-black'} pl-4`}>
                                 {heading}
                             </h2>
                             <p className="text-gray-700 leading-relaxed">{i === 0 ? project.challenge : project.solution}</p>
@@ -171,7 +171,7 @@ const ProjectDetails = () => {
 
                 {/* Key Features */}
                 <div className="container mx-auto max-w-6xl py-8 px-4">
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-900 pl-4">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-black-900 mb-6 border-l-4 border-black pl-4">
                         KEY FEATURES
                     </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -186,7 +186,7 @@ const ProjectDetails = () => {
                             >
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mr-4 relative">
-                                        <div className="w-9 h-9 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold">{idx + 1}</div>
+                                        <div className="w-9 h-9 rounded-full bg-black-700 flex items-center justify-center text-white font-bold">{idx + 1}</div>
                                     </div>
                                     <p className="text-gray-700">{feature}</p>
                                 </div>
@@ -198,7 +198,7 @@ const ProjectDetails = () => {
 
                 {/* 🖼 UI Screens (Neumorphism style retained) */}
                 <div style={sectionBlock}>
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-900 pl-4">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-black-900 mb-6 border-l-4 border-black pl-4">
                         UI SCREENS
                     </motion.h2>
                     <div style={screensContainerStyle}>
@@ -216,7 +216,7 @@ const ProjectDetails = () => {
                 {/* Conclusion Section */}
                 <div className="container mx-auto max-w-6xl py-8 px-4 text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
-                        <h2 className="text-3xl font-bold text-blue-900 mb-6 inline-block border-b-2 border-blue-900">PROJECT CONCLUSION</h2>
+                        <h2 className="text-3xl font-bold text-black-900 mb-6 inline-block border-b-2 border-black">PROJECT CONCLUSION</h2>
                         <p className="text-gray-700 leading-relaxed">{project.conclusion}</p>
                     </motion.div>
                 </div>
@@ -230,7 +230,7 @@ const ProjectDetails = () => {
                             transition={{ duration: 0.7, ease: 'easeOut' }}
                             className="text-center mb-10"
                         >
-                            <h2 className="text-3xl font-bold text-blue-900 inline-block border-b-2 border-blue-900 mb-2">RELATED PROJECTS</h2>
+                            <h2 className="text-3xl font-bold text-black-900 inline-block border-b-2 border-black mb-2">RELATED PROJECTS</h2>
                         </motion.div>
 
 

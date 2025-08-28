@@ -60,10 +60,11 @@ const Skills = () => {
                     <Box className="w-4 h-4" />
                     Skills
                 </span>
-                <h2 className="text-3xl font-bold text-gray-800">Technical Expertise</h2>
-                <p className="text-xs text-gray-600 mt-2 max-w-xl mx-auto">
+                <h2 className="text-4xl font-light text-center mb-1">Technical Expertise</h2>
+                <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
                     A compact neumorphic section with a minimal black & gray theme.
                 </p>
+
             </div>
 
             {/* Grid */}

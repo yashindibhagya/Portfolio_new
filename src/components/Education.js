@@ -81,15 +81,17 @@ const NeumorphicToggleSection = () => {
                 <div className="text-center mb-10">
                     {activeTab === "education" ? (
                         <>
-                            <h2 className="text-2xl font-bold mb-2">My Education</h2>
-                            <p className="text-gray-600 max-w-xl mx-auto">
+                            <h2 className="text-4xl font-light text-center mb-1">
+                                My Education
+                            </h2>
+                            <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
                                 I hold a Bachelor's in Computer Science and a Master’s in UX Design, which have helped shape my design and technical thinking.
                             </p>
                         </>
                     ) : (
                         <>
-                            <h2 className="text-2xl font-bold mb-2">My Experience</h2>
-                            <p className="text-gray-600 max-w-xl mx-auto">
+                            <h2 className="text-4xl font-light text-center mb-1">My Experience</h2>
+                            <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
                                 Over the years, I’ve worked as a UI/UX Designer at UrbanTech and a Graphic Designer at SummitWorks, gaining hands-on industry expertise.
                             </p>
                         </>

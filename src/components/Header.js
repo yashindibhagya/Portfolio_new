@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Instagram, Facebook, PhoneCall } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { socialLinks } from '../config/socialLinks';
 
@@ -6,15 +7,19 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [isHovered, setIsHovered] = useState(false);
     const [hoveredLink, setHoveredLink] = useState(null);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
-        const path = location.pathname.substring(1);
+        // Update active link based on current route
+        const path = location.pathname.substring(1); // remove the leading '/'
         if (path === '' || path === 'home') {
             setActiveLink('home');
-        } else {
-            setActiveLink(path);
+        } else if (path === 'projects') {
+            setActiveLink('projects');
+        } else if (path === 'services') {
+            setActiveLink('services');
+        } else if (path === 'contact') {
+            setActiveLink('contact');
         }
     }, [location]);
 
@@ -27,19 +32,23 @@ const Header = () => {
 
     return (
         <>
-            {/* Top Header */}
+            {/* Top Glass Header */}
             <div style={topHeaderStyle}>
                 <div style={nameStyle}>
                     <img src="../../assets/img/logo.png" alt="Logo" style={{ height: 30 }} />
                 </div>
 
                 <div style={rightContentStyle}>
+                    {/* Availability */}
                     <div style={availabilityStyle}>
                         <span style={greenDotStyle}></span>
                         available for work
                     </div>
 
+                    {/* Divider */}
                     <div style={dividerStyle} />
+
+                    {/* Social Icons */}
 
                     <div style={socialIconsStyle}>
                         {socialLinks.map((social) => (
@@ -50,15 +59,16 @@ const Header = () => {
                                 rel="noopener noreferrer"
                                 className="w-8 h-8 flex items-center justify-center rounded-xl bg-[#fff] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
                             >
-                                <span className="text-gray-600" style={{ fontSize: 20 }}>{social.icon}</span>
+                                <span className="text-gray-600 "
+                                    style={{ size: 20 }}>{social.icon}</span>
                             </a>
                         ))}
                     </div>
                 </div>
             </div>
 
-            {/* Desktop Bottom Nav */}
-            <div style={navContainerStyle} className="desktop-only">
+            {/* Bottom Navigation */}
+            <div style={navContainerStyle}>
                 <nav style={navStyle}>
                     {links.map(link => (
                         <Link
@@ -90,48 +100,14 @@ const Header = () => {
                     >
                         Download Resume
                     </a>
+
+
                 </nav>
-            </div>
-
-            {/* Mobile Floating Button & Menu */}
-            <div style={floatingButtonContainerStyle} className="mobile-only">
-                <button
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    style={floatingButtonStyle}
-                >
-                    ☰
-                </button>
-
-                {isMobileMenuOpen && (
-                    <div style={mobileMenuStyle}>
-                        {links.map(link => (
-                            <Link
-                                key={link.id}
-                                to={link.path}
-                                onClick={() => {
-                                    setActiveLink(link.id);
-                                    setIsMobileMenuOpen(false);
-                                }}
-                                style={mobileNavLinkStyle}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                        <a
-                            href="../../assets/document/Mobile Application developer.pdf"
-                            download
-                            style={mobileNavLinkStyle}
-                        >
-                            Download Resume
-                        </a>
-                    </div>
-                )}
             </div>
         </>
     );
 };
 
-// ----- STYLES -----
 
 const topHeaderStyle = {
     position: 'fixed',
@@ -189,6 +165,18 @@ const dividerStyle = {
 const socialIconsStyle = {
     display: 'flex',
     gap: '10px',
+};
+
+const iconBoxStyle = {
+    backgroundColor: '#f9f9f9',
+    padding: '8px',
+    borderRadius: '10px',
+    boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
 };
 
 const navContainerStyle = {
@@ -266,48 +254,6 @@ const navHoverStyle = {
     transition: 'all 0.3s ease',
 };
 
-const floatingButtonContainerStyle = {
-    position: 'fixed',
-    bottom: '30px',
-    right: '30px',
-    zIndex: 1000,
-    display: 'none',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-};
-
-const floatingButtonStyle = {
-    backgroundColor: '#3b82f6',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '50%',
-    width: '60px',
-    height: '60px',
-    fontSize: '28px',
-    cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-};
-
-const mobileMenuStyle = {
-    marginTop: '10px',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor: '#ffffff',
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    padding: '10px',
-    gap: '10px',
-};
-
-const mobileNavLinkStyle = {
-    textDecoration: 'none',
-    color: '#1f2937',
-    padding: '10px 15px',
-    borderRadius: '8px',
-    backgroundColor: '#f0f0f3',
-    boxShadow: '2px 2px 6px #d1d9e6, -2px -2px 6px #ffffff',
-    fontWeight: '500',
-    textAlign: 'center',
-};
 
 export default Header;
+

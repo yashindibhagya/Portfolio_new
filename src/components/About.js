@@ -27,8 +27,10 @@ const ProfileCard = () => {
                             <Box className="w-4 h-4" />
                             About
                         </span>
-                        <h2 className="text-4xl font-semibold text-black">Proven Impact & Results</h2>
-                        <p className="text-sm text-gray-800 mt-2">
+                        <h2 className="text-4xl font-light text-center mb-1">
+                            Proven Impact & Results
+                        </h2>
+                        <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
                             Explore Projects that reflect our AI expertise & real world impact
                         </p>
                     </div>
