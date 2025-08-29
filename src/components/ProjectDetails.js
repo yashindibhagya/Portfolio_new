@@ -186,7 +186,7 @@ const ProjectDetails = () => {
                             >
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mr-4 relative">
-                                        <div className="w-9 h-9 rounded-full bg-black-700 flex items-center justify-center text-white font-bold">{idx + 1}</div>
+                                        <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white font-bold">{idx + 1}</div>
                                     </div>
                                     <p className="text-gray-700">{feature}</p>
                                 </div>
