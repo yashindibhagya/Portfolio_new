@@ -1,102 +1,122 @@
-import { useEffect, useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import { useEffect, useState, useCallback } from 'react';
+import styled, { keyframes } from 'styled-components';
 
+// Splash animation with vibrant gradient and glow
 const splashAnimation = keyframes`
   0% {
-    transform: scale(0.2) rotate(0deg);
-    opacity: 1;
+    transform: scale(0.3);
+    opacity: 0.9;
+    filter: blur(2px);
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+    filter: blur(4px);
   }
   100% {
-    transform: scale(1) rotate(360deg);
+    transform: scale(1.8);
     opacity: 0;
+    filter: blur(6px);
   }
 `;
 
-const Splash = styled.div`
+const Splash = styled.div.attrs((props) => ({
+  style: {
+    left: `${props.x - 25}px`,
+    top: `${props.y - 25}px`,
+  },
+}))`
   position: fixed;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
+  background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb, #5f27cd);
+  background-size: 300% 300%;
+  animation: ${splashAnimation} 1s ease-out forwards;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.3);
   mix-blend-mode: multiply;
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-  animation: ${splashAnimation} 0.8s ease-out forwards;
-  transform-origin: center;
-  ${({ x, y }) => `
-    left: ${x - 20}px;
-    top: ${y - 20}px;
-  `}
 `;
 
-const Cursor = styled.div`
+// Cursor with dark center & neon border
+const Cursor = styled.div.attrs((props) => ({
+  style: {
+    left: `${props.x - 12}px`,
+    top: `${props.y - 12}px`,
+    transform: `scale(${props.$isHovering ? 1.8 : 1})`,
+    opacity: props.$isHovering ? 0.8 : 1,
+  },
+}))`
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background-color: #4ecdc4;
+  background: #1e1e1e; /* Dark core for visibility */
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 16px rgba(255, 0, 255, 0.4);
   pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: multiply;
-  transition: transform 0.1s ease-out;
-  ${({ x, y, isHovering }) => `
-    left: ${x - 10}px;
-    top: ${y - 10}px;
-    transform: scale(${isHovering ? 2 : 1});
-    opacity: ${isHovering ? 0.5 : 1};
-  `}
+  z-index: 10000;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 `;
 
 const PaintSplashCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: -100, y: -100 });
   const [splashes, setSplashes] = useState([]);
   const [isHovering, setIsHovering] = useState(false);
 
+  const createSplash = useCallback((x, y) => {
+    const newSplash = { id: Date.now(), x, y };
+    setSplashes((prev) => [...prev, newSplash]);
+    setTimeout(() => {
+      setSplashes((prev) => prev.filter((s) => s.id !== newSplash.id));
+    }, 1000);
+  }, []);
+
   useEffect(() => {
-    const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      
-      // Add a new splash at the current position
-      const newSplash = {
-        id: Date.now(),
-        x: e.clientX,
-        y: e.clientY
-      };
-      
-      setSplashes(prev => [...prev, newSplash]);
-      
-      // Remove the splash after animation completes
-      setTimeout(() => {
-        setSplashes(prev => prev.filter(splash => splash.id !== newSplash.id));
-      }, 800);
+    let animationFrameId;
+    let lastTime = 0;
+    const throttleDelay = 32;
+
+    const handleMouseMove = (e) => {
+      const now = Date.now();
+      if (now - lastTime >= throttleDelay) {
+        lastTime = now;
+        setPosition({ x: e.clientX, y: e.clientY });
+        if (Math.abs(e.movementX) > 2 || Math.abs(e.movementY) > 2) {
+          createSplash(e.clientX, e.clientY);
+        }
+      } else {
+        animationFrameId = requestAnimationFrame(() => {
+          setPosition({ x: e.clientX, y: e.clientY });
+        });
+      }
     };
 
-    const handleHover = () => {
-      const clickableElements = document.querySelectorAll('a, button, [role="button"], [data-clickable]');
-      
-      const checkHover = (e) => {
-        const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
-        const isHoveringClickable = clickableElements.some(el => el.contains(hoveredElement));
-        setIsHovering(isHoveringClickable);
-      };
-
-      document.addEventListener('mousemove', checkHover);
-      return () => document.removeEventListener('mousemove', checkHover);
+    const handleHover = (e) => {
+      const target = e.target;
+      const isInteractive = target.matches('a, button, [role="button"], [data-clickable], a *, button *');
+      setIsHovering(isInteractive);
     };
 
-    document.addEventListener('mousemove', updatePosition);
-    const hoverCleanup = handleHover();
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('mouseover', handleHover, { passive: true });
+    document.addEventListener('mouseout', () => setIsHovering(false), { passive: true });
 
     return () => {
-      document.removeEventListener('mousemove', updatePosition);
-      if (hoverCleanup) hoverCleanup();
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseover', handleHover);
+      document.removeEventListener('mouseout', () => setIsHovering(false));
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [createSplash]);
+
+  if (typeof window !== 'undefined' && window.innerWidth < 768) return null;
 
   return (
     <>
-      <Cursor x={position.x} y={position.y} isHovering={isHovering} />
-      {splashes.map(splash => (
+      <Cursor x={position.x} y={position.y} $isHovering={isHovering} />
+      {splashes.map((splash) => (
         <Splash key={splash.id} x={splash.x} y={splash.y} />
       ))}
     </>

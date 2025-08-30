@@ -1,8 +1,5 @@
 // App.js
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import PaintSplashCursor from './components/PaintSplashCursor';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -62,31 +59,8 @@ function App() {
     }
   }, []);
 
-  const theme = {
-    colors: {
-      primary: '#4ecdc4',
-      secondary: '#ff6b6b',
-      accent: '#96ceb4',
-      background: '#f8f9fa',
-    },
-  };
-
-  const GlobalStyle = createGlobalStyle`
-    * {
-      cursor: none !important;
-    }
-    
-    a, button, [role="button"], [data-clickable] {
-      position: relative;
-      z-index: 1;
-    }
-  `;
-
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <PaintSplashCursor />
-      <BrowserRouter>
+    <BrowserRouter>
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
@@ -129,8 +103,7 @@ function App() {
         {/* ✅ Global Scroll-to-Top Button */}
         <ScrollToTopButton />
       </div>
-      </BrowserRouter>
-    </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
