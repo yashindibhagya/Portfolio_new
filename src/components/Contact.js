@@ -121,71 +121,68 @@ const Contact = () => {
     }, [typingIndex]);
 
     const ContactCard = ({ icon, title, value }) => (
-        <div className="flex items-center p-6 rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff] transition-all hover:shadow-[inset_9px_9px_16px_#bec3c9,inset_-9px_-9px_16px_#ffffff] duration-300">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl mr-4 bg-[#E0E5E] shadow-[5px_5px_10px_#bec3c9,-5px_-5px_10px_#ffffff]">
+        <div className="flex items-center p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] sm:shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff] transition-all hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] sm:hover:shadow-[inset_9px_9px_16px_#bec3c9,inset_-9px_-9px_16px_#ffffff] duration-300">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl mr-3 sm:mr-4 bg-[#E0E5E] shadow-[4px_4px_8px_#bec3c9,-4px_-4px_8px_#ffffff] sm:shadow-[5px_5px_10px_#bec3c9,-5px_-5px_10px_#ffffff]">
                 {icon}
             </div>
             <div>
                 <div className="text-xs uppercase tracking-wider text-gray-500 mb-1">
                     {title}
                 </div>
-                <div className="text-gray-800 font-medium">{value}</div>
+                <div className="text-sm sm:text-base text-gray-800 font-medium">{value}</div>
             </div>
         </div>
     );
 
     return (
-        <section id="contact" className="py-20 sm:py-28 min-h-screen bg-[#F2F2F2]"
-            style={{
-                borderRadius: 100
-            }}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="max-w-5xl mx-auto text-center mb-12">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
-                        <Box className="w-4 h-4" />
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-28 min-h-screen bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px]">
+            <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
+                <div className="max-w-5xl mx-auto text-center mb-8 sm:mb-10 md:mb-12">
+                    <span className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-white px-3 py-1 sm:px-4 sm:py-1 shadow-md text-gray-700 text-xs sm:text-sm mb-2">
+                        <Box className="w-3 h-3 sm:w-4 sm:h-4" />
                         Contact
                     </span>
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-3 sm:mb-4">
                             Let's Connect
                         </h2>
 
-                        <div className="text-gray-500 text-lg">
+                        <div className="text-gray-500 text-sm sm:text-base md:text-lg">
                             <span>{typingText.substring(0, typingIndex)}</span>
-                            <span className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5 animate-blink"></span>
+                            <span className="inline-block w-0.5 h-4 sm:h-5 bg-gray-400 ml-0.5 animate-blink"></span>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10">
                         {/* Contact info */}
-                        <div className="lg:col-span-5 space-y-6">
+                        <div className="lg:col-span-5 space-y-4 sm:space-y-6">
                             <ContactCard
-                                icon={<span className="text-gray-600">📧</span>}
+                                icon={<span className="text-gray-600 text-sm sm:text-base">📧</span>}
                                 title="Email"
                                 value={contactInfo.email}
                             />
                             <ContactCard
-                                icon={<span className="text-gray-600">📞</span>}
+                                icon={<span className="text-gray-600 text-sm sm:text-base">📞</span>}
                                 title="Phone"
                                 value={contactInfo.phone}
                             />
                             <ContactCard
-                                icon={<span className="text-gray-600">📍</span>}
+                                icon={<span className="text-gray-600 text-sm sm:text-base">📍</span>}
                                 title="Location"
                                 value={contactInfo.location}
                             />
 
                             {/* Social Links */}
-                            <div className="flex gap-4 mt-6">
+                            <div className="flex gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 justify-center lg:justify-start">
                                 {socialLinks.map((social) => (
                                     <a
                                         key={social.name}
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#E0E5E] shadow-[4px_4px_8px_#bec3c9,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] sm:hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
                                     >
-                                        <span className="text-gray-600">{social.icon}</span>
+                                        <span className="text-gray-600 text-sm sm:text-base">{social.icon}</span>
                                     </a>
                                 ))}
                             </div>
@@ -193,30 +190,30 @@ const Contact = () => {
 
                         {/* Contact form */}
                         <div className="lg:col-span-7">
-                            <div className="p-1 rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
-                                <div className="p-8 rounded-xl">
+                            <div className="p-1 rounded-xl sm:rounded-2xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] sm:shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
+                                <div className="p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl">
                                     {formStatus.status === "success" ? (
-                                        <div className="flex flex-col items-center justify-center py-10 text-center">
-                                            <div className="w-16 h-16 flex items-center justify-center rounded-full bg-green-200 shadow-inner mb-4">
-                                                ✅
+                                        <div className="flex flex-col items-center justify-center py-6 sm:py-8 md:py-10 text-center">
+                                            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-green-200 shadow-inner mb-3 sm:mb-4">
+                                                <span className="text-lg sm:text-xl md:text-2xl">✅</span>
                                             </div>
-                                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                                            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                                                 Message Sent!
                                             </h3>
-                                            <p className="text-gray-600 mb-6">
+                                            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                                                 Thanks for reaching out. I'll get back to you shortly.
                                             </p>
                                         </div>
                                     ) : (
-                                        <form ref={form} onSubmit={handleSubmit} className="space-y-5">
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                                                 <input
                                                     type="text"
                                                     name="from_name"
                                                     value={formData.name}
                                                     onChange={handleChange}
                                                     placeholder="Name"
-                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                     required
                                                 />
                                                 <input
@@ -225,7 +222,7 @@ const Contact = () => {
                                                     value={formData.email}
                                                     onChange={handleChange}
                                                     placeholder="Email"
-                                                    className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                     required
                                                 />
                                             </div>
@@ -236,7 +233,7 @@ const Contact = () => {
                                                 value={formData.subject}
                                                 onChange={handleChange}
                                                 placeholder="Subject"
-                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
                                                 required
                                             />
 
@@ -244,14 +241,14 @@ const Contact = () => {
                                                 name="message"
                                                 value={formData.message}
                                                 onChange={handleChange}
-                                                rows={5}
+                                                rows={4}
                                                 placeholder="Your message..."
-                                                className="w-full px-4 py-3 rounded-xl bg-[#E0E5E] text-gray-700 shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
+                                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_4px_4px_8px_#bec3c9,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
                                                 required
                                             />
 
                                             {formStatus.status === "error" && (
-                                                <div className="p-3 rounded-lg bg-red-100 text-red-600 text-sm">
+                                                <div className="p-3 rounded-lg bg-red-100 text-red-600 text-xs sm:text-sm">
                                                     {formStatus.message}
                                                 </div>
                                             )}
@@ -259,7 +256,7 @@ const Contact = () => {
                                             <button
                                                 type="submit"
                                                 disabled={formStatus.status === "submitting"}
-                                                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
+                                                className="w-full py-2.5 sm:py-3 md:py-3.5 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-xs sm:text-sm md:text-base shadow-[4px_4px_8px_#00005D,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#00005D,inset_-4px_-4px_8px_#0000FF] sm:hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
                                             >
                                                 {formStatus.status === "submitting"
                                                     ? "Sending..."
@@ -273,6 +270,16 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes blink {
+                    0%, 50% { opacity: 1; }
+                    51%, 100% { opacity: 0; }
+                }
+                .animate-blink {
+                    animation: blink 1s infinite;
+                }
+            `}</style>
         </section>
     );
 };
