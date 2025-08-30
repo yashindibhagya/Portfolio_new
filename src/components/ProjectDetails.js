@@ -42,14 +42,14 @@ const ProjectDetails = () => {
         const [hover, setHover] = useState(false);
         return (
             <div
-                className={`w-10 h-10 ${neumorphic.raised} flex items-center justify-center relative group transition`}
+                className={`w-8 h-8 sm:w-10 sm:h-10 ${neumorphic.raised} flex items-center justify-center relative group transition`}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 tabIndex={0}
                 aria-label={tool}
             >
                 {toolData ? (
-                    <toolData.icon color={"#000"} className="w-5 h-5" />
+                    <toolData.icon color={"#000"} className="w-4 h-4 sm:w-5 sm:h-5" />
                 ) : (
                     <span className="text-xs text-gray-700">{tool}</span>
                 )}
@@ -70,39 +70,67 @@ const ProjectDetails = () => {
 
 
     return (
-        <div className="min-h-screen px-6 pt-24 pb-8">
+        <div className="min-h-screen px-3 sm:px-6 pt-16 sm:pt-24 pb-6 sm:pb-8">
             <div className="max-w-6xl w-full mx-auto font-sans">
-                {/* 🔝 Header Section (Based on Screenshot) */}
-                <div style={topSectionStyle}>
-                    <div style={topLeftStyle}>
-                        <h1 style={projectTitleStyle}>{project.title}</h1>
-                        <p style={projectDescriptionStyle}>{project.subtitle}</p>
-                        <div style={buttonGroupStyle}>
-                            <Link to="/contact" className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                {/* 🔝 Header Section (Mobile Responsive) */}
+                <div style={{
+                    ...topSectionStyle,
+                    flexDirection: window.innerWidth < 768 ? 'column' : 'row',
+                    gap: window.innerWidth < 768 ? '20px' : '30px',
+                    padding: window.innerWidth < 768 ? '20px' : '30px 50px'
+                }}>
+                    <div style={{
+                        ...topLeftStyle,
+                        flex: window.innerWidth < 768 ? '1' : '1 1 55%',
+                        minWidth: window.innerWidth < 768 ? 'auto' : '280px'
+                    }}>
+                        <h1 style={{
+                            ...projectTitleStyle,
+                            fontSize: window.innerWidth < 768 ? '28px' : '38px'
+                        }}>{project.title}</h1>
+                        <p style={{
+                            ...projectDescriptionStyle,
+                            fontSize: window.innerWidth < 768 ? '14px' : '15px',
+                            marginBottom: window.innerWidth < 768 ? '20px' : '24px'
+                        }}>{project.subtitle}</p>
+                        <div style={{
+                            ...buttonGroupStyle,
+                            flexDirection: window.innerWidth < 640 ? 'column' : 'row',
+                            gap: window.innerWidth < 640 ? '12px' : '16px'
+                        }}>
+                            <Link to="/contact" className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Contact Me
                             </Link>
                             <a
                                 href={project.websiteUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
+                                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
                                 → Site Preview
                             </a>
                         </div>
                     </div>
 
-                    <div style={topRightStyle}>
+                    <div style={{
+                        ...topRightStyle,
+                        flex: window.innerWidth < 768 ? '1' : '1 1 40%',
+                        minWidth: window.innerWidth < 768 ? 'auto' : '280px',
+                        gridTemplateColumns: window.innerWidth < 640 ? '1fr' : 'repeat(2, 1fr)',
+                        gridRowGap: window.innerWidth < 768 ? '16px' : '20px',
+                        gridColumnGap: window.innerWidth < 768 ? '20px' : '40px',
+                        fontSize: window.innerWidth < 768 ? '13px' : '14px'
+                    }}>
                         <div>
                             <p style={metaLabelStyle}>Services</p>
                             <p style={metaValueStyle}>{project.category}</p>
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Tools</p>
-                            <div className="grid grid-cols-2 gap-0 w-full">
+                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-1 sm:gap-0 w-full">
                                 {project.tools.map((tool) => {
                                     const toolData = toolIcons[tool];
                                     return (
-                                        <div key={tool} className="flex items-center gap-2">
+                                        <div key={tool} className="flex items-center gap-1 sm:gap-2">
                                             <div className="flex-shrink-0">
                                                 <ToolIconWithTooltip tool={tool} toolData={toolData} />
                                             </div>
@@ -122,36 +150,36 @@ const ProjectDetails = () => {
                     </div>
                 </div>
 
-                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                <div style={{ textAlign: 'center', marginBottom: window.innerWidth < 768 ? '40px' : '60px' }}>
                     <img
                         src={project.mockupImage}
                         alt={`${project.title} Mockup`}
                         style={{
                             maxWidth: '100%',
-                            borderRadius: '16px',
-                            boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+                            borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                            boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
                         }}
                     />
                 </div>
 
 
                 {/* Brand Overview */}
-                <div className="container mx-auto max-w-5xl text-center py-8 px-4">
+                <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 px-4">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-gray-700 mb-4 hover:underline">
+                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-gray-700 mb-3 sm:mb-4 hover:underline text-sm sm:text-base">
                             <svg className="w-4 h-4 mr-2 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             View Full Project
                         </a>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-black-900 mb-4 text-lg">BRAND OVERVIEW</h2>
-                        <p className="text-gray-800 text-lg leading-relaxed">{project.brandOverview}</p>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black-900 mb-3 sm:mb-4">BRAND OVERVIEW</h2>
+                        <p className="text-gray-800 text-base sm:text-lg leading-relaxed">{project.brandOverview}</p>
                     </motion.div>
                 </div>
 
                 {/* Challenge & Solution */}
-                <div className="container mx-auto max-w-6xl py-8 px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     {['THE CHALLENGE', 'THE SOLUTION'].map((heading, i) => (
                         <motion.div
                             key={heading}
@@ -159,36 +187,36 @@ const ProjectDetails = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, ease: 'easeOut' }}
-                            className="space-y-4"
+                            className="space-y-3 sm:space-y-4"
                         >
-                            <h2 className={`text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-black' : 'text-black-900 border-l-4 border-black'} pl-4`}>
+                            <h2 className={`text-2xl sm:text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-black' : 'text-black-900 border-l-4 border-black'} pl-3 sm:pl-4`}>
                                 {heading}
                             </h2>
-                            <p className="text-gray-700 leading-relaxed">{i === 0 ? project.challenge : project.solution}</p>
+                            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{i === 0 ? project.challenge : project.solution}</p>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Key Features */}
-                <div className="container mx-auto max-w-6xl py-8 px-4">
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-black-900 mb-6 border-l-4 border-black pl-4">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-black pl-3 sm:pl-4">
                         KEY FEATURES
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         {project.features.map((feature, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                 viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.15 }}
-                                whileHover={{ scale: 1.03 }}
-                                className={`${neumorphic.raised} p-6 rounded-xl transition shadow-lg hover:${neumorphic.pressed}`}
+                                whileHover={{ scale: window.innerWidth >= 768 ? 1.03 : 1 }}
+                                className={`${neumorphic.raised} p-4 sm:p-6 rounded-xl transition shadow-lg hover:${neumorphic.pressed}`}
                             >
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 mr-4 relative">
-                                        <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white font-bold">{idx + 1}</div>
+                                    <div className="flex-shrink-0 mr-3 sm:mr-4 relative">
+                                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm sm:text-base">{idx + 1}</div>
                                     </div>
-                                    <p className="text-gray-700">{feature}</p>
+                                    <p className="text-gray-700 text-sm sm:text-base">{feature}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -196,45 +224,59 @@ const ProjectDetails = () => {
                 </div>
 
 
-                {/* 🖼 UI Screens (Neumorphism style retained) */}
-                <div style={sectionBlock}>
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-3xl font-bold text-black-900 mb-6 border-l-4 border-black pl-4">
+                {/* 🖼 UI Screens (Mobile Responsive) */}
+                <div style={{
+                    ...sectionBlock,
+                    marginTop: window.innerWidth < 768 ? '40px' : '60px',
+                    marginBottom: window.innerWidth < 768 ? '40px' : '60px'
+                }}>
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-black pl-3 sm:pl-4">
                         UI SCREENS
                     </motion.h2>
-                    <div style={screensContainerStyle}>
+                    <div style={{
+                        ...screensContainerStyle,
+                        gap: window.innerWidth < 768 ? '15px' : '20px',
+                        flexDirection: window.innerWidth < 640 ? 'column' : 'row',
+                        alignItems: window.innerWidth < 640 ? 'center' : 'flex-start'
+                    }}>
                         {project.uiScreens.map(screen => (
                             <img
                                 key={screen.id}
                                 src={screen.image}
                                 alt={`Screen ${screen.id}`}
-                                style={screenImageStyle}
+                                style={{
+                                    ...screenImageStyle,
+                                    width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
+                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
+                                }}
                             />
                         ))}
                     </div>
                 </div>
 
                 {/* Conclusion Section */}
-                <div className="container mx-auto max-w-6xl py-8 px-4 text-center">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4 text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
-                        <h2 className="text-3xl font-bold text-black-900 mb-6 inline-block border-b-2 border-black">PROJECT CONCLUSION</h2>
-                        <p className="text-gray-700 leading-relaxed">{project.conclusion}</p>
+                        <h2 className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 inline-block border-b-2 border-black">PROJECT CONCLUSION</h2>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.conclusion}</p>
                     </motion.div>
                 </div>
 
                 {/* Related Projects Section */}
-                <div className="relative py-12 px-4 md:px-6">
+                <div className="relative py-8 sm:py-12 px-4 md:px-6">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: 'easeOut' }}
-                            className="text-center mb-10"
+                            className="text-center mb-8 sm:mb-10"
                         >
-                            <h2 className="text-3xl font-bold text-black-900 inline-block border-b-2 border-black mb-2">RELATED PROJECTS</h2>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-black-900 inline-block border-b-2 border-black mb-2">RELATED PROJECTS</h2>
                         </motion.div>
 
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                             {projectsData
                                 .filter(p => p.type === project.type && p.id !== project.id)
                                 .slice(0, 3)
@@ -249,26 +291,31 @@ const ProjectDetails = () => {
                                             <img
                                                 src={related.image}
                                                 alt={related.title}
-                                                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                                                className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                         </div>
 
                                         {/* Content */}
-                                        <div className="p-6">
-                                            <h3 className="text-xl font-semibold text-gray-800 mb-2">{related.title}</h3>
-                                            <p className="text-gray-600 mb-4 line-clamp-2">{related.description}</p>
+                                        <div className="p-4 sm:p-6">
+                                            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{related.title}</h3>
+                                            <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base">{related.description}</p>
 
                                             {/* Tags */}
-                                            <div className="flex flex-wrap gap-2 mb-2">
-                                                {related.tools && related.tools.map((tech, index) => (
+                                            <div className="flex flex-wrap gap-1 sm:gap-2 mb-2">
+                                                {related.tools && related.tools.slice(0, 3).map((tech, index) => (
                                                     <span
                                                         key={index}
-                                                        className="px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                                                        className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
                                                     >
                                                         {tech}
                                                     </span>
                                                 ))}
+                                                {related.tools && related.tools.length > 3 && (
+                                                    <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
+                                                        +{related.tools.length - 3}
+                                                    </span>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -276,9 +323,6 @@ const ProjectDetails = () => {
                         </div>
                     </div>
                 </div>
-
-
-
 
             </div>
         </div>
@@ -307,7 +351,6 @@ const topSectionStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    //padding: '30px 50px',
     borderRadius: '16px',
     boxShadow: 'none',
     gap: '30px',
