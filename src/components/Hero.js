@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const roles = ["Mobile App Developer", "UI UX Developer", "Remote Designer"];
 
 const Hero = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const Hero = () => {
             </video>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 -mt-50 sm:-mt-60 md:-mt-60 lg:mt-10 xl:mt-12 leading-snug w-full">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 -mt-14 sm:-mt-60 md:-mt-60 lg:mt-10 xl:mt-12 leading-snug w-full">
 
                 {/* Profile Section */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap justify-center w-full">
@@ -100,15 +100,15 @@ const Hero = () => {
                 {/* Buttons */}
                 <div className="w-full mt-2">
                     <div className="flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
-                        <button 
-                          onClick={() => navigate('/contact')}
-                          className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
                         >
                             ➜ Contact Me
                         </button>
-                        <button 
-                          onClick={() => navigate('/projects')}
-                          className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                        <button
+                            onClick={() => navigate('/projects')}
+                            className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
                         >
                             ➜ See Projects
                         </button>
