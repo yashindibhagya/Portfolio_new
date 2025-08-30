@@ -11,7 +11,7 @@ const projects = projectsData.map(project => ({
 
 const MarqueeProjects = () => {
     return (
-        <div className="relative w-full overflow-hidden py-6 sm:py-10 -mt-10 sm:-mt-80 md:-mt-60 lg:mt-10 xl:-mt-20">
+        <div className="relative w-full overflow-hidden py-6 sm:py-10 -mt-60 sm:-mt-80 md:-mt-60 lg:mt-10 xl:-mt-20">
             {/* Left fade gradient */}
             <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none"></div>
 
