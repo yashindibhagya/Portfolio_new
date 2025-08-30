@@ -1,6 +1,7 @@
 import React from 'react';
 import { socialLinks, contactInfo } from "../config/socialLinks";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CreativeProject = () => {
 
@@ -22,6 +23,7 @@ const CreativeProject = () => {
         boxShadow: '0 0 6px #22c55e',
     };
 
+    const navigate = useNavigate();
     return (
         <footer className="py-8 sm:py-16 px-4 sm:px-8 md:px-16 mt-12 sm:mt-20 bg-[#F2F2F2] align-center"
             style={{
@@ -44,11 +46,17 @@ const CreativeProject = () => {
                     Let's create captivating digital experiences that engage audiences and drive meaningful brand interactions across diverse platforms.
                 </p>
                 <div className="w-full mt-2">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6 px-4 sm:px-0">
-                        <button className="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                    <div className="flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
+                        <button
+                            onClick={() => navigate('/contact')}
+                            className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
+                        >
                             ➜ Contact Me
                         </button>
-                        <button className="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
+                        <button
+                            onClick={() => navigate('/projects')}
+                            className="px-5 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                        >
                             ➜ See Projects
                         </button>
                     </div>
