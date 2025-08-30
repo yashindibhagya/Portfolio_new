@@ -102,7 +102,7 @@ const ProjectDetails = () => {
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Tools</p>
-                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-3 w-full">
+                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-2 w-full"> {/* Reduced gap here */}
                                 {project.tools.map((tool) => {
                                     const toolData = toolIcons[tool];
                                     return (
@@ -114,10 +114,11 @@ const ProjectDetails = () => {
                                     );
                                 })}
                             </div>
+
                         </div>
                         <div>
-                            <p style={metaLabelStyle}>Value</p>
-                            <p style={metaValueStyle}>Seamless design, brand consistency</p>
+                            <p style={metaLabelStyle}>Type</p>
+                            <p style={metaValueStyle}>{project.type}</p>
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Timeline</p>
@@ -142,8 +143,8 @@ const ProjectDetails = () => {
                 {/* Brand Overview */}
                 <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 px-4">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-gray-700 mb-3 sm:mb-4 hover:underline text-sm sm:text-base">
-                            <svg className="w-4 h-4 mr-2 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-900 mb-3 sm:mb-4 hover:underline text-sm sm:text-base">
+                            <svg className="w-4 h-4 mr-2 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             View Full Project
@@ -165,7 +166,7 @@ const ProjectDetails = () => {
                             transition={{ duration: 0.7, ease: 'easeOut' }}
                             className="space-y-3 sm:space-y-4"
                         >
-                            <h2 className={`text-2xl sm:text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-black' : 'text-black-900 border-l-4 border-black'} pl-3 sm:pl-4`}>
+                            <h2 className={`text-2xl sm:text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-blue-900' : 'text-black-900 border-l-4 border-blue-900'} pl-3 sm:pl-4`}>
                                 {heading}
                             </h2>
                             <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{i === 0 ? project.challenge : project.solution}</p>
@@ -175,7 +176,7 @@ const ProjectDetails = () => {
 
                 {/* Key Features */}
                 <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4">
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-black pl-3 sm:pl-4">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
                         KEY FEATURES
                     </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -190,7 +191,7 @@ const ProjectDetails = () => {
                             >
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mr-3 sm:mr-4 relative">
-                                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm sm:text-base">{idx + 1}</div>
+                                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-bl from-[#0000B9] to-[#000000] flex items-center justify-center text-white font-bold text-sm sm:text-base">{idx + 1}</div>
                                     </div>
                                     <p className="text-gray-700 text-sm sm:text-base">{feature}</p>
                                 </div>
@@ -206,7 +207,7 @@ const ProjectDetails = () => {
                     marginTop: window.innerWidth < 768 ? '40px' : '60px',
                     marginBottom: window.innerWidth < 768 ? '40px' : '60px'
                 }}>
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-black pl-3 sm:pl-4">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
                         UI SCREENS
                     </motion.h2>
                     <div style={{

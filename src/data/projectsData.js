@@ -157,7 +157,7 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: burgermock,
         conclusion: "This landing page delivers a flavorful digital experience that mirrors the taste and energy of Burger House. It's built to convert hungry visitors into loyal customers with ease.",
-        websiteUrl: "#"
+        websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
         id: 3,
@@ -262,7 +262,7 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop", "React Native"],
         uiScreens: coffeeShop,
         conclusion: "BeanLine brings together beautiful design and practical functionality to deliver an app experience that coffee lovers will enjoy using daily. The app elevates the connection between brand and customer by offering more than coffee — it delivers convenience with heart.",
-        websiteUrl: "https://github.com/yashindibhagya/BeanLine-CoffeeShop"
+        websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
         id: 7,
@@ -288,7 +288,7 @@ export const projectsData = [
         tools: ["React Native", "Firebase"],
         uiScreens: learnmock,
         conclusion: "The E-Learning app successfully delivers educational content in an engaging mobile format.",
-        websiteUrl: "#"
+        websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
         id: 8,
@@ -314,7 +314,7 @@ export const projectsData = [
         tools: ["React Native"],
         uiScreens: insurancemock,
         conclusion: "This task management application successfully addresses the core needs of service professionals by providing a streamlined solution for tracking work performance and earnings. The intuitive design, automated calculations, and comprehensive reporting features make it an essential tool for professionals looking to optimize their productivity and maintain accurate records of their service activities.",
-        websiteUrl: "https://github.com/yashindibhagya/task_list_insurance-company"
+        websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
         id: 9,
