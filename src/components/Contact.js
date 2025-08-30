@@ -138,14 +138,12 @@ const Contact = () => {
         <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-28 min-h-screen bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px]">
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
                 <div className="max-w-5xl mx-auto text-center mb-8 sm:mb-10 md:mb-12">
-                    <span className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-white px-3 py-1 sm:px-4 sm:py-1 shadow-md text-gray-700 text-xs sm:text-sm mb-2">
-                        <Box className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
+                        <Box className="w-4 h-4" />
                         Contact
                     </span>
                     <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-3 sm:mb-4">
-                            Let's Connect
-                        </h2>
+                        <h2 className="text-4xl font-light text-center mb-1">Let's Connect</h2>
 
                         <div className="text-gray-500 text-sm sm:text-base md:text-lg">
                             <span>{typingText.substring(0, typingIndex)}</span>
