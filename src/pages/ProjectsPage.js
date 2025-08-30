@@ -43,7 +43,7 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col py-16 sm:py-20 md:py-24">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
         <section className="py-4 sm:py-5 px-4 sm:px-6 md:px-8 text-gray-800 mb-12 sm:mb-16 md:mb-20">

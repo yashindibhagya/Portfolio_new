@@ -19,22 +19,22 @@ const ProjectDetails = () => {
 
 
     const toolIcons = {
-        'Figma': { icon: SiFigma, color: '#1e3a8a' },
-        'Adobe Photoshop': { icon: SiAdobephotoshop, color: '#1e3a8a' },
-        'React Native': { icon: SiReact, color: '#1e3a8a' },
-        'React': { icon: SiReact, color: '#1e3a8a' },
-        'Firebase': { icon: SiFirebase, color: '#1e3a8a' },
-        'Cloudinary': { icon: SiCloudinary, color: '#1e3a8a' },
-        'Tailwind CSS': { icon: SiTailwindcss, color: '#1e3a8a' },
-        'Node.js': { icon: SiNodedotjs, color: '#1e3a8a' },
-        'Canva': { icon: SiCanva, color: '#1e3a8a' },
-        'Vercel': { icon: SiVercel, color: '#1e3a8a' },
-        'GitHub': { icon: SiGithub, color: '#1e3a8a' },
-        'Behance': { icon: SiBehance, color: '#1e3a8a' },
-        'Bootstrap': { icon: SiBootstrap, color: '#1e3a8a' },
-        'JavaScript': { icon: SiJavascript, color: '#1e3a8a' },
-        'HTML5': { icon: SiHtml5, color: '#1e3a8a' },
-        'CSS3': { icon: SiCss3, color: '#1e3a8a' }
+        'Figma': { icon: SiFigma, color: '#0000B9' },
+        'Adobe Photoshop': { icon: SiAdobephotoshop, color: '#0000B9' },
+        'React Native': { icon: SiReact, color: '#0000B9' },
+        'React': { icon: SiReact, color: '#0000B9' },
+        'Firebase': { icon: SiFirebase, color: '#0000B9' },
+        'Cloudinary': { icon: SiCloudinary, color: '#0000B9' },
+        'Tailwind CSS': { icon: SiTailwindcss, color: '#0000B9' },
+        'Node.js': { icon: SiNodedotjs, color: '#0000B9' },
+        'Canva': { icon: SiCanva, color: '#0000B9' },
+        'Vercel': { icon: SiVercel, color: '#0000B9' },
+        'GitHub': { icon: SiGithub, color: '#0000B9' },
+        'Behance': { icon: SiBehance, color: '#0000B9' },
+        'Bootstrap': { icon: SiBootstrap, color: '#0000B9' },
+        'JavaScript': { icon: SiJavascript, color: '#0000B9' },
+        'HTML5': { icon: SiHtml5, color: '#0000B9' },
+        'CSS3': { icon: SiCss3, color: '#0000B9' }
     };
 
 
@@ -42,19 +42,19 @@ const ProjectDetails = () => {
         const [hover, setHover] = useState(false);
         return (
             <div
-                className={`w-8 h-8 sm:w-10 sm:h-10 ${neumorphic.raised} flex items-center justify-center relative group transition`}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 tabIndex={0}
                 aria-label={tool}
             >
                 {toolData ? (
-                    <toolData.icon color={"#000"} className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <toolData.icon color={toolIcons[tool]?.color || '#3498db'} className="w-5 h-5" />
                 ) : (
                     <span className="text-xs text-gray-700">{tool}</span>
                 )}
                 {hover && (
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[#e0e0e0] text-black text-xs rounded-lg shadow-[4px_4px_8px_#bebebe,_-4px_-4px_#ffffff] whitespace-nowrap">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-white text-gray-800 text-xs rounded-lg shadow-md whitespace-nowrap z-10">
                         {tool}
                     </div>
                 )}
@@ -70,63 +70,39 @@ const ProjectDetails = () => {
 
 
     return (
-        <div className="min-h-screen px-3 sm:px-6 pt-16 sm:pt-24 pb-6 sm:pb-8">
-            <div className="max-w-6xl w-full mx-auto font-sans">
-                {/* 🔝 Header Section (Mobile Responsive) */}
-                <div style={{
-                    ...topSectionStyle,
-                    flexDirection: window.innerWidth < 768 ? 'column' : 'row',
-                    gap: window.innerWidth < 768 ? '20px' : '30px',
-                    padding: window.innerWidth < 768 ? '20px' : '30px 50px'
-                }}>
-                    <div style={{
-                        ...topLeftStyle,
-                        flex: window.innerWidth < 768 ? '1' : '1 1 55%',
-                        minWidth: window.innerWidth < 768 ? 'auto' : '280px'
-                    }}>
-                        <h1 style={{
-                            ...projectTitleStyle,
-                            fontSize: window.innerWidth < 768 ? '28px' : '38px'
-                        }}>{project.title}</h1>
-                        <p style={{
-                            ...projectDescriptionStyle,
-                            fontSize: window.innerWidth < 768 ? '14px' : '15px',
-                            marginBottom: window.innerWidth < 768 ? '20px' : '24px'
-                        }}>{project.subtitle}</p>
-                        <div style={{
-                            ...buttonGroupStyle,
-                            flexDirection: window.innerWidth < 640 ? 'column' : 'row',
-                            gap: window.innerWidth < 640 ? '12px' : '16px'
-                        }}>
-                            <Link to="/contact" className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+        <div className="min-h-screen pt-16 sm:pt-20 pb-6 sm:pb-8">
+            <div className="max-w-6xl w-full mx-auto font-sans px-4 sm:px-6">
+                {/* 🔝 Header Section */}
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 py-8">
+                    <div className="w-full lg:w-1/2">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                            {project.title}
+                        </h1>
+                        <p className="text-gray-700 text-base sm:text-lg mb-6 lg:mb-8 max-w-2xl">
+                            {project.subtitle}
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                            <Link to="/contact" className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Contact Me
                             </Link>
                             <a
                                 href={project.websiteUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center rounded-xl bg-[#E0E5E] text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all">
+                                className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-white text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all text-gray-800">
                                 → Site Preview
                             </a>
                         </div>
                     </div>
 
-                    <div style={{
-                        ...topRightStyle,
-                        flex: window.innerWidth < 768 ? '1' : '1 1 40%',
-                        minWidth: window.innerWidth < 768 ? 'auto' : '280px',
-                        gridTemplateColumns: window.innerWidth < 640 ? '1fr' : 'repeat(2, 1fr)',
-                        gridRowGap: window.innerWidth < 768 ? '16px' : '20px',
-                        gridColumnGap: window.innerWidth < 768 ? '20px' : '40px',
-                        fontSize: window.innerWidth < 768 ? '13px' : '14px'
-                    }}>
+                    <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm sm:text-base">
                         <div>
                             <p style={metaLabelStyle}>Services</p>
                             <p style={metaValueStyle}>{project.category}</p>
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Tools</p>
-                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-1 sm:gap-0 w-full">
+                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-3 w-full">
                                 {project.tools.map((tool) => {
                                     const toolData = toolIcons[tool];
                                     return (
