@@ -31,7 +31,7 @@ const FAQs = () => {
             <div className="max-w-6xl w-full">
                 {/* Header */}
                 <div className="text-center mb-14">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#fff] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
                         <Box className="w-4 h-4" /> FAQ
                     </span>
                     <h2 className="text-4xl font-light text-center mb-1">Questions? Answers!</h2>

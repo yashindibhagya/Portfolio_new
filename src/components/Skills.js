@@ -56,7 +56,7 @@ const Skills = () => {
             }}>
             {/* Section Header */}
             <div className="text-center mb-10">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#fff] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">
                     <Box className="w-4 h-4" />
                     Skills
                 </span>
