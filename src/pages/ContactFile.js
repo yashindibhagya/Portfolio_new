@@ -143,7 +143,7 @@ const Contact = () => {
                         Contact
                     </span>
                     <div className="text-center mb-12 sm:mb-16">
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-3 sm:mb-4 px-2">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-center mb-1">
                             Let's Connect
                         </h2>
 
@@ -151,11 +151,14 @@ const Contact = () => {
                             <span>{typingText.substring(0, typingIndex)}</span>
                             <span className="inline-block w-0.5 h-4 sm:h-5 bg-gray-400 ml-0.5 animate-blink"></span>
                         </div>
+
                     </div>
+
+
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
                         {/* Contact info */}
-                        <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+                        <div className="lg:col-span-5 space-y-6 sm:space-y-6">
                             <ContactCard
                                 icon={<span className="text-gray-600 text-lg sm:text-xl">📧</span>}
                                 title="Email"
