@@ -40,13 +40,13 @@ export default function ServicesSection() {
                 {/* Header */}
                 <div className="mb-6 text-center">
                     <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 shadow-md text-gray-700 text-sm mb-2">
-                        <Box className="w-4 h-4" />
+                        <Box className="w-3 h-3 sm:w-4 sm:h-4" />
                         Services
                     </span>
-                    <h2 className="text-4xl font-light text-center mb-1">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-center mb-1">
                         Crafting Digital Excellence
                     </h2>
-                    <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-10">
+                    <p className="text-xs sm:text-sm text-gray-700 text-center max-w-xs sm:max-w-xl mx-auto mb-6 sm:mb-10 px-2 sm:px-0">
                         Building smooth and engaging digital interactions that elevate user satisfaction
                     </p>
                 </div>
