@@ -1,17 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { projectsData } from "../data/projectsData";
 
-const projects = [
-    { id: 1, title: "CourseSite", img: "../../assets/img/bakery.png" },
-    { id: 2, title: "LanderOS", img: "../../assets/img/doctor.png" },
-    { id: 3, title: "Alter", img: "../../assets/img/burger.png" },
-    { id: 4, title: "Project Four", img: "../../assets/img/forest.png" },
-    { id: 5, title: "Project Five", img: "../../assets/img/gesture.png" },
-    { id: 6, title: "Project Six", img: "../../assets/img/nature.png" },
-    { id: 7, title: "Project Seven", img: "../../assets/img/plant.png" },
-    { id: 8, title: "Project Eight", img: "../../assets/img/nike.png" },
-    { id: 9, title: "Project Nine", img: "../../assets/img/coffee_shop.png" },
-];
+// Map projects data to the required format
+const projects = projectsData.map(project => ({
+    id: project.id,
+    title: project.title,
+    img: project.mockupImage || project.image
+}));
 
 const MarqueeProjects = () => {
     return (

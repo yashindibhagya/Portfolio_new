@@ -61,7 +61,7 @@ export default function ServicesSection() {
                     />
                     <ServiceCard
                         icon={<Box className="w-6 h-6 text-white" />}
-                        title="Framer Development"
+                        title="Mobile Application Development"
                         description="Building high-performance, interactive websites using Framer’s powerful design and development tools for seamless user experiences."
                         iconDark
                     />
