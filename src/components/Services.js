@@ -34,7 +34,7 @@ const ServiceCard = ({
 
 export default function ServicesSection() {
     return (
-        <section className="min-h-screen flex flex-col items-center px-6 py-16">
+        <section className="min-h-screen flex flex-col items-center px-6 py-16 ">
             {/* Shared Width Container with Projects */}
             <div className="max-w-6xl w-full mx-auto">
                 {/* Header */}
