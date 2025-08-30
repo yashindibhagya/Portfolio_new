@@ -23,7 +23,7 @@ const CreativeProject = () => {
     };
 
     return (
-        <footer className="py-8 sm:py-16 px-4 sm:px-8 md:px-16 mt-12 sm:mt-20 mb-8 sm:mb-18 bg-[#F2F2F2] align-center"
+        <footer className="py-8 sm:py-16 px-4 sm:px-8 md:px-16 mt-12 sm:mt-20 bg-[#F2F2F2] align-center"
             style={{
                 borderTopLeftRadius: window.innerWidth < 640 ? 40 : 100,
                 borderTopRightRadius: window.innerWidth < 640 ? 40 : 100,
