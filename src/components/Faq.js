@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Box, ChevronDown, ChevronUp } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const faqData = [
-    { question: "What services do you offer?", answer: "I specialize in web design, branding, UI/UX, and Framer development, creating modern, user-friendly experiences tailored to your needs." },
-    { question: "Do you provide revisions?", answer: "Yes, I offer multiple rounds of revisions to ensure you're fully satisfied." },
-    { question: "How do I start working with you?", answer: "You can start by reaching out through the contact form or email." },
-    { question: "What is your pricing structure?", answer: "Pricing varies based on the project. Contact me for a custom quote." },
-    { question: "How long does a project take?", answer: "Most projects take between 1–4 weeks depending on scope." },
+    { question: "What services do you offer?", answer: "I specialize in UI/UX design and mobile app development with React Native, while also bringing experience in web design, branding, and prototyping. My focus is on creating modern, user-friendly, and impactful digital experiences tailored to your goals." },
+    { question: "Do you provide revisions?", answer: "Absolutely! I offer multiple rounds of revisions to ensure the final outcome aligns perfectly with your vision and requirements." },
+    { question: "How do I start working with you?", answer: "Simply reach out through the contact form or email with details about your project. From there, we can discuss your needs, timeline, and next steps to get started." },
+    { question: "What is your pricing structure?", answer: "Pricing depends on the scope, complexity, and timeline of the project. Once I understand your requirements, I’ll provide a custom quote that fits your budget and goals." },
+    { question: "How long does a project take?", answer: "Timelines vary depending on the project’s scope. On average, most projects are completed within 2–4 weeks, but I’ll always provide a clear timeline after our initial discussion." },
 ];
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => (
@@ -25,6 +27,12 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => (
 const FAQs = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const toggleIndex = (index) => setOpenIndex(openIndex === index ? null : index);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     return (
         <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10">
@@ -54,7 +62,9 @@ const FAQs = () => {
                             Still have questions? Feel free to get in touch with us today!
                         </p>
                         <div className="flex justify-center">
-                            <button className="px-5 py-2 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                            <button
+                                onClick={() => navigate('/contact')}
+                                className="px-5 py-2 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Ask A Question
                             </button>
                         </div>

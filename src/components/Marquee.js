@@ -1,14 +1,14 @@
 import React from "react";
-import { FaVideo } from "react-icons/fa";
-import { MdOutlineSlideshow, MdOutlineSearch, MdOutlineWeb } from "react-icons/md";
-import { TbArrowsShuffle } from "react-icons/tb";
+import { FaMobileAlt, FaPencilRuler, FaLaptopCode } from "react-icons/fa";
+import { MdOutlineBrandingWatermark, MdOutlineWeb } from "react-icons/md";
+import { BiGitCompare } from "react-icons/bi";
 
 const tags = [
-    { icon: <FaVideo />, label: "Video & Motion Graphics" },
-    { icon: <MdOutlineSlideshow />, label: "Slide Decks" },
-    { icon: <MdOutlineSearch />, label: "SEO" },
-    { icon: <MdOutlineWeb />, label: "Landing Pages" },
-    { icon: <TbArrowsShuffle />, label: "Framer Migration" },
+    { icon: <FaPencilRuler />, label: "UI/UX Design" },           // design-focused icon
+    { icon: <FaMobileAlt />, label: "Mobile App Development" },  // mobile icon
+    { icon: <MdOutlineBrandingWatermark />, label: "Branding" }, // branding icon
+    { icon: <FaLaptopCode />, label: "Web Design" },             // web development icon
+    { icon: <BiGitCompare />, label: "Prototyping" },            // prototype/iteration icon
 ];
 
 const MarqueeTags = () => {

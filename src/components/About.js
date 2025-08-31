@@ -2,13 +2,21 @@ import React from 'react';
 import { socialLinks } from "../config/socialLinks";
 import Education from './Education';
 import { Box } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const skills = [
-    'Product Design', 'UX Design', 'UI Design', 'Framer',
-    'Interaction Design', 'Branding', 'Webflow', 'UX Research', 'No-Code',
+    'Product Design', 'UX Design', 'UI Design', 'Mobile Application Developer',
+    'Interaction Design', 'Branding', 'React Native', 'UX Research', 'Figma',
 ];
 
 const ProfileCard = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
     return (
         <div
             className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px]"
@@ -66,7 +74,10 @@ const ProfileCard = () => {
                             </div>
 
                             {/* Contact Button */}
-                            <button className="w-full mt-4 sm:mt-6 py-2.5 sm:py-3.5 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-xs sm:text-sm md:text-base shadow-[4px_4px_8px_#00005D,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#00005D,inset_-4px_-4px_8px_#0000FF] sm:hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                            <button
+                                onClick={() => navigate('/contact')}
+                                className="w-full mt-4 sm:mt-6 py-2.5 sm:py-3.5 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-xs sm:text-sm md:text-base shadow-[4px_4px_8px_#00005D,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#00005D,inset_-4px_-4px_8px_#0000FF] sm:hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
+                            >
                                 ➜ Contact Me
                             </button>
                         </div>
@@ -76,11 +87,12 @@ const ProfileCard = () => {
                             {/* Intro */}
                             <div>
                                 <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-                                    Hey, I'm Yashindi Bhagya, a final-year BSc (Hons) Computer Science student at NSBM, passionate about building intuitive digital experiences that blend design and functionality.
+                                    Hey, I’m Yashindi Bhagya.
+                                    I recently graduated with a BSc (Hons) in Computer Science (Second Class Upper Division) from NSBM affiliated with University of Plymouth UK, and I bring over 1 year of hands-on experience in UI/UX design.
                                     <br /><br />
-                                    With over a year of hands-on experience in UI/UX design, I specialize in user research, wireframing, and prototyping using tools like Figma, Adobe Photoshop, and Canva.
+                                    My journey began with crafting intuitive interfaces and engaging user experiences using tools like Figma, Photoshop, and Canva. Over time, my passion for building beyond visuals led me into the world of mobile app development with React Native.
                                     <br /><br />
-                                    Beyond design, I develop mobile applications using React Native and create interactive games with Unity and C#. I enjoy turning ideas into real-world solutions whether it's a learning app, a game, or a user-centric platform.
+                                    Now, I’m focused on blending design thinking with technical development to create apps that feel seamless, purposeful, and enjoyable to use. I’m always excited to learn, collaborate, and bring ideas to life, whether it’s a mobile app, a user-centric platform, or something entirely new.
                                     <br /><br />
                                     I'm always eager to learn, collaborate, and take on challenges that push my creative and technical skills forward.
                                 </p>
