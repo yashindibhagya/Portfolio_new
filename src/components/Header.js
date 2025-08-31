@@ -389,19 +389,19 @@ const mobileMenuButtonContainerStyle = {
 };
 
 const mobileMenuButtonBottomStyle = {
-    backgroundColor: '#f0f0f3',
+    background: '#f0f0f3',
     border: 'none',
-    padding: '12px',
+    padding: '14px',
     borderRadius: '50%',
     cursor: 'pointer',
-    boxShadow: '8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff',
+    boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: '#1f2937',
-    transition: 'all 0.3s ease',
-    width: '56px',
-    height: '56px',
+    transition: 'all 0.25s ease',
+    width: '60px',
+    height: '60px',
 };
 
 const mobileGreenDotStyle = {
@@ -429,18 +429,16 @@ const mobileMenuStyle = {
     position: 'absolute',
     bottom: '100px',
     right: '20px',
-    width: '280px',
-    background: 'rgba(255, 255, 255, 0.25)',
-    backdropFilter: 'blur(18px)',
-    WebkitBackdropFilter: 'blur(18px)',
-    borderRadius: '20px',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
+    width: '300px',
+    background: '#f0f0f3',
+    borderRadius: '25px',
+    border: '1px solid rgba(255, 255, 255, 0.6)',
     boxShadow: `
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 4px 4px 8px rgba(255, 255, 255, 0.6),
-        inset -4px -4px 8px rgba(0, 0, 0, 0.05)
+        10px 10px 20px #d1d9e6,
+        -10px -10px 20px #ffffff
     `,
     overflow: 'hidden',
+    animation: 'slideUp 0.35s ease',
 };
 
 const mobileMenuHeaderStyle = {
@@ -491,33 +489,34 @@ const mobileNavLinkStyle = {
     textDecoration: 'none',
     fontWeight: '500',
     fontSize: '16px',
-    padding: '12px 18px',
-    borderRadius: '12px',
-    backgroundColor: '#f0f0f3',
+    padding: '14px 20px',
+    borderRadius: '15px',
+    background: '#f0f0f3',
     boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.25s ease',
     textAlign: 'center',
 };
 
+
 const mobileActiveLinkStyle = {
     fontWeight: '600',
-    backgroundColor: '#e0e0e0',
-    boxShadow: 'inset 4px 4px 8px rgba(192, 192, 192, 0.61), inset -4px -4px 8px #ffffff',
+    background: '#e0e0e0',
+    boxShadow: 'inset 6px 6px 12px #c9ced8, inset -6px -6px 12px #ffffff',
 };
 
 const mobileResumeButtonStyle = {
-    backgroundColor: '#f0f0f3',
+    background: '#f0f0f3',
     color: '#3b82f6',
-    border: 'none',
     padding: '14px 20px',
-    borderRadius: '15px',
+    borderRadius: '18px',
     fontWeight: '600',
     fontSize: '16px',
     boxShadow: '6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff',
     textDecoration: 'none',
     textAlign: 'center',
     display: 'block',
-    marginTop: '8px',
+    marginTop: '12px',
+    transition: 'all 0.25s ease',
 };
 
 export default Header;
