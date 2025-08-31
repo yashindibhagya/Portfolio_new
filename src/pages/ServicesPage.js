@@ -7,7 +7,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow mt-10">
         <Services />
       </main>
       <Footer />
