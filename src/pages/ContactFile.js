@@ -156,121 +156,121 @@ const Contact = () => {
 
 
 
-                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-                                {/* Contact info */}
-                                <div className="lg:col-span-5 space-y-6 sm:space-y-6">
-                                    <ContactCard
-                                        icon={<span className="text-gray-600 text-lg sm:text-xl">📧</span>}
-                                        title="Email"
-                                        value={contactInfo.email}
-                                    />
-                                    <ContactCard
-                                        icon={<span className="text-gray-600 text-lg sm:text-xl">📞</span>}
-                                        title="Phone"
-                                        value={contactInfo.phone}
-                                    />
-                                    <ContactCard
-                                        icon={<span className="text-gray-600 text-lg sm:text-xl">📍</span>}
-                                        title="Location"
-                                        value={contactInfo.location}
-                                    />
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+                        {/* Contact info */}
+                        <div className="lg:col-span-5 space-y-6 sm:space-y-6">
+                            <ContactCard
+                                icon={<span className="text-gray-600 text-lg sm:text-xl">📧</span>}
+                                title="Email"
+                                value={contactInfo.email}
+                            />
+                            <ContactCard
+                                icon={<span className="text-gray-600 text-lg sm:text-xl">📞</span>}
+                                title="Phone"
+                                value={contactInfo.phone}
+                            />
+                            <ContactCard
+                                icon={<span className="text-gray-600 text-lg sm:text-xl">📍</span>}
+                                title="Location"
+                                value={contactInfo.location}
+                            />
 
-                                    {/* Social Links */}
-                                    <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center lg:justify-start">
-                                        {socialLinks.map((social) => (
-                                            <a
-                                                key={social.name}
-                                                href={social.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
-                                            >
-                                                <span className="text-gray-600 text-sm sm:text-base">{social.icon}</span>
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
+                            {/* Social Links */}
+                            <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6 justify-center lg:justify-start">
+                                {socialLinks.map((social) => (
+                                    <a
+                                        key={social.name}
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#E0E5E] shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all"
+                                    >
+                                        <span className="text-gray-600 text-sm sm:text-base">{social.icon}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
 
-                                {/* Contact form */}
-                                <div className="lg:col-span-7">
-                                    <div className="p-1 rounded-xl sm:rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
-                                        <div className="p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl">
-                                            {formStatus.status === "success" ? (
-                                                <div className="flex flex-col items-center justify-center py-8 sm:py-10 text-center">
-                                                    <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full bg-green-200 shadow-inner mb-3 sm:mb-4 text-lg sm:text-xl">
-                                                        ✅
-                                                    </div>
-                                                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-                                                        Message Sent!
-                                                    </h3>
-                                                    <p className="text-sm sm:text-base text-gray-600 mb-6 px-4">
-                                                        Thanks for reaching out. I'll get back to you shortly.
-                                                    </p>
-                                                </div>
-                                            ) : (
-                                                <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-                                                        <input
-                                                            type="text"
-                                                            name="from_name"
-                                                            value={formData.name}
-                                                            onChange={handleChange}
-                                                            placeholder="Name"
-                                                            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
-                                                            required
-                                                        />
-                                                        <input
-                                                            type="email"
-                                                            name="from_email"
-                                                            value={formData.email}
-                                                            onChange={handleChange}
-                                                            placeholder="Email"
-                                                            className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
-                                                            required
-                                                        />
-                                                    </div>
-
-                                                    <input
-                                                        type="text"
-                                                        name="subject"
-                                                        value={formData.subject}
-                                                        onChange={handleChange}
-                                                        placeholder="Subject"
-                                                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
-                                                        required
-                                                    />
-
-                                                    <textarea
-                                                        name="message"
-                                                        value={formData.message}
-                                                        onChange={handleChange}
-                                                        rows={window.innerWidth < 640 ? 4 : 5}
-                                                        placeholder="Your message..."
-                                                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
-                                                        required
-                                                    />
-
-                                                    {formStatus.status === "error" && (
-                                                        <div className="p-3 rounded-lg bg-red-100 text-red-600 text-sm">
-                                                            {formStatus.message}
-                                                        </div>
-                                                    )}
-
-                                                    <button
-                                                        type="submit"
-                                                        disabled={formStatus.status === "submitting"}
-                                                        className="w-full py-3 sm:py-3.5 px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
-                                                    >
-                                                        {formStatus.status === "submitting"
-                                                            ? "Sending..."
-                                                            : "Send Message"}
-                                                    </button>
-                                                </form>
-                                            )}
+                        {/* Contact form */}
+                        <div className="lg:col-span-7">
+                            <div className="p-1 rounded-xl sm:rounded-2xl bg-[#E0E5E] shadow-[9px_9px_16px_#bec3c9,-9px_-9px_16px_#ffffff]">
+                                <div className="p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl">
+                                    {formStatus.status === "success" ? (
+                                        <div className="flex flex-col items-center justify-center py-8 sm:py-10 text-center">
+                                            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center rounded-full bg-green-200 shadow-inner mb-3 sm:mb-4 text-lg sm:text-xl">
+                                                ✅
+                                            </div>
+                                            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                                                Message Sent!
+                                            </h3>
+                                            <p className="text-sm sm:text-base text-gray-600 mb-6 px-4">
+                                                Thanks for reaching out. I'll get back to you shortly.
+                                            </p>
                                         </div>
-                                    </div>
+                                    ) : (
+                                        <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                                                <input
+                                                    type="text"
+                                                    name="from_name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    placeholder="Name"
+                                                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    required
+                                                />
+                                                <input
+                                                    type="email"
+                                                    name="from_email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    placeholder="Email"
+                                                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                    required
+                                                />
+                                            </div>
+
+                                            <input
+                                                type="text"
+                                                name="subject"
+                                                value={formData.subject}
+                                                onChange={handleChange}
+                                                placeholder="Subject"
+                                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none"
+                                                required
+                                            />
+
+                                            <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                rows={window.innerWidth < 640 ? 4 : 5}
+                                                placeholder="Your message..."
+                                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-[#E0E5E] text-gray-700 text-sm sm:text-base shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] focus:outline-none resize-none"
+                                                required
+                                            />
+
+                                            {formStatus.status === "error" && (
+                                                <div className="p-3 rounded-lg bg-red-100 text-red-600 text-sm">
+                                                    {formStatus.message}
+                                                </div>
+                                            )}
+
+                                            <button
+                                                type="submit"
+                                                disabled={formStatus.status === "submitting"}
+                                                className="w-full py-3 sm:py-3.5 px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
+                                            >
+                                                {formStatus.status === "submitting"
+                                                    ? "Sending..."
+                                                    : "Send Message"}
+                                            </button>
+                                        </form>
+                                    )}
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,6 +1,7 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Favicon from './components/Favicon';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Favicon />
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">

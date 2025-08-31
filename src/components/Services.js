@@ -55,28 +55,32 @@ export default function ServicesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ServiceCard
                         icon={<Feather className="w-6 h-6 text-gray-700" />}
-                        title="UX & UI"
-                        description="Crafting seamless, user-friendly interfaces that enhance engagement and usability."
+                        title="UI / UX"
+                        description="Designing intuitive and user-friendly digital experiences that balance functionality with aesthetics."
                         imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=60"
                     />
+
                     <ServiceCard
                         icon={<Box className="w-6 h-6 text-white" />}
                         title="Mobile Application Development"
-                        description="Building high-performance, interactive websites using Framer’s powerful design and development tools for seamless user experiences."
+                        description="Developing fast, reliable, and scalable mobile applications tailored to your business needs."
                         iconDark
                     />
+
                     <ServiceCard
                         icon={<Monitor className="w-6 h-6 text-white" />}
                         title="Interactive Web Experiences"
-                        description="Interactive websites with Framer’s advanced design and development tools to deliver smooth and engaging user experiences."
+                        description="Building dynamic and engaging websites that keep users immersed through seamless interactivity."
                         iconDark
                     />
+
                     <ServiceCard
                         icon={<Brush className="w-6 h-6 text-gray-700" />}
                         title="Design & Creativity"
-                        description="Creating visually compelling designs that truly resonate with your target audience and brand."
+                        description="Bringing ideas to life with bold, innovative visuals that capture attention and elevate your brand."
                         imageUrl="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=60"
                     />
+
                 </div>
             </div>
         </section>
