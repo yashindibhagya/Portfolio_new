@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, ChevronDown, ChevronUp } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const faqData = [
     { question: "What services do you offer?", answer: "I specialize in UI/UX design and mobile app development with React Native, while also bringing experience in web design, branding, and prototyping. My focus is on creating modern, user-friendly, and impactful digital experiences tailored to your goals." },
@@ -28,11 +27,6 @@ const FAQs = () => {
     const [openIndex, setOpenIndex] = useState(0);
     const toggleIndex = (index) => setOpenIndex(openIndex === index ? null : index);
     const navigate = useNavigate();
-    const location = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
 
     return (
         <section className="w-full h-full flex items-center justify-center px-6 py-16 relative z-10">
@@ -63,10 +57,7 @@ const FAQs = () => {
                         </p>
                         <div className="flex justify-center">
                             <button
-                                onClick={() => {
-                                    navigate('/contact');
-                                    window.scrollTo(0, 0);
-                                }}
+                                onClick={() => navigate('/contact')}
                                 className="px-5 py-2 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Ask A Question
                             </button>
