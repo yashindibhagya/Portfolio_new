@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 
 // Map projects data to the required format
@@ -10,6 +11,13 @@ const projects = projectsData.map(project => ({
 }));
 
 const MarqueeProjects = () => {
+    const navigate = useNavigate();
+
+    const handleProjectClick = (projectId) => {
+        navigate(`/project/${projectId}`);
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="relative w-full overflow-hidden py-6 sm:py-10 -mt-60 sm:-mt-80 md:-mt-60 lg:mt-10 xl:-mt-20">
             {/* Left fade gradient */}
@@ -23,8 +31,9 @@ const MarqueeProjects = () => {
                 {[...projects, ...projects].map((project, idx) => (
                     <motion.div
                         key={`${project.id}-${idx}`}
-                        className="w-[250px] h-[150px] sm:w-[300px] sm:h-[200px] md:w-[350px] md:h-[250px] flex-shrink-0 rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-lg relative bg-white dark:bg-gray-800 bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-300 hover:scale-105 transition-transform duration-300 transform neumorphism"
+                        className="w-[250px] h-[150px] sm:w-[300px] sm:h-[200px] md:w-[350px] md:h-[250px] flex-shrink-0 rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-lg relative bg-white dark:bg-gray-800 bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-300 hover:scale-105 transition-transform duration-300 transform neumorphism cursor-pointer"
                         whileHover={{ scale: 1.03 }}
+                        onClick={() => handleProjectClick(project.id)}
                     >
                         <img
                             src={project.img}

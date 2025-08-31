@@ -75,7 +75,10 @@ const ProfileCard = () => {
 
                             {/* Contact Button */}
                             <button
-                                onClick={() => navigate('/contact')}
+                                onClick={() => {
+                                    navigate('/contact');
+                                    window.scrollTo(0, 0);
+                                }}
                                 className="w-full mt-4 sm:mt-6 py-2.5 sm:py-3.5 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-xs sm:text-sm md:text-base shadow-[4px_4px_8px_#00005D,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#00005D,inset_-4px_-4px_8px_#0000FF] sm:hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all"
                             >
                                 ➜ Contact Me

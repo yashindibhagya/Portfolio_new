@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import { motion } from 'framer-motion';
@@ -6,14 +6,53 @@ import {
     SiFigma, SiAdobephotoshop, SiReact, SiFirebase,
     SiCloudinary, SiTailwindcss, SiNodedotjs, SiCanva,
     SiVercel, SiGithub, SiBehance, SiBootstrap,
-    SiJavascript, SiHtml5, SiCss3
+    SiJavascript, SiHtml5, SiCss3, SiPython, SiOpencv, SiTensorflow
 } from 'react-icons/si';
+import ImageViewer from './ImageViewer';
 
 
 const ProjectDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = projectsData.find(p => p.id === parseInt(id));
+
+    // State for image viewer
+    const [viewerState, setViewerState] = useState({
+        isOpen: false,
+        currentIndex: 0
+    });
+
+    // Get all project images for the viewer
+    const allImages = [project.image, ...(project.additionalImages || [])].filter(Boolean);
+
+    // Open image viewer
+    const openImageViewer = useCallback((index = 0) => {
+        setViewerState({
+            isOpen: true,
+            currentIndex: index
+        });
+    }, []);
+
+    // Close image viewer
+    const closeImageViewer = useCallback(() => {
+        setViewerState(prev => ({ ...prev, isOpen: false }));
+    }, []);
+
+    // Navigate to next image
+    const goToNext = useCallback(() => {
+        setViewerState(prev => ({
+            ...prev,
+            currentIndex: (prev.currentIndex + 1) % allImages.length
+        }));
+    }, [allImages.length]);
+
+    // Navigate to previous image
+    const goToPrev = useCallback(() => {
+        setViewerState(prev => ({
+            ...prev,
+            currentIndex: (prev.currentIndex - 1 + allImages.length) % allImages.length
+        }));
+    }, [allImages.length]);
 
     if (!project) return <div>Project not found</div>;
 
@@ -34,27 +73,32 @@ const ProjectDetails = () => {
         'Bootstrap': { icon: SiBootstrap, color: '#0000B9' },
         'JavaScript': { icon: SiJavascript, color: '#0000B9' },
         'HTML5': { icon: SiHtml5, color: '#0000B9' },
-        'CSS3': { icon: SiCss3, color: '#0000B9' }
+        'CSS3': { icon: SiCss3, color: '#0000B9' },
+        'Python': { icon: SiPython, color: '#0000B9' },
+        'OpenCV': { icon: SiOpencv, color: '#0000B9' },
+        'TensorFlow': { icon: SiTensorflow, color: '#0000B9' }
     };
 
 
     const ToolIconWithTooltip = ({ tool, toolData }) => {
         const [hover, setHover] = useState(false);
         return (
-            <div
-                className="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-                tabIndex={0}
-                aria-label={tool}
-            >
-                {toolData ? (
-                    <toolData.icon color={toolIcons[tool]?.color || '#3498db'} className="w-5 h-5" />
-                ) : (
-                    <span className="text-xs text-gray-700">{tool}</span>
-                )}
+            <div className="relative">
+                <div
+                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                    tabIndex={0}
+                    aria-label={tool}
+                >
+                    {toolData ? (
+                        <toolData.icon color={toolIcons[tool]?.color || '#3498db'} className="w-5 h-5" />
+                    ) : (
+                        <span className="text-xs text-gray-700">{tool}</span>
+                    )}
+                </div>
                 {hover && (
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-white text-gray-800 text-xs rounded-lg shadow-md whitespace-nowrap z-10">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-white text-gray-800 text-xs rounded-lg shadow-md whitespace-nowrap z-50">
                         {tool}
                     </div>
                 )}
@@ -71,6 +115,15 @@ const ProjectDetails = () => {
 
     return (
         <div className="min-h-screen pt-16 sm:pt-20 pb-6 sm:pb-8">
+            {viewerState.isOpen && (
+                <ImageViewer
+                    images={allImages}
+                    currentIndex={viewerState.currentIndex}
+                    onClose={closeImageViewer}
+                    onNext={goToNext}
+                    onPrev={goToPrev}
+                />
+            )}
             <div className="max-w-6xl w-full mx-auto font-sans px-4 sm:px-6">
                 {/* 🔝 Header Section */}
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 py-8">
@@ -102,19 +155,16 @@ const ProjectDetails = () => {
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Tools</p>
-                            <div className="grid grid-cols-3 sm:grid-cols-2 gap-2 w-full"> {/* Reduced gap here */}
+                            <div className="grid grid-cols-4 gap-2 w-full">
                                 {project.tools.map((tool) => {
                                     const toolData = toolIcons[tool];
                                     return (
-                                        <div key={tool} className="flex items-center gap-1 sm:gap-2">
-                                            <div className="flex-shrink-0">
-                                                <ToolIconWithTooltip tool={tool} toolData={toolData} />
-                                            </div>
+                                        <div key={tool} className="flex justify-center">
+                                            <ToolIconWithTooltip tool={tool} toolData={toolData} />
                                         </div>
                                     );
                                 })}
                             </div>
-
                         </div>
                         <div>
                             <p style={metaLabelStyle}>Type</p>
@@ -128,15 +178,22 @@ const ProjectDetails = () => {
                 </div>
 
                 <div style={{ textAlign: 'center', marginBottom: window.innerWidth < 768 ? '40px' : '60px' }}>
-                    <img
-                        src={project.mockupImage}
-                        alt={`${project.title} Mockup`}
-                        style={{
-                            maxWidth: '100%',
-                            borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                            boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
-                        }}
-                    />
+                    <motion.div
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
+                        onClick={() => openImageViewer(0)}
+                        className="cursor-zoom-in"
+                    >
+                        <img
+                            src={project.mockupImage}
+                            alt={`${project.title} Mockup`}
+                            style={{
+                                maxWidth: '100%',
+                                borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+                            }}
+                        />
+                    </motion.div>
                 </div>
 
 
@@ -217,17 +274,18 @@ const ProjectDetails = () => {
                         alignItems: window.innerWidth < 640 ? 'center' : 'flex-start'
                     }}>
                         {project.uiScreens.map(screen => (
-                            <img
-                                key={screen.id}
-                                src={screen.image}
-                                alt={`Screen ${screen.id}`}
-                                style={{
-                                    ...screenImageStyle,
-                                    width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
-                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
-                                }}
-                            />
+                            <div key={screen.id}>
+                                <img
+                                    src={screen.image}
+                                    alt={`Screen ${screen.id}`}
+                                    style={{
+                                        ...screenImageStyle,
+                                        width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
+                                        borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                        boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
+                                    }}
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -258,49 +316,31 @@ const ProjectDetails = () => {
                                 .filter(p => p.type === project.type && p.id !== project.id)
                                 .slice(0, 3)
                                 .map(related => (
-                                    <div
-                                        key={related.id}
-                                        className="group bg-[#f2f2f2] rounded-2xl overflow-hidden shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300 cursor-pointer"
-                                        onClick={() => navigate(`/project/${related.id}`)}
-                                    >
-                                        {/* Image */}
-                                        <div className="relative overflow-hidden rounded-t-2xl">
-                                            <img
-                                                src={related.image}
-                                                alt={related.title}
-                                                className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                        </div>
+                                    <div key={related.id} className="p-4 sm:p-6">
+                                        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{related.title}</h3>
+                                        <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base">{related.description}</p>
 
-                                        {/* Content */}
-                                        <div className="p-4 sm:p-6">
-                                            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{related.title}</h3>
-                                            <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base">{related.description}</p>
-
-                                            {/* Tags */}
-                                            <div className="flex flex-wrap gap-1 sm:gap-2 mb-2">
-                                                {related.tools && related.tools.slice(0, 3).map((tech, index) => (
-                                                    <span
-                                                        key={index}
-                                                        className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
-                                                    >
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                                {related.tools && related.tools.length > 3 && (
-                                                    <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
-                                                        +{related.tools.length - 3}
-                                                    </span>
-                                                )}
-                                            </div>
+                                        {/* Tags */}
+                                        <div className="flex flex-wrap gap-1 sm:gap-2 mb-2">
+                                            {related.tools && related.tools.slice(0, 3).map((tech, index) => (
+                                                <span
+                                                    key={index}
+                                                    className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                            {related.tools && related.tools.length > 3 && (
+                                                <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
+                                                    +{related.tools.length - 3}
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

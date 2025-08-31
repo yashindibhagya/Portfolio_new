@@ -339,7 +339,7 @@ export const projectsData = [
             "Cross-Platform Integration",
             "Performance Optimization"
         ],
-        tools: ["React Native", "Firebase", "Cloudinary"],
+        tools: ["React Native", "Python", "OpenCV", "TensorFlow", "Node.js", "Firebase", "Cloudinary"],
         uiScreens: gesturemock,
         conclusion: "GestureConnect represents a significant advancement in assistive technology for the deaf and hard of hearing community. By combining cutting-edge machine learning, computer vision, and mobile technology, the project addresses a critical social need while promoting inclusivity and accessibility. The application's comprehensive approach—serving as both a communication tool and educational platform—positions it to make a lasting impact on how deaf and hearing individuals interact. With its focus on real-time translation, user-friendly design, and cross-platform accessibility, GestureConnect has the potential to transform daily interactions in healthcare, workplace, and social settings. This final year project not only showcases technical expertise in machine learning and mobile development but also demonstrates a commitment to using technology for social good, making it a valuable contribution to both the academic and social landscape.",
         websiteUrl: "https://github.com/yashindibhagya/GestureConnect"

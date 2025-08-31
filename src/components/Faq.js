@@ -63,7 +63,10 @@ const FAQs = () => {
                         </p>
                         <div className="flex justify-center">
                             <button
-                                onClick={() => navigate('/contact')}
+                                onClick={() => {
+                                    navigate('/contact');
+                                    window.scrollTo(0, 0);
+                                }}
                                 className="px-5 py-2 rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Ask A Question
                             </button>
