@@ -103,6 +103,20 @@ export const coffeeShop = [
     { id: 9, image: '/assets/img/coffeeShop/9.png' },
     { id: 10, image: '/assets/img/coffeeShop/10.png' },
 ];
+export const travelmock = [
+    { id: 1, image: '/assets/img/travel/1.png' },
+    { id: 2, image: '/assets/img/travel/2.png' },
+    { id: 3, image: '/assets/img/travel/3.png' },
+    { id: 4, image: '/assets/img/travel/4.png' },
+    { id: 5, image: '/assets/img/travel/5.png' },
+    { id: 6, image: '/assets/img/travel/6.png' },
+    { id: 7, image: '/assets/img/travel/7.png' },
+    { id: 8, image: '/assets/img/travel/8.png' },
+    { id: 9, image: '/assets/img/travel/9.png' },
+    { id: 10, image: '/assets/img/travel/10.png' },
+];
+
+
 
 // Projects data
 export const projectsData = [
@@ -188,6 +202,32 @@ export const projectsData = [
     },
     {
         id: 4,
+        title: "LANKA TRAVEL BUDDY APP",
+        subtitle: "A seamless travel planning app designed to explore Sri Lanka effortlessly",
+        category: "UI/UX Design | Mobile App",
+        duration: "3 WEEKS",
+        type: "uiux",
+        image: "/assets/img/travel.jpg",
+        mockupImage: "/assets/img/travel.jpg",
+        description: "Lanka Travel Buddy is a mobile application designed to simplify trip planning and enhance the travel experience in Sri Lanka. With intuitive navigation, personalized recommendations, and smart planning tools, the app empowers travelers to explore the island’s culture, heritage, and hidden gems with confidence.",
+        overview: "The project focuses on creating a user-friendly mobile app that supports travelers in discovering locations, building trip itineraries, and saving favourite spots. By combining location-based features and simple design, the app delivers a smooth and engaging travel experience.",
+        brandOverview: "Sri Lanka, often called the 'Pearl of the Indian Ocean,' is a vibrant travel destination. Lanka Travel Buddy embodies this identity by highlighting cultural richness, natural beauty, and warm hospitality. The app design reflects modern aesthetics while keeping local authenticity at its core.",
+        challenge: "Many travelers struggle with fragmented information, lack of organized itineraries, and the difficulty of balancing spontaneous discovery with structured planning. Existing apps often feel overwhelming or too generic, making it hard to focus on Sri Lanka-specific experiences.",
+        solution: "Lanka Travel Buddy provides an all-in-one platform to explore destinations, create day-by-day itineraries, and save favourite places. With location-based features, simple navigation, and personalization, the app bridges the gap between planning and on-the-go travel assistance.",
+        features: [
+            "Home: View nearby attractions and personalized recommendations based on location",
+            "Explore: Search destinations, discover hidden gems, and add them to plan or favourites",
+            "Plan: Build customized itineraries with days and locations for a well-structured trip",
+            "Favourites: Save must-visit locations for easy access during the trip",
+            "Location-based Services: Navigate current location and explore nearby highlights"
+        ],
+        tools: ["Figma", "Adobe Photoshop"],
+        uiScreens: travelmock,
+        conclusion: "Lanka Travel Buddy demonstrates how thoughtful design can enhance travel experiences by blending simplicity, personalization, and functionality. The app not only helps tourists plan better but also highlights the unique beauty of Sri Lanka. It represents a step toward designing tools that make global exploration easier.",
+        websiteUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design"
+    },
+    {
+        id: 5,
         title: "THE BAKERY SHOP",
         subtitle: "Handcrafted Delights, Baked to Impress",
         category: "Food & Beverage E-commerce",
@@ -213,7 +253,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-"
     },
     {
-        id: 5,
+        id: 6,
         title: "FLORONA",
         subtitle: "Nurturing Nature - Your Green Oasis Awaits",
         category: "E-commerce & Retail Design",
@@ -239,7 +279,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-"
     },
     {
-        id: 6,
+        id: 7,
         title: "BEANLINE",
         subtitle: "A mobile-first coffee shop app designed for seamless browsing and ordering",
         category: "Mobile App Design · UI/UX · Coffee & Lifestyle",
@@ -265,7 +305,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
-        id: 7,
+        id: 8,
         title: "E-LEARNING",
         subtitle: "Home Enterprises",
         category: "E-Commerce",
@@ -291,7 +331,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 8,
+        id: 9,
         title: "INSURANCE",
         subtitle: "Task Management & Earnings Tracker for Service Professionals",
         category: "Productivity & Finance Management Mobile Application",
@@ -317,7 +357,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 9,
+        id: 10,
         title: "GESTURECONNECT",
         subtitle: "Real-Time Sign Language Translation and Learning Platform for Enhanced Deaf-Hearing Communication",
         category: "Machine Learning Application",
@@ -345,7 +385,7 @@ export const projectsData = [
         websiteUrl: "https://github.com/yashindibhagya/GestureConnect"
     },
     {
-        id: 10,
+        id: 11,
         title: "NATURE WONDERS",
         subtitle: "Discovering Sri Lanka's Hidden Forest Treasures",
         category: "Environmental & Conservation Web Design",
@@ -371,7 +411,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park"
     },
     {
-        id: 11,
+        id: 12,
         title: "EVENT EDGE",
         subtitle: "Home Enterprises",
         category: "Event Management Platform",
@@ -397,7 +437,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment"
     },
     {
-        id: 12,
+        id: 13,
         title: "EPICUREAN DELIGHT",
         subtitle: "Experience luxury accommodations with world-class amenities and exceptional hospitality in the heart of the city.",
         category: "Luxury Hotel & Hospitality Website",
@@ -423,7 +463,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms"
     },
     {
-        id: 13,
+        id: 14,
         title: "TROPICAL WATER",
         subtitle: "Pure, high-quality water solutions with reliable island-wide delivery, ensuring pure hydration reaches your doorstep.",
         category: "Beverage & Water Solutions",
@@ -449,7 +489,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere"
     },
     {
-        id: 14,
+        id: 15,
         title: "FOREST HAVEN",
         subtitle: "Discover amazing wildlife and conservation through immersive experiences and educational programs.",
         category: "Zoo & Wildlife Conservation Website",
