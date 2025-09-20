@@ -133,7 +133,7 @@ export const projectsData = [
         duration: "4 WEEKS",
         type: "uiux",
         image: "/assets/img/boc.png",
-        mockupImage: "/assets/img/nike.png",
+        mockupImage: "/assets/img/boc.png",
         description: "A sleek and modern Nike landing page designed to showcase the latest and most popular shoes, promote the Nike app, and deliver a smooth shopping experience.",
         overview: "The landing page is designed to deliver a seamless shopping experience while reinforcing Nike's core brand values—comfort, quality, and style. It includes dynamic product displays, intuitive navigation, and app promotion, appealing to both desktop and mobile users.",
         brandOverview: "Nike is a globally recognized brand known for innovation, performance, and iconic style in sportswear. This landing page upholds Nike's reputation by integrating strong visual identity elements like the Swoosh logo, bold fonts, and athletic product imagery. The tone is confident, energetic, and modern—mirroring Nike's 'Just Do It' philosophy.",
@@ -148,9 +148,9 @@ export const projectsData = [
             "Footer with categorized navigation and social links"
         ],
         tools: ["Figma", "Adobe Photoshop"],
-        uiScreens: nikemock,
+        uiScreens: bocmock,
         conclusion: "The design captures Nike s brand essence while offering an efficient and stylish shopping experience. It s user-focused, visually striking, and built to convert visitors into loyal customers",
-        websiteUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey"
+        websiteUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign"
     },
     {
         id: 2,
