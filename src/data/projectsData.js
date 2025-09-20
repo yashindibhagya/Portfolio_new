@@ -115,13 +115,45 @@ export const travelmock = [
     { id: 9, image: '/assets/img/travel/9.png' },
     { id: 10, image: '/assets/img/travel/10.png' },
 ];
-
-
+export const bocmock = [
+    { id: 1, image: '/assets/img/boc/0.png' },
+    { id: 2, image: '/assets/img/boc/1.png' },
+    { id: 3, image: '/assets/img/boc/2.png' },
+    { id: 4, image: '/assets/img/boc/3.png' },
+    { id: 5, image: '/assets/img/boc/4.png' },
+];
 
 // Projects data
 export const projectsData = [
     {
         id: 1,
+        title: "BOC App Redesign",
+        subtitle: "Empowering Every Step with Style, Comfort, and Innovation.",
+        category: "UI/UX Design",
+        duration: "4 WEEKS",
+        type: "uiux",
+        image: "/assets/img/boc.png",
+        mockupImage: "/assets/img/nike.png",
+        description: "A sleek and modern Nike landing page designed to showcase the latest and most popular shoes, promote the Nike app, and deliver a smooth shopping experience.",
+        overview: "The landing page is designed to deliver a seamless shopping experience while reinforcing Nike's core brand values—comfort, quality, and style. It includes dynamic product displays, intuitive navigation, and app promotion, appealing to both desktop and mobile users.",
+        brandOverview: "Nike is a globally recognized brand known for innovation, performance, and iconic style in sportswear. This landing page upholds Nike's reputation by integrating strong visual identity elements like the Swoosh logo, bold fonts, and athletic product imagery. The tone is confident, energetic, and modern—mirroring Nike's 'Just Do It' philosophy.",
+        challenge: "To create a visually appealing and highly functional landing page that: Highlights Nike s latest and most popular footwear collections. Encourages user engagement and exploration. Provides a smooth shopping experience across all devices. Promotes the Nike mobile app effectively.",
+        solution: "To address these challenges, the design incorporates bold typography, strong product visuals, and a clear layout that prioritizes user engagement. The product sections are organized for quick browsing, while strategically placed call-to-actions guide users through the experience. The mobile app section and clean footer complete the journey, reinforcing Nike s omnichannel presence.",
+        features: [
+            "Hero section with bold branding and featured product",
+            "Search bar and minimal top navigation",
+            "Interactive product cards with pricing and 'add' options",
+            "Sections for latest collection and popular products",
+            "Dedicated Nike App promotion with QR code",
+            "Footer with categorized navigation and social links"
+        ],
+        tools: ["Figma", "Adobe Photoshop"],
+        uiScreens: nikemock,
+        conclusion: "The design captures Nike s brand essence while offering an efficient and stylish shopping experience. It s user-focused, visually striking, and built to convert visitors into loyal customers",
+        websiteUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey"
+    },
+    {
+        id: 2,
         title: "NIKE",
         subtitle: "Empowering Every Step with Style, Comfort, and Innovation.",
         category: "UI/UX Design",
@@ -148,7 +180,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey"
     },
     {
-        id: 2,
+        id: 3,
         title: "BURGER HOUSE",
         subtitle: "Sizzling Designs that Serve Cravings and Conversions.",
         category: "E-Commerce",
@@ -174,7 +206,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
-        id: 3,
+        id: 4,
         title: "DOCNET",
         subtitle: "Transforming Healthcare Communication Through User-Centered Design",
         category: "Healthcare & Medical Web Design",
@@ -201,7 +233,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
     },
     {
-        id: 4,
+        id: 5,
         title: "LANKA TRAVEL BUDDY APP",
         subtitle: "A seamless travel planning app designed to explore Sri Lanka effortlessly",
         category: "UI/UX Design | Mobile App",
@@ -227,7 +259,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design"
     },
     {
-        id: 5,
+        id: 6,
         title: "THE BAKERY SHOP",
         subtitle: "Handcrafted Delights, Baked to Impress",
         category: "Food & Beverage E-commerce",
@@ -253,7 +285,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-"
     },
     {
-        id: 6,
+        id: 7,
         title: "FLORONA",
         subtitle: "Nurturing Nature - Your Green Oasis Awaits",
         category: "E-commerce & Retail Design",
@@ -279,7 +311,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-"
     },
     {
-        id: 7,
+        id: 8,
         title: "BEANLINE",
         subtitle: "A mobile-first coffee shop app designed for seamless browsing and ordering",
         category: "Mobile App Design · UI/UX · Coffee & Lifestyle",
@@ -305,7 +337,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
-        id: 8,
+        id: 9,
         title: "E-LEARNING",
         subtitle: "Home Enterprises",
         category: "E-Commerce",
@@ -331,7 +363,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 9,
+        id: 10,
         title: "INSURANCE",
         subtitle: "Task Management & Earnings Tracker for Service Professionals",
         category: "Productivity & Finance Management Mobile Application",
@@ -357,7 +389,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 10,
+        id: 11,
         title: "GESTURECONNECT",
         subtitle: "Real-Time Sign Language Translation and Learning Platform for Enhanced Deaf-Hearing Communication",
         category: "Machine Learning Application",
@@ -385,7 +417,7 @@ export const projectsData = [
         websiteUrl: "https://github.com/yashindibhagya/GestureConnect"
     },
     {
-        id: 11,
+        id: 12,
         title: "NATURE WONDERS",
         subtitle: "Discovering Sri Lanka's Hidden Forest Treasures",
         category: "Environmental & Conservation Web Design",
@@ -411,7 +443,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park"
     },
     {
-        id: 12,
+        id: 13,
         title: "EVENT EDGE",
         subtitle: "Home Enterprises",
         category: "Event Management Platform",
@@ -437,7 +469,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment"
     },
     {
-        id: 13,
+        id: 14,
         title: "EPICUREAN DELIGHT",
         subtitle: "Experience luxury accommodations with world-class amenities and exceptional hospitality in the heart of the city.",
         category: "Luxury Hotel & Hospitality Website",
@@ -463,7 +495,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms"
     },
     {
-        id: 14,
+        id: 15,
         title: "TROPICAL WATER",
         subtitle: "Pure, high-quality water solutions with reliable island-wide delivery, ensuring pure hydration reaches your doorstep.",
         category: "Beverage & Water Solutions",
@@ -489,7 +521,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere"
     },
     {
-        id: 15,
+        id: 16,
         title: "FOREST HAVEN",
         subtitle: "Discover amazing wildlife and conservation through immersive experiences and educational programs.",
         category: "Zoo & Wildlife Conservation Website",
