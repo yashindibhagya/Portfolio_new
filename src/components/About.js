@@ -56,7 +56,7 @@ const ProfileCard = () => {
                                 available for work
                             </p>
                             <h1 className="text-lg sm:text-xl font-semibold">Yashindi Bhagya</h1>
-                            <p className="text-xs sm:text-sm text-gray-500 mt-1">UI/UX Interaction Designer Based in Berlin.</p>
+                            <p className="text-xs sm:text-sm text-gray-500 mt-1">UI/UX Interaction Designer and Mobile App Developer Based in Sri Lanka.</p>
 
                             {/* Social Links */}
                             <div className="flex gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 justify-center">
