@@ -98,7 +98,7 @@ const Header = () => {
                             </Link>
                         ))}
                         <a
-                            href="../../assets/document/Mobile Application developer.pdf"
+                            href="../../assets/document/Yashindi_Bhagya.pdf"
                             download
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
