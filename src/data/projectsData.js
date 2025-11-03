@@ -207,6 +207,40 @@ export const projectsData = [
     },
     {
         id: 4,
+        title: "FLIGHT FINDER",
+        subtitle: "A secure cross-platform flight booking application",
+        category: "Mobile Application Development / Travel & Transportation",
+        duration: "16 HOURS",
+        type: "mobile",
+        image: "/assets/img/doctor.png",
+        mockupImage: "/assets/img/doctor.png",
+        description: "FlightFinder is a modern mobile application that enables users to search, compare, and view flight options across platforms. Built with React Native and Expo framework, it provides a seamless user experience for booking flights with real-time data integration from RapidAPI's Sky Scrapper service. The app features intelligent airport search with typeahead suggestions, native date pickers, and a clean, intuitive interface designed for both iOS and Android platforms.",
+        overview: "FlightFinder is a comprehensive cross-platform mobile application that revolutionizes the flight booking experience through modern technology and intuitive design. Built on React Native with the Expo framework, the application seamlessly integrates real-time flight data from RapidAPI's Sky Scrapper service to provide users with up-to-date flight information at their fingertips. The app features a sophisticated architecture that includes intelligent airport search with typeahead suggestions, native date selection components, and a beautiful glassmorphic user interface. At its core, FlightFinder leverages Firebase for backend services including authentication, Firestore database, and cloud storage, ensuring secure and scalable data management. The application employs advanced techniques such as debounced API calls, request caching, and exponential backoff retry logic to optimize performance and handle network challenges gracefully. With its file-system-based routing through Expo Router, context-driven state management, and modular service architecture, FlightFinder demonstrates best practices in modern mobile development. The platform offers a complete user journey from browsing flights to managing bookings, all wrapped in a polished interface that works consistently across iOS, Android, and web platforms. Whether users are planning a one-way trip or a round-trip adventure, FlightFinder provides a secure, efficient, and delightful booking experience that puts the user first.",
+        brandOverview: "FlightFinder aims to simplify the flight booking experience by providing users with a secure, efficient, and user-friendly platform to search and manage their travel plans. The brand focuses on accessibility, real-time information, and cross-platform consistency, making flight booking accessible to everyone regardless of their device.",
+        challenge: ["The main challenges in developing FlightFinder included:",
+            "(1) Integrating real-time flight data from external APIs while handling rate limits and transient errors gracefully,",
+            "(2) Implementing efficient airport/city search with debounced typeahead to minimize unnecessary API calls,",
+            "(3) Creating a consistent user experience across iOS, Android, and web platforms", "(4) Managing date selection with platform-specific native components while maintaining logical constraints (return date after departure date)",
+            "(5) Designing a scalable architecture that separates concerns between UI, API logic, and state management."],
+        solution: "The solution involved building a modular architecture using Expo Router for file-system-based routing, React Context for global state management, and abstracted API services with built-in retry logic and caching mechanisms. The flight search API implementation includes exponential backoff for rate limiting, local caching for airport data to reduce redundant calls, and debounced input handlers for the typeahead functionality. Native date pickers were integrated using @react-native-community/datetimepicker for platform-consistent experiences. Firebase services were configured for authentication, Firestore database, and storage, providing a scalable backend infrastructure. The UI was designed with a modern flight theme featuring glassmorphism effects, smooth animations, and responsive layouts.",
+        features: [
+            "Intelligent flight search with one-way and round-trip options",
+            "Real-time airport/city typeahead with debounced API calls",
+            "Native date picker integration with logical date constraints",
+            "Cross-platform support (iOS, Android, Web)",
+            "Modern UI with glassmorphism and smooth animations",
+            "Firebase backend integration for authentication and data storage",
+            "Booking management system with status tracking",
+            "User profile management",
+            "Retry logic with exponential backoff for API resilience",
+        ],
+        tools: ["Figma", "Adobe Photoshop"],
+        uiScreens: docmock,
+        conclusion: "FlightFinder successfully demonstrates a production-ready mobile application architecture that balances user experience, performance, and scalability. By leveraging Expo's managed workflow, React Native's cross-platform capabilities, and Firebase's backend services, the application provides a solid foundation for a flight booking platform. The modular design, comprehensive error handling, and attention to UX details make it a robust solution for modern travel needs. Future enhancements could include payment integration, push notifications for flight updates, and advanced filtering options for search results.",
+        websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
+    },
+    {
+        id: 5,
         title: "DOCNET",
         subtitle: "Transforming Healthcare Communication Through User-Centered Design",
         category: "Healthcare & Medical Web Design",
@@ -233,7 +267,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
     },
     {
-        id: 5,
+        id: 6,
         title: "LANKA TRAVEL BUDDY APP",
         subtitle: "A seamless travel planning app designed to explore Sri Lanka effortlessly",
         category: "UI/UX Design | Mobile App",
@@ -259,7 +293,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design"
     },
     {
-        id: 6,
+        id: 7,
         title: "THE BAKERY SHOP",
         subtitle: "Handcrafted Delights, Baked to Impress",
         category: "Food & Beverage E-commerce",
@@ -285,7 +319,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-"
     },
     {
-        id: 7,
+        id: 8,
         title: "FLORONA",
         subtitle: "Nurturing Nature - Your Green Oasis Awaits",
         category: "E-commerce & Retail Design",
@@ -311,7 +345,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-"
     },
     {
-        id: 8,
+        id: 9,
         title: "BEANLINE",
         subtitle: "A mobile-first coffee shop app designed for seamless browsing and ordering",
         category: "Mobile App Design · UI/UX · Coffee & Lifestyle",
@@ -337,7 +371,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
     },
     {
-        id: 9,
+        id: 10,
         title: "E-LEARNING",
         subtitle: "Home Enterprises",
         category: "E-Commerce",
@@ -363,7 +397,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 10,
+        id: 11,
         title: "INSURANCE",
         subtitle: "Task Management & Earnings Tracker for Service Professionals",
         category: "Productivity & Finance Management Mobile Application",
@@ -389,7 +423,7 @@ export const projectsData = [
         websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
     },
     {
-        id: 11,
+        id: 12,
         title: "GESTURECONNECT",
         subtitle: "Real-Time Sign Language Translation and Learning Platform for Enhanced Deaf-Hearing Communication",
         category: "Machine Learning Application",
@@ -417,7 +451,7 @@ export const projectsData = [
         websiteUrl: "https://github.com/yashindibhagya/GestureConnect"
     },
     {
-        id: 12,
+        id: 13,
         title: "NATURE WONDERS",
         subtitle: "Discovering Sri Lanka's Hidden Forest Treasures",
         category: "Environmental & Conservation Web Design",
@@ -443,7 +477,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park"
     },
     {
-        id: 13,
+        id: 14,
         title: "EVENT EDGE",
         subtitle: "Home Enterprises",
         category: "Event Management Platform",
@@ -469,7 +503,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment"
     },
     {
-        id: 14,
+        id: 15,
         title: "EPICUREAN DELIGHT",
         subtitle: "Experience luxury accommodations with world-class amenities and exceptional hospitality in the heart of the city.",
         category: "Luxury Hotel & Hospitality Website",
@@ -495,7 +529,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms"
     },
     {
-        id: 15,
+        id: 16,
         title: "TROPICAL WATER",
         subtitle: "Pure, high-quality water solutions with reliable island-wide delivery, ensuring pure hydration reaches your doorstep.",
         category: "Beverage & Water Solutions",
@@ -521,7 +555,7 @@ export const projectsData = [
         websiteUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere"
     },
     {
-        id: 16,
+        id: 17,
         title: "FOREST HAVEN",
         subtitle: "Discover amazing wildlife and conservation through immersive experiences and educational programs.",
         category: "Zoo & Wildlife Conservation Website",
