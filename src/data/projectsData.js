@@ -123,6 +123,15 @@ export const bocmock = [
     { id: 5, image: '/assets/img/boc/4.png' },
 ];
 
+export const flightmock = [
+    { id: 1, image: '/assets/img/flight/0.png' },
+    { id: 2, image: '/assets/img/flight/1.png' },
+    { id: 3, image: '/assets/img/flight/2.png' },
+    { id: 4, image: '/assets/img/flight/3.png' },
+    { id: 5, image: '/assets/img/flight/4.png' },
+    { id: 6, image: '/assets/img/flight/5.png' },
+];
+
 // Projects data
 export const projectsData = [
     {
@@ -235,7 +244,7 @@ export const projectsData = [
             "Retry logic with exponential backoff for API resilience",
         ],
         tools: ["Figma", "Adobe Photoshop"],
-        uiScreens: docmock,
+        uiScreens: flightmock,
         conclusion: "FlightFinder successfully demonstrates a production-ready mobile application architecture that balances user experience, performance, and scalability. By leveraging Expo's managed workflow, React Native's cross-platform capabilities, and Firebase's backend services, the application provides a solid foundation for a flight booking platform. The modular design, comprehensive error handling, and attention to UX details make it a robust solution for modern travel needs. Future enhancements could include payment integration, push notifications for flight updates, and advanced filtering options for search results.",
         websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
     },
