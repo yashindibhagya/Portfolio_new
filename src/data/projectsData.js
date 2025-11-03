@@ -218,7 +218,7 @@ export const projectsData = [
         id: 4,
         title: "FLIGHT FINDER",
         subtitle: "A secure cross-platform flight booking application",
-        category: "Mobile Application Development / Travel & Transportation",
+        category: "Travel & Transportation",
         duration: "16 HOURS",
         type: "mobile",
         image: "/assets/img/doctor.png",
