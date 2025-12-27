@@ -23,6 +23,12 @@ const NeumorphicToggleSection = () => {
     // Experience data
     const experienceData = [
         {
+            role: "Junior Mobile Application Developer",
+            place: "BridgeMe AB",
+            period: "2025 Dec - Present",
+            work: "Remote"
+        },
+        {
             role: "UI/UX Designer - Intern",
             place: "Amerck Inc",
             period: "2025 May - 2025 Aug",
