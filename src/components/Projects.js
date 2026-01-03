@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import { Box } from "lucide-react";
 import { projectsData } from "../data/projectsData"; // Adjust path as needed
 
-const tabs = ["All", "UI/UX", "Mobile App"];
+const tabs = ["All", "UI/UX", "Mobile App", "Website"];
 
 const NeumorphicProjects = () => {
     const [activeTab, setActiveTab] = useState("All");
     const [hoveredCard, setHoveredCard] = useState(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
-    // Filtering logic based on the `type` field (e.g., 'uiux', 'mobile')
+    // Filtering logic based on the `type` field (e.g., 'uiux', 'mobile', 'website')
     const filteredProjects =
         activeTab === "All"
             ? projectsData
-            : projectsData.filter((project) =>
-                activeTab === "UI/UX" ? project.type === "uiux" : project.type === "mobile"
-            );
+            : projectsData.filter((project) => {
+                if (activeTab === "UI/UX") return project.type === "uiux";
+                if (activeTab === "Mobile App") return project.type === "mobile";
+                if (activeTab === "Website") return project.type === "website";
+                return false;
+            });
 
     const handleMouseMove = (e, index) => {
         const card = e.currentTarget.getBoundingClientRect();
@@ -44,12 +47,12 @@ const NeumorphicProjects = () => {
             <div className="max-w-6xl mx-auto rounded-3xl p-6 md:p-10 shadow-[10px_10px_20px_#d1d9e6,-10px_-10px_20px_#ffffff]">
 
                 {/* Tabs */}
-                <div className="flex justify-center space-x-4 mb-8">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
                     {tabs.map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`py-2 px-8 rounded-2xl text-sm font-medium transition-all duration-200
+                            className={`py-2 px-4 sm:px-8 rounded-2xl text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap
                             ${activeTab === tab
                                     ? "bg-white text-black shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff]"
                                     : "bg-[#f5f5f5] text-gray-600 shadow-[4px_4px_10px_#d1d9e6,-4px_-4px_10px_#ffffff]"

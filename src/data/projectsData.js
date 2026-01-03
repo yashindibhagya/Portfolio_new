@@ -158,8 +158,11 @@ export const projectsData = [
         ],
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: bocmock,
-        conclusion: "The BOC app redesign transforms the mobile banking experience into a more user-friendly, modern, and efficient tool. By focusing on clarity, simplicity, and trust, the new design strengthens the bank’s digital presence and ensures customers can manage finances with confidence and ease.",
-        websiteUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign"
+        conclusion: "The BOC app redesign transforms the mobile banking experience into a more user-friendly, modern, and efficient tool. By focusing on clarity, simplicity, and trust, the new design strengthens the bank's digital presence and ensures customers can manage finances with confidence and ease.",
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 2,
@@ -186,7 +189,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: nikemock,
         conclusion: "The design captures Nike s brand essence while offering an efficient and stylish shopping experience. It s user-focused, visually striking, and built to convert visitors into loyal customers",
-        websiteUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 3,
@@ -212,7 +218,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: burgermock,
         conclusion: "This landing page delivers a flavorful digital experience that mirrors the taste and energy of Burger House. It's built to convert hungry visitors into loyal customers with ease.",
-        websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
+        githubUrl: null,
+        behanceUrl: null,
+        linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
+        website: null
     },
     {
         id: 4,
@@ -242,7 +251,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop", "React Native", "Firebase", "RapidAPI"],
         uiScreens: flightmock,
         conclusion: "FlightFinder successfully demonstrates a production-ready mobile application architecture that balances user experience, performance, and scalability. By leveraging Expo's managed workflow, React Native's cross-platform capabilities, and Firebase's backend services, the application provides a solid foundation for a flight booking platform. The modular design, comprehensive error handling, and attention to UX details make it a robust solution for modern travel needs. Future enhancements could include payment integration, push notifications for flight updates, and advanced filtering options for search results.",
-        websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
+        githubUrl: "https://github.com/yashindibhagya/Flight-Finder",
+        behanceUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 5,
@@ -269,7 +281,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: docmock,
         conclusion: "Doc Net successfully bridges the gap between patients and healthcare providers through its user-friendly interface.",
-        websiteUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 6,
@@ -295,7 +310,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: travelmock,
         conclusion: "Lanka Travel Buddy demonstrates how thoughtful design can enhance travel experiences by blending simplicity, personalization, and functionality. The app not only helps tourists plan better but also highlights the unique beauty of Sri Lanka. It represents a step toward designing tools that make global exploration easier.",
-        websiteUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 7,
@@ -321,7 +339,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: bakerymock,
         conclusion: "These UI design projects showcase versatility in creating industry-specific digital experiences that balance aesthetic appeal with functional usability. From healthcare's trust-focused design to bakery's appetite-driven interface, both demonstrate proficiency in responsive systems, user-centered design, and conversion optimization. The projects reflect strategic thinking in adapting modern web principles to serve distinct user needs while achieving clear business objectives across different sectors.",
-        websiteUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 8,
@@ -347,7 +368,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: plantmock,
         conclusion: "This plant retail design demonstrates the ability to create emotionally resonant e-commerce experiences that align with lifestyle values. The nature-inspired interface successfully bridges the gap between digital shopping and the organic world of plants, showing expertise in designing for niche markets while maintaining broad appeal and usability.",
-        websiteUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 9,
@@ -373,7 +397,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop", "React Native"],
         uiScreens: coffeeShop,
         conclusion: "BeanLine brings together beautiful design and practical functionality to deliver an app experience that coffee lovers will enjoy using daily. The app elevates the connection between brand and customer by offering more than coffee — it delivers convenience with heart.",
-        websiteUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D"
+        githubUrl: "https://github.com/yashindibhagya/BeanLine-CoffeeShop.git",
+        behanceUrl: null,
+        linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
+        website: null
     },
     {
         id: 10,
@@ -399,7 +426,10 @@ export const projectsData = [
         tools: ["React Native", "Firebase"],
         uiScreens: learnmock,
         conclusion: "The E-Learning app successfully delivers educational content in an engaging mobile format.",
-        websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
+        githubUrl: null,
+        behanceUrl: null,
+        linkedinUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE",
+        website: null
     },
     {
         id: 11,
@@ -425,7 +455,10 @@ export const projectsData = [
         tools: ["React Native"],
         uiScreens: insurancemock,
         conclusion: "This task management application successfully addresses the core needs of service professionals by providing a streamlined solution for tracking work performance and earnings. The intuitive design, automated calculations, and comprehensive reporting features make it an essential tool for professionals looking to optimize their productivity and maintain accurate records of their service activities.",
-        websiteUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE"
+        githubUrl: "https://github.com/yashindibhagya/task_list_insurance-company",
+        behanceUrl: null,
+        linkedinUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE",
+        website: null
     },
     {
         id: 12,
@@ -453,7 +486,10 @@ export const projectsData = [
         tools: ["React Native", "Python", "OpenCV", "TensorFlow", "Node.js", "Firebase", "Cloudinary"],
         uiScreens: gesturemock,
         conclusion: "GestureConnect represents a significant advancement in assistive technology for the deaf and hard of hearing community. By combining cutting-edge machine learning, computer vision, and mobile technology, the project addresses a critical social need while promoting inclusivity and accessibility. The application's comprehensive approach—serving as both a communication tool and educational platform—positions it to make a lasting impact on how deaf and hearing individuals interact. With its focus on real-time translation, user-friendly design, and cross-platform accessibility, GestureConnect has the potential to transform daily interactions in healthcare, workplace, and social settings. This final year project not only showcases technical expertise in machine learning and mobile development but also demonstrates a commitment to using technology for social good, making it a valuable contribution to both the academic and social landscape.",
-        websiteUrl: "https://github.com/yashindibhagya/GestureConnect"
+        githubUrl: "https://github.com/yashindibhagya/GestureConnect",
+        behanceUrl: null,
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 13,
@@ -479,7 +515,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: naturemock,
         conclusion: "This environmental design showcases the ability to create powerful, emotion-driven digital experiences that serve conservation goals while maintaining visual impact and usability, demonstrating expertise in designing for environmental and cultural preservation initiatives.",
-        websiteUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 14,
@@ -505,7 +544,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: dashmock,
         conclusion: "EventEdge empowers event organizers with the tools and insights needed to create successful events consistently. By centralizing event management and providing actionable analytics, our platform helps organizations make data-driven decisions that improve attendee satisfaction and event ROI. With EventEdge, managing multiple events becomes streamlined, efficient, and results-oriented.",
-        websiteUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 15,
@@ -531,7 +573,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: hotelmock,
         conclusion: "Epicurean Delight sets the standard for urban luxury hospitality by combining exceptional accommodations with thoughtful amenities and prime location advantages. Our commitment to cleanliness, comfort, and personalized service ensures every guest enjoys a memorable stay that exceeds expectations while providing excellent value for premium experiences.",
-        websiteUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 16,
@@ -557,7 +602,10 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: watermock,
         conclusion: "Tropical Water successfully simplifies water delivery service through digital innovation.",
-        websiteUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere",
+        linkedinUrl: null,
+        website: null
     },
     {
         id: 17,
@@ -583,6 +631,39 @@ export const projectsData = [
         tools: ["Figma", "Adobe Photoshop"],
         uiScreens: forestmock,
         conclusion: "Forest Haven successfully brings eco-tourism to the digital space.",
-        websiteUrl: "https://www.behance.net/gallery/210628451/Nature-Wonders-Zoo-Website-UI-Design"
+        githubUrl: null,
+        behanceUrl: "https://www.behance.net/gallery/210628451/Nature-Wonders-Zoo-Website-UI-Design",
+        linkedinUrl: null,
+        website: null
+    },
+    {
+        id: 18,
+        title: "MAWPRINT",
+        subtitle: "Professional website for a custom printing and sublimation services company",
+        category: "Business Website / Printing Services",
+        duration: "2 WEEKS",
+        type: "website",
+        image: "/assets/img/boc.png",
+        mockupImage: "/assets/img/boc.png",
+        description: "MAWPRINT is a modern, responsive business website developed for a company specializing in sublimation printing, custom T-shirt printing, and personalized merchandise. The website is designed to showcase services, printing quality, and brand identity while making it easy for customers to explore offerings and get in touch.",
+        overview: "This website was built to provide a strong online presence for a printing company by clearly presenting its services, work samples, and contact information. The design focuses on clarity, visual appeal, and usability, ensuring potential customers can quickly understand the company’s offerings and request services from any device.",
+        brandOverview: "MAWPRINT is a creative printing brand offering sublimation printing, custom T-shirt printing, and personalized products. The website reflects the brand’s professionalism and creativity through bold visuals, clean layouts, and a user-friendly experience that builds trust with customers.",
+        challenge: "The main challenge was to design a website that effectively communicates the company’s printing services and quality while maintaining a clean, modern look. The site also needed to be responsive, fast, and easy to navigate for both individual and business customers.",
+        solution: "A responsive business website was developed using React with a structured layout that highlights services, product categories, and printing capabilities. Visual sections were used to showcase printing work, while smooth animations and clear call-to-action elements guide users to contact the company or request quotes effortlessly.",
+        features: [
+            "Fully Responsive Design",
+            "Service-Based Layout (Sublimation, T-Shirt Printing, Custom Prints)",
+            "Product & Work Showcase",
+            "Clear Call-to-Action Sections",
+            "Smooth Animations and Transitions",
+            "SEO-Friendly Structure",
+            "Fast Performance Optimization"
+        ],
+        tools: ["React", "JavaScript", "Vercel"],
+        uiScreens: null,
+        conclusion: "MAWPRINT delivers a professional digital platform for a custom printing business, helping the company present its services clearly and attract new customers. This project demonstrates my ability to translate business requirements into a clean, functional, and visually appealing web solution.",
+        behanceUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign",
+        linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
+        website: "https://mawprint.com"
     }
 ];

@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projectsData } from "../data/projectsData";
 
-const tabs = ["All", "UI/UX", "Mobile App"];
+const tabs = ["All", "UI/UX", "Mobile App", "Website"];
 
 const ProjectsPage = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -15,9 +15,12 @@ const ProjectsPage = () => {
   const filteredProjects =
     activeTab === "All"
       ? projectsData
-      : projectsData.filter((project) =>
-        activeTab === "UI/UX" ? project.type === "uiux" : project.type === "mobile"
-      );
+      : projectsData.filter((project) => {
+        if (activeTab === "UI/UX") return project.type === "uiux";
+        if (activeTab === "Mobile App") return project.type === "mobile";
+        if (activeTab === "Website") return project.type === "website";
+        return false;
+      });
 
   const handleMouseMove = (e, index) => {
     // Only enable cursor tracking on desktop
@@ -63,12 +66,12 @@ const ProjectsPage = () => {
             {/* Outer Neumorphic Container */}
             <div className="max-w-6xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 -mt-10">
               {/* Tabs */}
-              <div className="flex justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
                 {tabs.map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`py-2 px-4 sm:px-6 md:px-8 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-medium transition-all duration-200 flex-1 sm:flex-none
+                    className={`py-2 px-3 sm:px-5 md:px-8 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap
                     ${activeTab === tab
                         ? "bg-white text-black shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff]"
                         : "bg-[#f5f5f5] text-gray-600 shadow-[4px_4px_10px_#d1d9e6,-4px_-4px_10px_#ffffff]"

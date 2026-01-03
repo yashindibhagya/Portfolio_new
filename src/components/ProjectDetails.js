@@ -6,7 +6,7 @@ import {
     SiFigma, SiAdobephotoshop, SiReact, SiFirebase,
     SiCloudinary, SiTailwindcss, SiNodedotjs, SiCanva,
     SiVercel, SiGithub, SiBehance, SiBootstrap,
-    SiJavascript, SiHtml5, SiCss3, SiPython, SiOpencv, SiTensorflow
+    SiJavascript, SiHtml5, SiCss3, SiPython, SiOpencv, SiTensorflow, SiLinkedin
 } from 'react-icons/si';
 import ImageViewer from './ImageViewer';
 
@@ -138,13 +138,52 @@ const ProjectDetails = () => {
                             <Link to="/contact" className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Contact Me
                             </Link>
-                            <a
-                                href={project.websiteUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-white text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all text-gray-800">
-                                → Site Preview
-                            </a>
+                            {/* Site Preview - Only for website type projects */}
+                            {project.type === "website" && project.website && (
+                                <a
+                                    href={project.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-white text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all text-gray-800">
+                                    → Site Preview
+                                </a>
+                            )}
+                            {/* GitHub Icon - Only if githubUrl exists */}
+                            {project.githubUrl && (
+                                <a
+                                    href={project.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                    title="View on GitHub"
+                                >
+                                    <SiGithub className="w-6 h-6 text-gray-800" />
+                                </a>
+                            )}
+                            {/* Behance Icon - Only if behanceUrl exists */}
+                            {project.behanceUrl && (
+                                <a
+                                    href={project.behanceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                    title="View on Behance"
+                                >
+                                    <SiBehance className="w-6 h-6 text-gray-800" />
+                                </a>
+                            )}
+                            {/* LinkedIn Icon - Only if linkedinUrl exists */}
+                            {project.linkedinUrl && (
+                                <a
+                                    href={project.linkedinUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                    title="View on LinkedIn"
+                                >
+                                    <SiLinkedin className="w-6 h-6 text-gray-800" />
+                                </a>
+                            )}
                         </div>
                     </div>
 
@@ -198,15 +237,8 @@ const ProjectDetails = () => {
 
 
                 {/* Brand Overview */}
-                <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 px-4">
+                <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 px-3">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                        <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-900 mb-3 sm:mb-4 hover:underline text-sm sm:text-base">
-                            <svg className="w-4 h-4 mr-2 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            View Full Project
-                        </a>
-
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black-900 mb-3 sm:mb-4">BRAND OVERVIEW</h2>
                         <p className="text-gray-800 text-base sm:text-lg leading-relaxed">{project.brandOverview}</p>
                     </motion.div>
@@ -258,37 +290,39 @@ const ProjectDetails = () => {
                 </div>
 
 
-                {/* 🖼 UI Screens (Mobile Responsive) */}
-                <div style={{
-                    ...sectionBlock,
-                    marginTop: window.innerWidth < 768 ? '40px' : '60px',
-                    marginBottom: window.innerWidth < 768 ? '40px' : '60px'
-                }}>
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
-                        UI SCREENS
-                    </motion.h2>
+                {/* 🖼 UI Screens (Mobile Responsive) - Only show if uiScreens exists and is not null */}
+                {project.uiScreens && project.uiScreens.length > 0 && (
                     <div style={{
-                        ...screensContainerStyle,
-                        gap: window.innerWidth < 768 ? '15px' : '20px',
-                        flexDirection: window.innerWidth < 640 ? 'column' : 'row',
-                        alignItems: window.innerWidth < 640 ? 'center' : 'flex-start'
+                        ...sectionBlock,
+                        marginTop: window.innerWidth < 768 ? '40px' : '60px',
+                        marginBottom: window.innerWidth < 768 ? '40px' : '60px'
                     }}>
-                        {project.uiScreens.map(screen => (
-                            <div key={screen.id}>
-                                <img
-                                    src={screen.image}
-                                    alt={`Screen ${screen.id}`}
-                                    style={{
-                                        ...screenImageStyle,
-                                        width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
-                                        borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                        boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
-                                    }}
-                                />
-                            </div>
-                        ))}
+                        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
+                            UI SCREENS
+                        </motion.h2>
+                        <div style={{
+                            ...screensContainerStyle,
+                            gap: window.innerWidth < 768 ? '15px' : '20px',
+                            flexDirection: window.innerWidth < 640 ? 'column' : 'row',
+                            alignItems: window.innerWidth < 640 ? 'center' : 'flex-start'
+                        }}>
+                            {project.uiScreens.map(screen => (
+                                <div key={screen.id}>
+                                    <img
+                                        src={screen.image}
+                                        alt={`Screen ${screen.id}`}
+                                        style={{
+                                            ...screenImageStyle,
+                                            width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
+                                            borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                            boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* Conclusion Section */}
                 <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4 text-center">
@@ -315,29 +349,68 @@ const ProjectDetails = () => {
                             {projectsData
                                 .filter(p => p.type === project.type && p.id !== project.id)
                                 .slice(0, 3)
-                                .map(related => (
-                                    <div key={related.id} className="p-4 sm:p-6">
-                                        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{related.title}</h3>
-                                        <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base">{related.description}</p>
+                                .map(related => {
+                                    const isWebsite = related.type === "website";
+                                    const websiteUrl = related.website || null;
 
-                                        {/* Tags */}
-                                        <div className="flex flex-wrap gap-1 sm:gap-2 mb-2">
-                                            {related.tools && related.tools.slice(0, 3).map((tech, index) => (
-                                                <span
-                                                    key={index}
-                                                    className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                                    return (
+                                        <div key={related.id} className="h-full flex flex-col">
+                                            <Link
+                                                to={`/project/${related.id}`}
+                                                className="block no-underline h-full flex flex-col"
+                                            >
+                                                <motion.div
+                                                    whileHover={{ scale: 1.02 }}
+                                                    whileTap={{ scale: 0.98 }}
+                                                    className="h-full p-4 sm:p-6 rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#c9d1de,-8px_-8px_16px_#ffffff] transition-all duration-300 cursor-pointer flex flex-col"
                                                 >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                            {related.tools && related.tools.length > 3 && (
-                                                <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
-                                                    +{related.tools.length - 3}
-                                                </span>
+                                                    {/* Project Image */}
+                                                    <div className="mb-4 rounded-lg overflow-hidden flex-shrink-0">
+                                                        <img
+                                                            src={related.image}
+                                                            alt={related.title}
+                                                            className="w-full h-40 sm:h-48 object-cover rounded-lg"
+                                                        />
+                                                    </div>
+
+                                                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 flex-shrink-0">{related.title}</h3>
+                                                    <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base flex-grow">{related.description}</p>
+
+                                                    {/* Tags */}
+                                                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                                                        {related.tools && related.tools.slice(0, 3).map((tech, index) => (
+                                                            <span
+                                                                key={index}
+                                                                className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                                                            >
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                        {related.tools && related.tools.length > 3 && (
+                                                            <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
+                                                                +{related.tools.length - 3}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </motion.div>
+                                            </Link>
+
+                                            {/* Site Preview Button - Only for Website type */}
+                                            {isWebsite && websiteUrl && (
+                                                <a
+                                                    href={websiteUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="mt-3 w-full px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-white text-sm font-medium text-gray-800 shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] hover:shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff] transition-all duration-200"
+                                                >
+                                                    <span>→</span>
+                                                    <span>Site Preview</span>
+                                                </a>
                                             )}
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                         </div>
                     </div>
                 </div>
