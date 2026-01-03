@@ -135,7 +135,7 @@ const Contact = () => {
     );
 
     return (
-        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-28 min-h-screen bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px]">
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-28 h-screen bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px] mt-12">
             <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative">
                 <div className="max-w-5xl mx-auto text-center mb-8 sm:mb-10 md:mb-12">
                     <span className="inline-flex items-center gap-2 rounded-full bg-[#f2f2f2] px-4 py-1 shadow-[3px_3px_7px_#c3c6ca,-3px_-3px_7px_#ffffff] text-gray-700 text-sm mb-2">

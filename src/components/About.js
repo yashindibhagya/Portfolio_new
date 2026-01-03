@@ -19,7 +19,7 @@ const ProfileCard = () => {
     }, [location.pathname]);
     return (
         <div
-            className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px]"
+            className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#F2F2F2] rounded-[50px] sm:rounded-[70px] lg:rounded-[100px] -mt-48"
         >
             {/* 🎥 Background Video (optional) */}
 
