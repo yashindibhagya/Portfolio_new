@@ -85,7 +85,7 @@ const CreativeProject = () => {
 
             {/* Footer Sides with Copyright and Framer Text */}
             <div className="flex flex-col sm:flex-row justify-between items-center mt-12 sm:mt-20 px-4 sm:px-8 gap-4 sm:gap-0">
-                <p className="text-xs sm:text-sm text-gray-600 order-2 sm:order-1">© 2025 Yashindi. All rights reserved.</p>
+                <p className="text-xs sm:text-sm text-gray-600 order-2 sm:order-1">© 2026 Yashindi. All rights reserved.</p>
                 <div className="flex gap-4 text-xs sm:text-sm text-gray-600 order-1 sm:order-2"
                     style={{
                         borderRadius: 100,
