@@ -88,6 +88,7 @@ const ProjectsPage = () => {
                   <Link
                     to={`/project/${project.id}`}
                     key={project.id}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="block no-underline"
                   >
                     <div

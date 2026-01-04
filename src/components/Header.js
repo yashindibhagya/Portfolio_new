@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Facebook, PhoneCall, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Instagram, Facebook, PhoneCall, Menu, X, ArrowLeft } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { socialLinks } from '../config/socialLinks';
 
 const Header = () => {
@@ -8,7 +8,12 @@ const Header = () => {
     const [isHovered, setIsHovered] = useState(false);
     const [hoveredLink, setHoveredLink] = useState(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isBackButtonHovered, setIsBackButtonHovered] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
+    
+    // Check if we're on a project details page
+    const isProjectDetailsPage = location.pathname.startsWith('/project/');
 
     useEffect(() => {
         // Update active link based on current route
@@ -85,7 +90,10 @@ const Header = () => {
                             <Link
                                 key={link.id}
                                 to={link.path}
-                                onClick={() => setActiveLink(link.id)}
+                                onClick={() => {
+                                    setActiveLink(link.id);
+                                    window.scrollTo(0, 0);
+                                }}
                                 onMouseEnter={() => setHoveredLink(link.id)}
                                 onMouseLeave={() => setHoveredLink(null)}
                                 style={{
@@ -120,7 +128,22 @@ const Header = () => {
                 {/* Mobile Top Header */}
                 <div style={mobileTopHeaderStyle}>
                     <div style={mobileLogoStyle}>
-                        <img src="../../assets/img/logo.png" alt="Logo" style={{ height: 24 }} />
+                        {/* Back Button - Only show on project details pages */}
+                        {isProjectDetailsPage && (
+                            <button
+                                onClick={() => navigate(-1)}
+                                onMouseEnter={() => setIsBackButtonHovered(true)}
+                                onMouseLeave={() => setIsBackButtonHovered(false)}
+                                style={{
+                                    ...mobileBackButtonStyle,
+                                    ...(isBackButtonHovered ? mobileBackButtonHoverStyle : {}),
+                                }}
+                                aria-label="Go back"
+                            >
+                                <ArrowLeft size={20} />
+                            </button>
+                        )}
+                        <img src="../../assets/img/logo.png" alt="Logo" style={{ height: 24, marginLeft: isProjectDetailsPage ? '12px' : '0' }} />
                     </div>
 
                     <div style={mobileRightStyle}>
@@ -178,6 +201,7 @@ const Header = () => {
                                         onClick={() => {
                                             setActiveLink(link.id);
                                             closeMobileMenu();
+                                            window.scrollTo(0, 0);
                                         }}
                                         style={{
                                             ...mobileNavLinkStyle,
@@ -361,6 +385,27 @@ const mobileTopHeaderStyle = {
 const mobileLogoStyle = {
     display: 'flex',
     alignItems: 'center',
+    gap: '8px',
+};
+
+const mobileBackButtonStyle = {
+    background: '#f0f0f3',
+    border: 'none',
+    padding: '8px',
+    borderRadius: '10px',
+    cursor: 'pointer',
+    boxShadow: '4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#1f2937',
+    transition: 'all 0.25s ease',
+    width: '36px',
+    height: '36px',
+};
+
+const mobileBackButtonHoverStyle = {
+    boxShadow: 'inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff',
 };
 
 const mobileRightStyle = {

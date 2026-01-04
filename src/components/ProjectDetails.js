@@ -85,20 +85,20 @@ const ProjectDetails = () => {
         return (
             <div className="relative">
                 <div
-                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] sm:hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                     tabIndex={0}
                     aria-label={tool}
                 >
                     {toolData ? (
-                        <toolData.icon color={toolIcons[tool]?.color || '#3498db'} className="w-5 h-5" />
+                        <toolData.icon color={toolIcons[tool]?.color || '#3498db'} className="w-4 h-4 sm:w-5 sm:h-5" />
                     ) : (
                         <span className="text-xs text-gray-700">{tool}</span>
                     )}
                 </div>
                 {hover && (
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-white text-gray-800 text-xs rounded-lg shadow-md whitespace-nowrap z-50">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-1 sm:py-1.5 bg-white text-gray-800 text-xs rounded-lg shadow-md whitespace-nowrap z-50">
                         {tool}
                     </div>
                 )}
@@ -114,7 +114,7 @@ const ProjectDetails = () => {
 
 
     return (
-        <div className="min-h-screen pt-16 sm:pt-20 pb-6 sm:pb-8">
+        <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8 md:pb-12">
             {viewerState.isOpen && (
                 <ImageViewer
                     images={allImages}
@@ -124,18 +124,18 @@ const ProjectDetails = () => {
                     onPrev={goToPrev}
                 />
             )}
-            <div className="max-w-6xl w-full mx-auto font-sans px-4 sm:px-6">
+            <div className="max-w-7xl w-full mx-auto font-sans px-4 sm:px-6 md:px-8 lg:px-10">
                 {/* 🔝 Header Section */}
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 py-8">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 py-6 sm:py-8 md:py-10">
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight">
                             {project.title}
                         </h1>
-                        <p className="text-gray-700 text-base sm:text-lg mb-6 lg:mb-8 max-w-2xl">
+                        <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 lg:mb-8 max-w-2xl leading-relaxed">
                             {project.subtitle}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                            <Link to="/contact" className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
+                            <Link to="/contact" className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-center rounded-xl bg-gradient-to-bl from-[#0000B9] to-[#000000] text-white text-sm sm:text-base shadow-[6px_6px_12px_#00005D,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#00005D,inset_-6px_-6px_12px_#0000FF] transition-all">
                                 ↗ Contact Me
                             </Link>
                             {/* Site Preview - Only for website type projects */}
@@ -144,57 +144,60 @@ const ProjectDetails = () => {
                                     href={project.website}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-xl bg-white text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all text-gray-800">
+                                    className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-center rounded-xl bg-white text-sm sm:text-base shadow-[6px_6px_12px_#bec3c9,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bec3c9,inset_-6px_-6px_12px_#ffffff] transition-all text-gray-800">
                                     → Site Preview
                                 </a>
                             )}
-                            {/* GitHub Icon - Only if githubUrl exists */}
-                            {project.githubUrl && (
-                                <a
-                                    href={project.githubUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                                    title="View on GitHub"
-                                >
-                                    <SiGithub className="w-6 h-6 text-gray-800" />
-                                </a>
-                            )}
-                            {/* Behance Icon - Only if behanceUrl exists */}
-                            {project.behanceUrl && (
-                                <a
-                                    href={project.behanceUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                                    title="View on Behance"
-                                >
-                                    <SiBehance className="w-6 h-6 text-gray-800" />
-                                </a>
-                            )}
-                            {/* LinkedIn Icon - Only if linkedinUrl exists */}
-                            {project.linkedinUrl && (
-                                <a
-                                    href={project.linkedinUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-12 h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
-                                    title="View on LinkedIn"
-                                >
-                                    <SiLinkedin className="w-6 h-6 text-gray-800" />
-                                </a>
-                            )}
+                            {/* Social Icons Container */}
+                            <div className="flex gap-3 sm:gap-4">
+                                {/* GitHub Icon - Only if githubUrl exists */}
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                        title="View on GitHub"
+                                    >
+                                        <SiGithub className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
+                                    </a>
+                                )}
+                                {/* Behance Icon - Only if behanceUrl exists */}
+                                {project.behanceUrl && (
+                                    <a
+                                        href={project.behanceUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                        title="View on Behance"
+                                    >
+                                        <SiBehance className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
+                                    </a>
+                                )}
+                                {/* LinkedIn Icon - Only if linkedinUrl exists */}
+                                {project.linkedinUrl && (
+                                    <a
+                                        href={project.linkedinUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#d1d9e6,inset_-6px_-6px_12px_#ffffff] transition-all duration-300"
+                                        title="View on LinkedIn"
+                                    >
+                                        <SiLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </div>
 
-                    <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm sm:text-base">
-                        <div>
-                            <p style={metaLabelStyle}>Services</p>
-                            <p style={metaValueStyle}>{project.category}</p>
+                    <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base">
+                        <div className="flex flex-col">
+                            <p className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 text-gray-600 uppercase tracking-wide">Services</p>
+                            <p className="text-sm sm:text-base md:text-lg font-bold text-gray-900 break-words">{project.category}</p>
                         </div>
-                        <div>
-                            <p style={metaLabelStyle}>Tools</p>
-                            <div className="grid grid-cols-4 gap-2 w-full">
+                        <div className="flex flex-col">
+                            <p className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-gray-600 uppercase tracking-wide">Tools</p>
+                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 gap-2 sm:gap-3 w-full">
                                 {project.tools.map((tool) => {
                                     const toolData = toolIcons[tool];
                                     return (
@@ -205,24 +208,25 @@ const ProjectDetails = () => {
                                 })}
                             </div>
                         </div>
-                        <div>
-                            <p style={metaLabelStyle}>Type</p>
-                            <p style={metaValueStyle}>{project.type}</p>
+                        <div className="flex flex-col">
+                            <p className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 text-gray-600 uppercase tracking-wide">Type</p>
+                            <p className="text-sm sm:text-base md:text-lg font-bold text-gray-900 capitalize">{project.type}</p>
                         </div>
-                        <div>
-                            <p style={metaLabelStyle}>Timeline</p>
-                            <p style={metaValueStyle}>{project.duration}</p>
+                        <div className="flex flex-col">
+                            <p className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 text-gray-600 uppercase tracking-wide">Timeline</p>
+                            <p className="text-sm sm:text-base md:text-lg font-bold text-gray-900">{project.duration}</p>
                         </div>
                     </div>
                 </div>
 
-                <div style={{ textAlign: 'center', marginBottom: window.innerWidth < 768 ? '40px' : '60px' }}>
+                <div className="text-center mb-8 sm:mb-12 md:mb-16">
                     {project.video ? (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
+                            className="w-full"
                         >
                             <video
                                 src={project.video}
@@ -231,12 +235,7 @@ const ProjectDetails = () => {
                                 loop
                                 muted
                                 playsInline
-                                style={{
-                                    maxWidth: '100%',
-                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
-                                }}
-                                className="w-full"
+                                className="w-full rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                             >
                                 Your browser does not support the video tag.
                             </video>
@@ -246,16 +245,12 @@ const ProjectDetails = () => {
                             whileHover={{ scale: 1.01 }}
                             whileTap={{ scale: 0.99 }}
                             onClick={() => openImageViewer(0)}
-                            className="cursor-zoom-in"
+                            className="cursor-zoom-in w-full"
                         >
                             <img
                                 src={project.mockupImage}
                                 alt={`${project.title} Mockup`}
-                                style={{
-                                    maxWidth: '100%',
-                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
-                                }}
+                                className="w-full rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                             />
                         </motion.div>
                     )}
@@ -263,15 +258,15 @@ const ProjectDetails = () => {
 
 
                 {/* Brand Overview */}
-                <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 px-3">
+                <div className="container mx-auto max-w-5xl text-center py-6 sm:py-8 md:py-10 px-4 sm:px-6">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black-900 mb-3 sm:mb-4">BRAND OVERVIEW</h2>
-                        <p className="text-gray-800 text-base sm:text-lg leading-relaxed">{project.brandOverview}</p>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black-900 mb-3 sm:mb-4 md:mb-6">BRAND OVERVIEW</h2>
+                        <p className="text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto">{project.brandOverview}</p>
                     </motion.div>
                 </div>
 
                 {/* Challenge & Solution */}
-                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 md:py-10 px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                     {['THE CHALLENGE', 'THE SOLUTION'].map((heading, i) => (
                         <motion.div
                             key={heading}
@@ -279,36 +274,36 @@ const ProjectDetails = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, ease: 'easeOut' }}
-                            className="space-y-3 sm:space-y-4"
+                            className="space-y-3 sm:space-y-4 md:space-y-5"
                         >
-                            <h2 className={`text-2xl sm:text-3xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-blue-900' : 'text-black-900 border-l-4 border-blue-900'} pl-3 sm:pl-4`}>
+                            <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${i === 0 ? 'text-black-800 border-l-4 border-blue-900' : 'text-black-900 border-l-4 border-blue-900'} pl-3 sm:pl-4 md:pl-5`}>
                                 {heading}
                             </h2>
-                            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{i === 0 ? project.challenge : project.solution}</p>
+                            <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg">{i === 0 ? project.challenge : project.solution}</p>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Key Features */}
-                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4">
-                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 md:py-10 px-4 sm:px-6">
+                    <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black-900 mb-4 sm:mb-6 md:mb-8 border-l-4 border-blue-900 pl-3 sm:pl-4 md:pl-5">
                         KEY FEATURES
                     </motion.h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                         {project.features.map((feature, idx) => (
                             <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                 viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.15 }}
-                                whileHover={{ scale: window.innerWidth >= 768 ? 1.03 : 1 }}
-                                className={`${neumorphic.raised} p-4 sm:p-6 rounded-xl transition shadow-lg hover:${neumorphic.pressed}`}
+                                whileHover={{ scale: 1.02 }}
+                                className={`${neumorphic.raised} p-4 sm:p-5 md:p-6 rounded-xl transition-all duration-300 hover:shadow-[inset_6px_6px_12px_#bebebe,_inset_-6px_-6px_12px_#ffffff]`}
                             >
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mr-3 sm:mr-4 relative">
-                                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-bl from-[#0000B9] to-[#000000] flex items-center justify-center text-white font-bold text-sm sm:text-base">{idx + 1}</div>
+                                        <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-bl from-[#0000B9] to-[#000000] flex items-center justify-center text-white font-bold text-xs sm:text-sm md:text-base">{idx + 1}</div>
                                     </div>
-                                    <p className="text-gray-700 text-sm sm:text-base">{feature}</p>
+                                    <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">{feature}</p>
                                 </div>
                             </motion.div>
                         ))}
@@ -318,31 +313,17 @@ const ProjectDetails = () => {
 
                 {/* 🖼 UI Screens (Mobile Responsive) - Only show if uiScreens exists and is not null */}
                 {project.uiScreens && project.uiScreens.length > 0 && (
-                    <div style={{
-                        ...sectionBlock,
-                        marginTop: window.innerWidth < 768 ? '40px' : '60px',
-                        marginBottom: window.innerWidth < 768 ? '40px' : '60px'
-                    }}>
-                        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 border-l-4 border-blue-900 pl-3 sm:pl-4">
+                    <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-4 sm:px-6">
+                        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black-900 mb-4 sm:mb-6 md:mb-8 border-l-4 border-blue-900 pl-3 sm:pl-4 md:pl-5">
                             UI SCREENS
                         </motion.h2>
-                        <div style={{
-                            ...screensContainerStyle,
-                            gap: window.innerWidth < 768 ? '15px' : '20px',
-                            flexDirection: window.innerWidth < 640 ? 'column' : 'row',
-                            alignItems: window.innerWidth < 640 ? 'center' : 'flex-start'
-                        }}>
+                        <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center sm:items-start gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                             {project.uiScreens.map(screen => (
-                                <div key={screen.id}>
+                                <div key={screen.id} className="flex-shrink-0">
                                     <img
                                         src={screen.image}
                                         alt={`Screen ${screen.id}`}
-                                        style={{
-                                            ...screenImageStyle,
-                                            width: window.innerWidth < 640 ? '200px' : window.innerWidth < 768 ? '180px' : '250px',
-                                            borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                            boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff'
-                                        }}
+                                        className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                                     />
                                 </div>
                             ))}
@@ -351,27 +332,27 @@ const ProjectDetails = () => {
                 )}
 
                 {/* Conclusion Section */}
-                <div className="container mx-auto max-w-6xl py-6 sm:py-8 px-4 text-center">
+                <div className="container mx-auto max-w-6xl py-6 sm:py-8 md:py-10 px-4 sm:px-6 text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-black-900 mb-4 sm:mb-6 inline-block border-b-2 border-black">PROJECT CONCLUSION</h2>
-                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.conclusion}</p>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black-900 mb-4 sm:mb-6 md:mb-8 inline-block border-b-2 border-black pb-2">PROJECT CONCLUSION</h2>
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto">{project.conclusion}</p>
                     </motion.div>
                 </div>
 
                 {/* Related Projects Section */}
-                <div className="relative py-8 sm:py-12 px-4 md:px-6">
+                <div className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-8">
                     <div className="container mx-auto max-w-6xl">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: 'easeOut' }}
-                            className="text-center mb-8 sm:mb-10"
+                            className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                         >
-                            <h2 className="text-2xl sm:text-3xl font-bold text-black-900 inline-block border-b-2 border-black mb-2">RELATED PROJECTS</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black-900 inline-block border-b-2 border-black pb-2 mb-2">RELATED PROJECTS</h2>
                         </motion.div>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                             {projectsData
                                 .filter(p => p.type === project.type && p.id !== project.id)
                                 .slice(0, 3)
@@ -383,37 +364,38 @@ const ProjectDetails = () => {
                                         <div key={related.id} className="h-full flex flex-col">
                                             <Link
                                                 to={`/project/${related.id}`}
+                                                onClick={() => window.scrollTo(0, 0)}
                                                 className="block no-underline h-full flex flex-col"
                                             >
                                                 <motion.div
                                                     whileHover={{ scale: 1.02 }}
                                                     whileTap={{ scale: 0.98 }}
-                                                    className="h-full p-4 sm:p-6 rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#c9d1de,-8px_-8px_16px_#ffffff] transition-all duration-300 cursor-pointer flex flex-col"
+                                                    className="h-full p-4 sm:p-5 md:p-6 rounded-xl bg-white shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] hover:shadow-[8px_8px_16px_#c9d1de,-8px_-8px_16px_#ffffff] transition-all duration-300 cursor-pointer flex flex-col"
                                                 >
                                                     {/* Project Image */}
-                                                    <div className="mb-4 rounded-lg overflow-hidden flex-shrink-0">
+                                                    <div className="mb-3 sm:mb-4 rounded-lg overflow-hidden flex-shrink-0">
                                                         <img
                                                             src={related.image}
                                                             alt={related.title}
-                                                            className="w-full h-40 sm:h-48 object-cover rounded-lg"
+                                                            className="w-full h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 object-cover rounded-lg"
                                                         />
                                                     </div>
 
-                                                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 flex-shrink-0">{related.title}</h3>
-                                                    <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-sm sm:text-base flex-grow">{related.description}</p>
+                                                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-2 flex-shrink-0">{related.title}</h3>
+                                                    <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-2 text-xs sm:text-sm md:text-base flex-grow leading-relaxed">{related.description}</p>
 
                                                     {/* Tags */}
-                                                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                                                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto">
                                                         {related.tools && related.tools.slice(0, 3).map((tech, index) => (
                                                             <span
                                                                 key={index}
-                                                                className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
+                                                                className="px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]"
                                                             >
                                                                 {tech}
                                                             </span>
                                                         ))}
                                                         {related.tools && related.tools.length > 3 && (
-                                                            <span className="px-2 sm:px-3 py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
+                                                            <span className="px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 text-xs rounded-full bg-[#f2f2f2] text-gray-700 shadow-[2px_2px_4px_#d1d9e6,-2px_-2px_4px_#ffffff]">
                                                                 +{related.tools.length - 3}
                                                             </span>
                                                         )}
@@ -428,7 +410,7 @@ const ProjectDetails = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     onClick={(e) => e.stopPropagation()}
-                                                    className="mt-3 w-full px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-white text-sm font-medium text-gray-800 shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] hover:shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff] transition-all duration-200"
+                                                    className="mt-3 w-full px-3 sm:px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-white text-xs sm:text-sm font-medium text-gray-800 shadow-[4px_4px_8px_#d1d9e6,-4px_-4px_8px_#ffffff] hover:shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff] transition-all duration-200"
                                                 >
                                                     <span>→</span>
                                                     <span>Site Preview</span>

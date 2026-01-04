@@ -18,6 +18,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTopButton from './components/ScrollToTopButton'; // ✅ Import
+import ScrollToTop from './components/ScrollToTop'; // ✅ Import
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
