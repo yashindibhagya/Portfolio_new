@@ -217,22 +217,48 @@ const ProjectDetails = () => {
                 </div>
 
                 <div style={{ textAlign: 'center', marginBottom: window.innerWidth < 768 ? '40px' : '60px' }}>
-                    <motion.div
-                        whileHover={{ scale: 1.01 }}
-                        whileTap={{ scale: 0.99 }}
-                        onClick={() => openImageViewer(0)}
-                        className="cursor-zoom-in"
-                    >
-                        <img
-                            src={project.mockupImage}
-                            alt={`${project.title} Mockup`}
-                            style={{
-                                maxWidth: '100%',
-                                borderRadius: window.innerWidth < 768 ? '12px' : '16px',
-                                boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
-                            }}
-                        />
-                    </motion.div>
+                    {project.video ? (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <video
+                                src={project.video}
+                                controls
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                style={{
+                                    maxWidth: '100%',
+                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+                                }}
+                                className="w-full"
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            whileHover={{ scale: 1.01 }}
+                            whileTap={{ scale: 0.99 }}
+                            onClick={() => openImageViewer(0)}
+                            className="cursor-zoom-in"
+                        >
+                            <img
+                                src={project.mockupImage}
+                                alt={`${project.title} Mockup`}
+                                style={{
+                                    maxWidth: '100%',
+                                    borderRadius: window.innerWidth < 768 ? '12px' : '16px',
+                                    boxShadow: window.innerWidth < 768 ? '4px 4px 8px #bebebe, -4px -4px 8px #ffffff' : '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+                                }}
+                            />
+                        </motion.div>
+                    )}
                 </div>
 
 

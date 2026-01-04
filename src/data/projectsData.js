@@ -162,7 +162,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 2,
@@ -192,7 +193,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/215614109/Elevating-Sneaker-Culture-Nike-Website-Design-Journey",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 3,
@@ -221,7 +223,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: null,
         linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 4,
@@ -254,7 +257,8 @@ export const projectsData = [
         githubUrl: "https://github.com/yashindibhagya/Flight-Finder",
         behanceUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 5,
@@ -284,7 +288,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/208489759/Doctor-Website-Design",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 6,
@@ -313,7 +318,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/234168973/Travel-App-Design",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 7,
@@ -342,7 +348,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/208464529/-UI-Design-for-The-Bakery-Shop-",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 8,
@@ -371,7 +378,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/208403183/Discover-Your-Green-Oasis-with-Florona-",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 9,
@@ -400,7 +408,8 @@ export const projectsData = [
         githubUrl: "https://github.com/yashindibhagya/BeanLine-CoffeeShop.git",
         behanceUrl: null,
         linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7359614675140956161/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
-        website: null
+        website: null,
+        video: "/assets/video/coffee.mp4"
     },
     {
         id: 10,
@@ -429,7 +438,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: null,
         linkedinUrl: "https://www.linkedin.com/posts/yashindibhagya_reactnative-ai-firebase-activity-7299357121526079490-nIr0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE",
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 11,
@@ -458,7 +468,8 @@ export const projectsData = [
         githubUrl: "https://github.com/yashindibhagya/task_list_insurance-company",
         behanceUrl: null,
         linkedinUrl: "https://www.linkedin.com/posts/yashindibhagya_insuranceapp-reactnative-uiuxdesign-activity-7269062163489579008-ugsu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUcmngBFksevSFzInbwIWTsrVqBF7YPNoE",
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 12,
@@ -489,7 +500,8 @@ export const projectsData = [
         githubUrl: "https://github.com/yashindibhagya/GestureConnect",
         behanceUrl: null,
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 13,
@@ -518,7 +530,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/208881237/Discover-the-Wilderness-of-Wilpattu-National-Park",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 14,
@@ -547,7 +560,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/211986447/Dashboard-for-event-booking-and-managment",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 15,
@@ -576,7 +590,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/208403929/Coastal-Luxury-Hotel-Rooms",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 16,
@@ -605,7 +620,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/217841279/Tropical-Water-BottlePure-Hydration-Anytime-Anywhere",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 17,
@@ -634,7 +650,8 @@ export const projectsData = [
         githubUrl: null,
         behanceUrl: "https://www.behance.net/gallery/210628451/Nature-Wonders-Zoo-Website-UI-Design",
         linkedinUrl: null,
-        website: null
+        website: null,
+        video: null
     },
     {
         id: 18,
@@ -664,6 +681,7 @@ export const projectsData = [
         conclusion: "MAWPRINT delivers a professional digital platform for a custom printing business, helping the company present its services clearly and attract new customers. This project demonstrates my ability to translate business requirements into a clean, functional, and visually appealing web solution.",
         behanceUrl: "https://www.behance.net/gallery/234636623/BOC-Mobile-App-Redesign",
         linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7246503118333435906?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7246503118333435906%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUHPWvrJWQZeNVXFp1hOFcw%3D%3D",
-        website: "https://mawprint.com"
+        website: "https://mawprint.com",
+        video: "/assets/video/mawprint.mp4"
     }
 ];
