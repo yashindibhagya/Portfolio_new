@@ -8,7 +8,7 @@ import { projectsData } from "../data/projectsData";
 const tabs = ["All", "UI/UX", "Mobile App", "Website"];
 
 const ProjectsPage = () => {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("Mobile App");
   const [hoveredCard, setHoveredCard] = useState(null);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
