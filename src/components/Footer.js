@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialLinks, contactInfo } from "../config/socialLinks";
+import { socialLinks } from "../config/socialLinks";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 

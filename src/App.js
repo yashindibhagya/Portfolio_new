@@ -4,21 +4,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Projects from './components/Projects';
 import ProjectDetails from './components/ProjectDetails';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
-import Education from './components/Education';
 import Projects_Marquee from './components/ProjectsMarquee';
-import Marquee from './components/Marquee';
+import ProjectsMarquee from './components/Marquee';
 import FAQ from './components/Faq';
 import ProjectsPage from './pages/ProjectsPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTopButton from './components/ScrollToTopButton'; // ✅ Import
-import ScrollToTop from './components/ScrollToTop'; // ✅ Import
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -62,7 +59,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
@@ -87,7 +83,7 @@ function App() {
                 <div className="w-full">
                   <Services />
                   <About />
-                  <Marquee />
+                  <ProjectsMarquee />
                 </div>
                 <div className="w-full">
                   <Skills />

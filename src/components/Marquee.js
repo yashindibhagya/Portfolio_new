@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMobileAlt, FaPencilRuler, FaLaptopCode } from "react-icons/fa";
-import { MdOutlineBrandingWatermark, MdOutlineWeb } from "react-icons/md";
+import { MdOutlineBrandingWatermark } from "react-icons/md";
 import { BiGitCompare } from "react-icons/bi";
 
 const tags = [

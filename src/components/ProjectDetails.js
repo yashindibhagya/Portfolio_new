@@ -13,7 +13,7 @@ import ImageViewer from './ImageViewer';
 
 const ProjectDetails = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const project = projectsData.find(p => p.id === parseInt(id));
 
     // State for image viewer
@@ -427,180 +427,180 @@ const ProjectDetails = () => {
     );
 };
 
-// 🔄 Reusable Text Section Component
-const Section = ({ title, content }) => (
-    <div style={{ marginBottom: '40px' }}>
-        <h2 style={sectionHeading}>{title}</h2>
-        <p style={sectionText}>{content}</p>
-    </div>
-);
+// // 🔄 Reusable Text Section Component
+// const Section = ({ title, content }) => (
+//     <div style={{ marginBottom: '40px' }}>
+//         <h2 style={sectionHeading}>{title}</h2>
+//         <p style={sectionText}>{content}</p>
+//     </div>
+// );
 
 
-const pageContainer = {
-    padding: '120px 20px 60px',
-    maxWidth: '1100px',
-    margin: '0 auto',
-    fontFamily: 'Inter, sans-serif',
-    color: '#1e293b',
-};
+// const pageContainer = {
+//     padding: '120px 20px 60px',
+//     maxWidth: '1100px',
+//     margin: '0 auto',
+//     fontFamily: 'Inter, sans-serif',
+//     color: '#1e293b',
+// };
 
-// Header Section (Screenshot Style)
-const topSectionStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    borderRadius: '16px',
-    boxShadow: 'none',
-    gap: '30px',
-    flexWrap: 'wrap',
-    maxWidth: '1100px',
-    margin: '0 auto 40px',
-};
+// // Header Section (Screenshot Style)
+// const topSectionStyle = {
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     alignItems: 'flex-start',
+//     borderRadius: '16px',
+//     boxShadow: 'none',
+//     gap: '30px',
+//     flexWrap: 'wrap',
+//     maxWidth: '1100px',
+//     margin: '0 auto 40px',
+// };
 
-const topLeftStyle = {
-    flex: '1 1 55%',
-    minWidth: '280px',
-};
+// const topLeftStyle = {
+//     flex: '1 1 55%',
+//     minWidth: '280px',
+// };
 
-const topRightStyle = {
-    flex: '1 1 40%',
-    minWidth: '280px',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gridRowGap: '20px',
-    gridColumnGap: '40px',
-    fontSize: '14px',
-    color: '#4b5563',
-};
+// const topRightStyle = {
+//     flex: '1 1 40%',
+//     minWidth: '280px',
+//     display: 'grid',
+//     gridTemplateColumns: 'repeat(2, 1fr)',
+//     gridRowGap: '20px',
+//     gridColumnGap: '40px',
+//     fontSize: '14px',
+//     color: '#4b5563',
+// };
 
-const projectTitleStyle = {
-    fontSize: '38px',
-    fontWeight: '900',
-    margin: 0,
-    lineHeight: 1.2,
-    color: '#111827',
-};
+// const projectTitleStyle = {
+//     fontSize: '38px',
+//     fontWeight: '900',
+//     margin: 0,
+//     lineHeight: 1.2,
+//     color: '#111827',
+// };
 
-const projectDescriptionStyle = {
-    fontSize: '15px',
-    marginTop: '8px',
-    marginBottom: '24px',
-    color: '#6b7280',
-};
+// const projectDescriptionStyle = {
+//     fontSize: '15px',
+//     marginTop: '8px',
+//     marginBottom: '24px',
+//     color: '#6b7280',
+// };
 
-const buttonGroupStyle = {
-    display: 'flex',
-    gap: '16px',
-};
+// const buttonGroupStyle = {
+//     display: 'flex',
+//     gap: '16px',
+// };
 
-const primaryButtonStyle = {
-    backgroundColor: '#111827',
-    color: '#fff',
-    padding: '11px 24px',
-    borderRadius: '8px',
-    fontWeight: '600',
-    fontSize: '14px',
-    border: 'none',
-    cursor: 'pointer',
-    boxShadow: '0 8px 16px rgb(17 24 39 / 0.2)',
-    textDecoration: 'none',
-};
+// const primaryButtonStyle = {
+//     backgroundColor: '#111827',
+//     color: '#fff',
+//     padding: '11px 24px',
+//     borderRadius: '8px',
+//     fontWeight: '600',
+//     fontSize: '14px',
+//     border: 'none',
+//     cursor: 'pointer',
+//     boxShadow: '0 8px 16px rgb(17 24 39 / 0.2)',
+//     textDecoration: 'none',
+// };
 
-const secondaryButtonStyle = {
-    backgroundColor: '#f3f4f6',
-    color: '#111827',
-    padding: '11px 24px',
-    borderRadius: '8px',
-    fontWeight: '600',
-    fontSize: '14px',
-    border: 'none',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    boxShadow: 'none',
-};
+// const secondaryButtonStyle = {
+//     backgroundColor: '#f3f4f6',
+//     color: '#111827',
+//     padding: '11px 24px',
+//     borderRadius: '8px',
+//     fontWeight: '600',
+//     fontSize: '14px',
+//     border: 'none',
+//     cursor: 'pointer',
+//     textDecoration: 'none',
+//     boxShadow: 'none',
+// };
 
 
-const metaGroupStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '20px',
-};
+// const metaGroupStyle = {
+//     display: 'flex',
+//     justifyContent: 'space-between',
+//     gap: '20px',
+// };
 
-const metaLabelStyle = {
-    fontWeight: '600',
-    marginBottom: '4px',
-    color: '#6b7280',
-};
+// const metaLabelStyle = {
+//     fontWeight: '600',
+//     marginBottom: '4px',
+//     color: '#6b7280',
+// };
 
-const metaValueStyle = {
-    fontWeight: '700',
-    color: '#111827',
-    whiteSpace: 'nowrap',
-};
+// const metaValueStyle = {
+//     fontWeight: '700',
+//     color: '#111827',
+//     whiteSpace: 'nowrap',
+// };
 
-// Body Sections
-const sectionBlock = {
-    marginTop: '60px',
-    marginBottom: '60px',
-};
+// // Body Sections
+// const sectionBlock = {
+//     marginTop: '60px',
+//     marginBottom: '60px',
+// };
 
-const sectionHeading = {
-    fontSize: '22px',
-    fontWeight: '600',
-    marginBottom: '12px',
-};
+// const sectionHeading = {
+//     fontSize: '22px',
+//     fontWeight: '600',
+//     marginBottom: '12px',
+// };
 
-const sectionText = {
-    lineHeight: '1.7',
-    color: '#374151',
-    fontSize: '16px',
-};
+// const sectionText = {
+//     lineHeight: '1.7',
+//     color: '#374151',
+//     fontSize: '16px',
+// };
 
-const featuresList = {
-    paddingLeft: '20px',
-    marginTop: '10px',
-};
+// const featuresList = {
+//     paddingLeft: '20px',
+//     marginTop: '10px',
+// };
 
-const featureItem = {
-    fontSize: '15px',
-    padding: '5px 0',
-};
+// const featureItem = {
+//     fontSize: '15px',
+//     padding: '5px 0',
+// };
 
-const toolsList = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '12px',
-};
+// const toolsList = {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//     gap: '12px',
+// };
 
-const toolTag = {
-    padding: '6px 12px',
-    backgroundColor: '#f3f4f6',
-    borderRadius: '10px',
-    fontSize: '14px',
-    fontWeight: '500',
-    color: '#1f2937',
-};
+// const toolTag = {
+//     padding: '6px 12px',
+//     backgroundColor: '#f3f4f6',
+//     borderRadius: '10px',
+//     fontSize: '14px',
+//     fontWeight: '500',
+//     color: '#1f2937',
+// };
 
-// UI Screens (Neumorphic style)
-const screensContainerStyle = {
-    display: 'flex',
-    gap: '20px',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-};
+// // UI Screens (Neumorphic style)
+// const screensContainerStyle = {
+//     display: 'flex',
+//     gap: '20px',
+//     flexWrap: 'wrap',
+//     justifyContent: 'center',
+// };
 
-const screenImageStyle = {
-    width: '250px',
-    borderRadius: '16px',
-    boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
-};
+// const screenImageStyle = {
+//     width: '250px',
+//     borderRadius: '16px',
+//     boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+// };
 
-// External Link
-const externalLinkStyle = {
-    textDecoration: 'none',
-    color: '#3b82f6',
-    fontWeight: '600',
-    fontSize: '16px',
-};
+// // External Link
+// const externalLinkStyle = {
+//     textDecoration: 'none',
+//     color: '#3b82f6',
+//     fontWeight: '600',
+//     fontSize: '16px',
+// };
 
 export default ProjectDetails;

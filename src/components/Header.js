@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Facebook, PhoneCall, Menu, X, ArrowLeft } from 'lucide-react';
+import { Menu, X, ArrowLeft } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { socialLinks } from '../config/socialLinks';
 
@@ -11,7 +11,7 @@ const Header = () => {
     const [isBackButtonHovered, setIsBackButtonHovered] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     // Check if we're on a project details page
     const isProjectDetailsPage = location.pathname.startsWith('/project/');
 
