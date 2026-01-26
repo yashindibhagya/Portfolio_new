@@ -8,7 +8,7 @@ import { projectsData } from "../data/projectsData";
 const tabs = ["All", "UI/UX", "Mobile App", "Website"];
 
 const ProjectsPage = () => {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("Mobile App");
   const [hoveredCard, setHoveredCard] = useState(null);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
@@ -83,7 +83,7 @@ const ProjectsPage = () => {
               </div>
 
               {/* Projects Grid */}
-              <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+              <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {filteredProjects.map((project, index) => (
                   <Link
                     to={`/project/${project.id}`}
