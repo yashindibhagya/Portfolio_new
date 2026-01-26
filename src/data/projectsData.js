@@ -685,5 +685,37 @@ export const projectsData = [
         linkedinUrl: null,
         website: "https://mawprint.com",
         video: "/assets/video/mawprint.mp4"
+    },
+    {
+        id: 19,
+        title: "ELITE ESTATES",
+        subtitle: "Modern real estate platform for property listings and seamless property discovery",
+        category: "Real Estate Website",
+        duration: "3 WEEKS",
+        type: "website",
+        image: "/assets/img/realestate.png",
+        mockupImage: "/assets/img/realestate.png",
+        description: "Elite Estates is a modern, responsive real estate website designed to help users discover, explore, and connect with premium properties. The platform features an intuitive interface for browsing property listings, detailed property information, and seamless user experience for both buyers and sellers.",
+        overview: "This real estate website was built to provide a comprehensive platform for property listings and discovery. The design focuses on showcasing properties with high-quality imagery, clear property details, and an easy-to-navigate interface that helps users find their dream homes or investment properties efficiently.",
+        brandOverview: "Elite Estates represents a premium real estate brand focused on connecting clients with exceptional properties. The website reflects the brand's commitment to quality, professionalism, and customer satisfaction through modern design, clear property presentations, and user-friendly navigation.",
+        challenge: "The main challenge was to create a website that effectively displays property listings with rich visual content while maintaining fast performance and intuitive navigation. The site needed to handle multiple property types, search functionality, and provide clear information to help users make informed decisions.",
+        solution: "A responsive real estate website was developed with a focus on visual property showcases, organized listing layouts, and smooth user interactions. The design incorporates modern UI elements, clear property categorization, and intuitive search features that make property discovery effortless for users.",
+        features: [
+            "Property Listing Showcase",
+            "Advanced Search and Filter Options",
+            "Detailed Property Information Pages",
+            "Responsive Design for All Devices",
+            "Modern and Clean UI/UX",
+            "Fast Performance and Optimization",
+            "Property Image Galleries",
+            "Contact and Inquiry Forms"
+        ],
+        tools: ["React", "JavaScript", "Vercel"],
+        conclusion: "Elite Estates delivers a professional and modern platform for real estate listings, making property discovery and exploration seamless for users. This project demonstrates expertise in creating functional, visually appealing web solutions for the real estate industry.",
+        githubUrl: "https://github.com/yashindibhagya/Real_Estate.git",
+        behanceUrl: null,
+        linkedinUrl: null,
+        website: "https://real-estate-mocha-nine.vercel.app/",
+        video: "/assets/video/realestate.mp4"
     }
 ];
