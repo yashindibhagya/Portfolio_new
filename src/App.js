@@ -9,7 +9,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
-import Projects_Marquee from './components/ProjectsMarquee';
+import ProjectsMarquee1 from './components/ProjectsMarquee';
 import ProjectsMarquee from './components/Marquee';
 import FAQ from './components/Faq';
 import ProjectsPage from './pages/ProjectsPage';
@@ -78,7 +78,7 @@ function App() {
                 <Header activeSection={activeSection} />
                 <div className="w-full">
                   <Hero />
-                  <Projects_Marquee />
+                  <ProjectsMarquee1 />
                 </div>
                 <div className="w-full">
                   <Services />
