@@ -24,7 +24,7 @@ const Hero = () => {
                 muted
                 playsInline
                 preload="metadata"
-                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23000060'/%3E%3Cstop offset='100%25' stop-color='%23000000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='1920' height='1080'/%3E%3C/svg%3E"
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23ffffff' width='1920' height='1080'/%3E%3C/svg%3E"
                 className="absolute inset-0 w-full h-full object-cover opacity-100"
             >
                 <source src="/assets/img/video.mp4" type="video/mp4" />

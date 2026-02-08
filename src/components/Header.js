@@ -50,9 +50,9 @@ const Header = () => {
             <div className="hidden md:block">
                 {/* Top Glass Header */}
                 <div style={topHeaderStyle}>
-                    <div style={nameStyle}>
-                        <img src="../../assets/img/logo.png" alt="Logo" style={{ height: 30 }} />
-                    </div>
+                    <Link to="/" onClick={() => { setActiveLink('home'); window.scrollTo(0, 0); }} style={{ ...nameStyle, textDecoration: 'none' }}>
+                        <img src="/assets/img/logo.png" alt="Logo" style={{ height: 30 }} />
+                    </Link>
 
                     <div style={rightContentStyle}>
                         {/* Availability */}
@@ -143,7 +143,9 @@ const Header = () => {
                                 <ArrowLeft size={20} />
                             </button>
                         )}
-                        <img src="../../assets/img/logo.png" alt="Logo" style={{ height: 24, marginLeft: isProjectDetailsPage ? '12px' : '0' }} />
+                        <Link to="/" onClick={() => { setActiveLink('home'); closeMobileMenu(); window.scrollTo(0, 0); }} style={{ display: 'flex', alignItems: 'center' }}>
+                            <img src="/assets/img/logo.png" alt="Yashindi Bhagya" style={{ height: 24, marginLeft: isProjectDetailsPage ? '12px' : '0' }} />
+                        </Link>
                     </div>
 
                     <div style={mobileRightStyle}>
