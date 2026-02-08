@@ -235,6 +235,7 @@ const ProjectDetails = () => {
                                 loop
                                 muted
                                 playsInline
+                                preload="metadata"
                                 className="w-full rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                             >
                                 Your browser does not support the video tag.
@@ -250,6 +251,7 @@ const ProjectDetails = () => {
                             <img
                                 src={project.mockupImage}
                                 alt={`${project.title} Mockup`}
+                                loading="lazy"
                                 className="w-full rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                             />
                         </motion.div>
@@ -323,6 +325,7 @@ const ProjectDetails = () => {
                                     <img
                                         src={screen.image}
                                         alt={`Screen ${screen.id}`}
+                                        loading="lazy"
                                         className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 rounded-xl sm:rounded-2xl shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] sm:shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff]"
                                     />
                                 </div>
@@ -377,6 +380,7 @@ const ProjectDetails = () => {
                                                         <img
                                                             src={related.image}
                                                             alt={related.title}
+                                                            loading="lazy"
                                                             className="w-full h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 object-cover rounded-lg"
                                                         />
                                                     </div>

@@ -75,6 +75,7 @@ const NeumorphicProjects = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
+                                loading="lazy"
                                 className="w-full h-64 object-cover rounded-3xl"
                             />
                             <div className="text-center py-4 text-base font-semibold text-gray-700">

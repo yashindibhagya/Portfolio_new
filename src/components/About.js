@@ -49,6 +49,7 @@ const ProfileCard = () => {
                             <img
                                 src="../../assets/img/pic.png"
                                 alt="Yashindi Bhagya"
+                                loading="lazy"
                                 className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg sm:rounded-xl mb-3 sm:mb-4"
                             />
                             <p className="text-green-500 text-xs sm:text-sm flex items-center justify-center gap-2 mb-2">

@@ -22,11 +22,11 @@ const MarqueeTags = () => {
             <div className="absolute right-0 top-0 h-full w-8 sm:w-12 lg:w-16 bg-gradient-to-l from-[#fff] to-transparent pointer-events-none z-10" />
 
             {/* Marquee container */}
-            <div className="animate-marquee whitespace-nowrap flex gap-3 sm:gap-4 lg:gap-6">
+            <div className="animate-marquee whitespace-nowrap flex gap-3 sm:gap-4 lg:gap-6" style={{ willChange: 'transform' }}>
                 {[...tags, ...tags].map((tag, index) => (
                     <div
                         key={index}
-                        className="inline-flex items-center bg-white/50 text-gray-700 font-medium text-sm sm:text-base lg:text-sm px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 rounded-full backdrop-blur-sm shadow-sm"
+                        className="inline-flex items-center bg-white/90 text-gray-700 font-medium text-sm sm:text-base lg:text-sm px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 rounded-full shadow-sm"
                         style={{
                             width: "max-content",
                             maxWidth: "max-content",

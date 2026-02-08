@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const roles = ["Mobile App Developer", "UI UX Developer", "Remote Designer"];
+const roles = ["Mobile App Developer", "UI UX Designer", "Remote Designer"];
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -17,15 +17,17 @@ const Hero = () => {
 
     return (
         <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* 🎥 Background Video */}
+            {/* 🎥 Background Video - preload=metadata loads ~few KB instead of full video */}
             <video
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="metadata"
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23000060'/%3E%3Cstop offset='100%25' stop-color='%23000000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='1920' height='1080'/%3E%3C/svg%3E"
                 className="absolute inset-0 w-full h-full object-cover opacity-100"
             >
-                <source src="../../assets/img/video.mp4" type="video/mp4" />
+                <source src="/assets/img/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
@@ -38,7 +40,7 @@ const Hero = () => {
                         Hey, I m
                     </h1>
                     <img
-                        src="../assets/img/pic.png"
+                        src="/assets/img/pic.png"
                         alt="Profile"
                         className="w-[60px] h-[40px] sm:w-[70px] sm:h-[45px] md:w-[80px] md:h-[50px] lg:w-[100px] lg:h-[55px] rounded-full border border-black shadow-lg object-contain"
                     />
@@ -64,13 +66,13 @@ const Hero = () => {
                     </AnimatePresence>
 
                     <img
-                        src="../assets/img/day.jpg"
+                        src="/assets/img/day.jpg"
                         alt="Day Icon"
                         className="w-[60px] h-[40px] sm:w-[70px] sm:h-[45px] md:w-[80px] md:h-[50px] lg:w-[100px] lg:h-[55px] rounded-full border shadow-lg object-cover"
                     />
 
                     <img
-                        src="../assets/img/night.jpg"
+                        src="/assets/img/night.jpg"
                         alt="Night Icon"
                         className="w-[60px] h-[40px] sm:w-[70px] sm:h-[45px] md:w-[80px] md:h-[50px] lg:w-[100px] lg:h-[55px] rounded-full border border-black shadow-lg object-cover"
                     />
@@ -82,7 +84,7 @@ const Hero = () => {
                         Living in
                     </h1>
                     <img
-                        src="../assets/img/sl.avif"
+                        src="/assets/img/sl.avif"
                         alt="Sri Lanka"
                         className="w-[60px] h-[40px] sm:w-[70px] sm:h-[45px] md:w-[80px] md:h-[50px] lg:w-[100px] lg:h-[55px] rounded-full border border-black shadow-lg object-cover"
                     />

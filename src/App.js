@@ -1,10 +1,9 @@
 // App.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import ProjectDetails from './components/ProjectDetails';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -12,32 +11,44 @@ import Services from './components/Services';
 import ProjectsMarquee1 from './components/ProjectsMarquee';
 import ProjectsMarquee from './components/Marquee';
 import FAQ from './components/Faq';
-import ProjectsPage from './pages/ProjectsPage';
-import ServicesPage from './pages/ServicesPage';
-import ContactPage from './pages/ContactPage';
-import ScrollToTopButton from './components/ScrollToTopButton'; // ✅ Import
+import ScrollToTopButton from './components/ScrollToTopButton';
+
+// Lazy load route components for faster initial load
+const ProjectDetails = lazy(() => import('./components/ProjectDetails'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const handleScroll = () => {
+    let cleanup;
+    const timeoutId = setTimeout(() => {
       const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 100;
+      if (sections.length === 0) return;
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              if (id) setActiveSection(id);
+              break;
+            }
+          }
+        },
+        { rootMargin: '-20% 0px -60% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+      );
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
-        }
-      });
+      sections.forEach((s) => observer.observe(s));
+      cleanup = () => sections.forEach((s) => observer.unobserve(s));
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      cleanup?.();
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -62,18 +73,23 @@ function App() {
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
-          <Routes>
-            <Route path="/project/:id" element={
-              <div className="w-full">
-                <Header activeSection={activeSection} isProjectPage={true} />
-                <ProjectDetails />
-                <Footer />
-              </div>
-            } />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/" element={
+          <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-[#E4E9ED]">
+              <div className="animate-pulse text-gray-500">Loading...</div>
+            </div>
+          }>
+            <Routes>
+              <Route path="/project/:id" element={
+                <div className="w-full">
+                  <Header activeSection={activeSection} isProjectPage={true} />
+                  <ProjectDetails />
+                  <Footer />
+                </div>
+              } />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/" element={
               <>
                 <Header activeSection={activeSection} />
                 <div className="w-full">
@@ -96,6 +112,7 @@ function App() {
               </>
             } />
           </Routes>
+          </Suspense>
         </div>
 
         {/* ✅ Global Scroll-to-Top Button */}

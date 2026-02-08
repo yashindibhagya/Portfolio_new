@@ -100,6 +100,7 @@ const ProjectsPage = () => {
                       <img
                         src={project.image}
                         alt={project.title}
+                        loading="lazy"
                         className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-2xl sm:rounded-3xl group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="text-center py-3 sm:py-4 text-sm sm:text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 px-2">

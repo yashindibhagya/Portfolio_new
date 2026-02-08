@@ -38,9 +38,10 @@ const MarqueeProjects = () => {
                         <img
                             src={project.img}
                             alt={project.title}
+                            loading="lazy"
                             className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                         />
-                        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-white/80 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold shadow-sm text-gray-800 dark:text-white">
+                        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-white/95 px-2 py-1 sm:px-3 sm:py-1 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold shadow-sm text-gray-800 dark:text-white">
                             {project.title}
                         </div>
                     </motion.div>
@@ -55,6 +56,7 @@ const MarqueeProjects = () => {
                 .animate-marquee {
                     display: flex;
                     animation: marquee 45s linear infinite;
+                    will-change: transform;
                 }
                 @media (min-width: 640px) {
                     .animate-marquee {

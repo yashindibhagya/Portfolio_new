@@ -5,11 +5,17 @@ const ScrollToTopButton = () => {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
+        let ticking = false;
         const toggleVisibility = () => {
-            setVisible(window.scrollY > 300);
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                setVisible(window.scrollY > 300);
+                ticking = false;
+            });
         };
 
-        window.addEventListener("scroll", toggleVisibility);
+        window.addEventListener("scroll", toggleVisibility, { passive: true });
         return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
 

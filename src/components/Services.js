@@ -16,6 +16,7 @@ const ServiceCard = ({
             <img
                 src={imageUrl}
                 alt={title}
+                loading="lazy"
                 className="rounded-lg w-full md:w-48 object-cover"
             />
         )}

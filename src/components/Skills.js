@@ -33,7 +33,7 @@ const Skills = () => {
             <div className="flex justify-between items-center mb-2">
                 <div className="flex items-center gap-2">
                     <div className="w-8 h-8 flex items-center justify-center rounded-lg shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff] bg-[#f2f2f2]">
-                        <img src={skill.iconUrl} alt={skill.name} className="w-4 h-4 object-contain" />
+                        <img src={skill.iconUrl} alt={skill.name} loading="lazy" className="w-4 h-4 object-contain" />
                     </div>
                     <span className="text-gray-700 text-sm">{skill.name}</span>
                 </div>
