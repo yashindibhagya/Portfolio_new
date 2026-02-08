@@ -69,7 +69,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL || ''}>
+    <BrowserRouter>
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
