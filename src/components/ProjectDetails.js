@@ -13,19 +13,16 @@ import ImageViewer from './ImageViewer';
 
 const ProjectDetails = () => {
     const { id } = useParams();
-    // const navigate = useNavigate();
-    const project = projectsData.find(p => p.id === parseInt(id));
+    const project = projectsData.find(p => p.id === parseInt(id, 10));
 
-    // State for image viewer
+    // State for image viewer - hooks must be before any early return
     const [viewerState, setViewerState] = useState({
         isOpen: false,
         currentIndex: 0
     });
 
-    // Get all project images for the viewer
-    const allImages = [project.image, ...(project.additionalImages || [])].filter(Boolean);
+    const allImages = project ? [project.image, ...(project.additionalImages || [])].filter(Boolean) : [];
 
-    // Open image viewer
     const openImageViewer = useCallback((index = 0) => {
         setViewerState({
             isOpen: true,
@@ -33,29 +30,27 @@ const ProjectDetails = () => {
         });
     }, []);
 
-    // Close image viewer
     const closeImageViewer = useCallback(() => {
         setViewerState(prev => ({ ...prev, isOpen: false }));
     }, []);
 
-    // Navigate to next image
     const goToNext = useCallback(() => {
+        const len = allImages.length || 1;
         setViewerState(prev => ({
             ...prev,
-            currentIndex: (prev.currentIndex + 1) % allImages.length
+            currentIndex: (prev.currentIndex + 1) % len
         }));
     }, [allImages.length]);
 
-    // Navigate to previous image
     const goToPrev = useCallback(() => {
+        const len = allImages.length || 1;
         setViewerState(prev => ({
             ...prev,
-            currentIndex: (prev.currentIndex - 1 + allImages.length) % allImages.length
+            currentIndex: (prev.currentIndex - 1 + len) % len
         }));
     }, [allImages.length]);
 
-    if (!project) return <div>Project not found</div>;
-
+    if (!project) return <div className="min-h-screen flex items-center justify-center p-8">Project not found</div>;
 
     const toolIcons = {
         'Figma': { icon: SiFigma, color: '#0000B9' },

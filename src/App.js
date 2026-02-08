@@ -13,8 +13,8 @@ import ProjectsMarquee from './components/Marquee';
 import FAQ from './components/Faq';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
-// Lazy load route components for faster initial load
-const ProjectDetails = lazy(() => import('./components/ProjectDetails'));
+// ProjectDetails loaded directly - prevents empty page when chunk fails on deploy (e.g. subpath)
+import ProjectDetails from './components/ProjectDetails';
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -69,7 +69,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL || ''}>
       <div className="min-h-screen relative bg-[#E4E9ED]">
         {/* Main content wrapper */}
         <div className="relative z-10">
