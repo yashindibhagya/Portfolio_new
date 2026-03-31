@@ -106,7 +106,7 @@ const Header = () => {
                             </Link>
                         ))}
                         <a
-                            href="../../assets/document/Yashindi_Bhagya.pdf"
+                            href="/assets/document/Yashindi Bhagya.pdf"
                             download
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
@@ -216,7 +216,7 @@ const Header = () => {
 
                                 {/* Mobile Resume Download */}
                                 <a
-                                    href="../../assets/document/Mobile Application developer.pdf"
+                                    href="/assets/document/Yashindi Bhagya.pdf"
                                     download
                                     onClick={closeMobileMenu}
                                     style={mobileResumeButtonStyle}
